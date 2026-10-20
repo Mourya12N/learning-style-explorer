@@ -1,0 +1,56 @@
+
+/* Dynamic Island */
+.dynamic-island {
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 126px;
+    height: 37px;
+
+    background-color: #000;
+    border-radius: 25px;
+
+    z-index: 10;
+    pointer-events: none;
+}
+
+.dynamic-island::after {
+    content: "";
+    position: absolute;
+
+    width: 12px;
+    height: 12px;
+
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    background-color: #14243a;
+    border: 2px solid #263b55;
+    border-radius: 50%;
+}
+
+/* Status icons */
+.status-icons {
+    position: absolute;
+    top: 30.5px;
+    right: calc((50% - 63px) / 2);
+    transform: translate(50%, -50%);
+}
+
+/* Status time */
+.status-time {
+    position: absolute;
+    top: 30.5px;
+    left: calc((50% - 63px) / 2);
+    transform: translate(-50%, -50%);
+
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    line-height: 1;
+    color: #000;
+    white-space: nowrap;
+}

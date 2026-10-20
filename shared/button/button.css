@@ -1,0 +1,173 @@
+
+/* Base button */
+app-button {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    border: none;
+    border-radius: 999px;
+    background: var(--button-color, #B8B8B8);
+    color: var(--button-text-color, #FFFFFF);
+    font-family: "Inter", Arial, sans-serif;
+    font-size: inherit;
+    font-weight: inherit;
+    cursor: pointer;
+}
+
+/* Button states */
+.button:hover {
+    background: var(--button-hover-color, #A0A0A0);
+    color: var(
+        --button-text-hover-color,
+        var(--button-text-color, #FFFFFF)
+    );
+}
+
+.button:focus-visible {
+    outline: 2px solid #555555;
+    outline-offset: 3px;
+}
+
+.button:disabled {
+    cursor: not-allowed;
+}
+
+/* Text */
+.button-text {
+    min-width: 0;
+    overflow: visible;
+    white-space: nowrap;
+    line-height: normal;
+}
+
+/* Icons */
+.button-icon {
+    display: block;
+    flex-shrink: 0;
+}
+
+svg.button-icon {
+    fill: var(--button-icon-color, #FFFFFF);
+}
+
+.button:hover svg.button-icon {
+    fill: var(
+        --button-icon-hover-color,
+        var(--button-icon-color, #FFFFFF)
+    );
+}
+
+/* Large */
+app-button[type="large"] {
+    display: block;
+    width: 100%;
+    height: 55px;
+    font-size: 15.5px;
+    font-weight: 800;
+}
+
+/* Next and Back */
+app-button:is([type="next"], [type="back"]) {
+    width: 186px;
+    height: 54px;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+/* Accept and Decline */
+app-button:is([type="accept"], [type="decline"]) {
+    width: 176px;
+    height: 52px;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+/* Save and Share */
+app-button:is([type="save"], [type="share"]) {
+    width: 186px;
+    height: 52px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Retake */
+app-button[type="retake"] {
+    width: 186px;
+    height: 55px;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+/* Mini Back */
+app-button[type="mini-back"] {
+    width: 65px;
+    height: 28px;
+    font-size: 12.25px;
+    font-weight: 500;
+}
+
+app-button[type="mini-back"] .button {
+    gap: 4px;
+}
+
+/* Small Login */
+app-button[type="login"] {
+    width: 66px;
+    height: 30px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+app-button[type="login"] .button {
+    border: 1.25px solid var(--button-border-color, #333333);
+    background: var(--button-color, transparent);
+    color: var(--button-text-color, #333333);
+}
+
+app-button[type="login"] .button:hover {
+    background: var(--button-hover-color, #F0F0F0);
+    color: var(
+        --button-text-hover-color,
+        var(--button-text-color, #333333)
+    );
+}
+
+/* Google */
+app-button[type="google"] {
+    display: block;
+    width: 392px;
+    max-width: 100%;
+    height: 55px;
+    font-size: 13.6px;
+    font-weight: 700;
+}
+
+app-button[type="google"] .button {
+    border: 2px solid var(--button-border-color, #D8D9DE);
+    background: var(--button-color, transparent);
+    color: var(--button-text-color, #3D405B);
+}
+
+app-button[type="google"] .button:hover {
+    background: var(--button-hover-color, #F5F5F5);
+    color: var(
+        --button-text-hover-color,
+        var(--button-text-color, #3D405B)
+    );
+}
+
+/* Google icon */
+app-button[type="google"] img.button-icon {
+    width: 20px;
+    height: 20px;
+}

@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Learning Style Explorer</title>
+
+    <!-- Shared styles -->
+    <link rel="stylesheet" href="../shared/iphone-frame/iphone-frame.css">
+    <link rel="stylesheet" href="../shared/status-bar/status-bar.css">
+    <link rel="stylesheet" href="../shared/bottom-nav/bottom-nav.css">
+    <link rel="stylesheet" href="../shared/themes/themes.css">
+    <link rel="stylesheet" href="../shared/brand/brand.css">
+    <link rel="stylesheet" href="../shared/button/button.css">
+    <link rel="stylesheet" href="../shared/form-field/form-field.css">
+    <link rel="stylesheet" href="../shared/dropdown/dropdown.css">
+    <link rel="stylesheet" href="../shared/checkbox/checkbox.css">
+    <link rel="stylesheet" href="signup.css">
+
+    <!-- Shared components -->
+    <script src="../shared/brand/brand.js" defer></script>
+    <script src="../shared/button/button.js" defer></script>
+    <script src="../shared/form-field/form-field.js" defer></script>
+    <script src="../shared/dropdown/dropdown.js" defer></script>
+    <script src="../shared/checkbox/checkbox.js" defer></script>
+</head>
+
+<body data-theme="summer-drift">
+    <main class="app-container">
+        <div id="status-bar"></div>
+
+        <div class="signup-content">
+
+            <!-- Header -->
+            <header class="signup-header">
+                <app-brand></app-brand>
+
+                <app-button
+                    type="mini-back"
+                    text="Back">
+                </app-button>
+            </header>
+
+            <!-- Welcome card -->
+            <section class="signup-card">
+                <div class="signup-welcome">
+                    <span class="signup-label">CREATE ACCOUNT</span>
+
+                    <h1 class="signup-heading">
+                        <span class="signup-heading-first">Join Learning</span>
+                        <span class="signup-heading-second">Style Explorer</span>
+                    </h1>
+
+                    <p class="signup-description">
+                        <span>Create your free account today</span>
+                        <span>and discover how you learn</span>
+                    </p>
+                </div>
+            </section>
+
+            <!-- Illustrations -->
+            <div class="signup-illustrations" aria-hidden="true">
+                <img
+                    class="person-rocket"
+                    src="assets/person-rocket.svg"
+                    alt=""
+                >
+
+                <img
+                    class="decorative-squares-signup"
+                    src="assets/decorative-squares-signup.svg"
+                    alt=""
+                >
+
+                <img
+                    class="decorative-squares-small-signup"
+                    src="assets/decorative-squares-small-signup.svg"
+                    alt=""
+                >
+            </div>
+
+            <!-- Fields -->
+            <div class="signup-form">
+
+                <app-form-field
+                    type="person"
+                    heading="Full Name"
+                    label="Enter your full name">
+                </app-form-field>
+
+                <app-form-field
+                    type="email"
+                    heading="Email Address"
+                    label="Enter your email address">
+                </app-form-field>
+
+                <app-form-field
+                    type="password"
+                    heading="Password"
+                    label="Create a password">
+                </app-form-field>
+
+                <app-form-field
+                    type="password"
+                    heading="Confirm Password"
+                    label="Confirm your password">
+                </app-form-field>
+
+                <app-dropdown
+                    heading="Your Role"
+                    label="Select your role"
+                    name="user-role"
+                    options="High School Student|University Student|Teacher / Tutor|Parent">
+                </app-dropdown>
+
+            </div>
+
+            <!-- Agreement -->
+            <div class="signup-agreement">
+                <app-checkbox
+                    name="agreement"
+                    value="yes">
+                </app-checkbox>
+
+                <span class="signup-agreement-text">
+                    I agree to the
+                    <a href="#" class="signup-link">Terms of Service</a>
+                    and
+                    <a href="#" class="signup-link">EULA</a>
+                </span>
+            </div>
+
+            <!-- Create Account -->
+            <div class="signup-submit">
+                <app-button
+                    type="large"
+                    variant="primary"
+                    text="Create Account">
+                </app-button>
+            </div>
+
+            <!-- Login -->
+            <div class="signup-login">
+                <span>Already have an account?</span>
+                <a href="../login/login.html" class="signup-link">Login</a>
+            </div>
+
+        </div>
+
+        <div id="bottom-nav"></div>
+    </main>
+
+    <!-- Shared scripts -->
+    <script src="../shared/status-bar/status-bar.js"></script>
+    <script src="../shared/bottom-nav/bottom-nav.js"></script>
+    <script src="signup.js"></script>
+</body>
+</html>

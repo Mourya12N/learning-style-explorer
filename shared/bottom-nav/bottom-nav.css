@@ -1,0 +1,123 @@
+
+/* Bottom navigation */
+.bottom-nav {
+    position: absolute;
+    bottom: -7px;
+    left: 0;
+    z-index: 20;
+
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    align-items: start;
+
+    width: 100%;
+    height: 100px;
+    padding-inline: 17px;
+
+    background-color: #3D405B;
+
+    --selected-color: #E07A5F;
+    --unselected-color: #81B29A;
+}
+
+/* Navigation items */
+.nav-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    width: 100%;
+    height: 70px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Selected indicator and circle */
+.nav-indicator,
+.nav-circle {
+    display: none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.nav-indicator {
+    top: 3.5px;
+    width: 60px;
+    height: 3px;
+    background-color: var(--selected-color);
+    border-radius: 1.5px;
+}
+
+.nav-circle {
+    top: 12px;
+    width: 40px;
+    height: 40px;
+    background-color: #E07A5F73;
+    border-radius: 50%;
+}
+
+/* Navigation icons */
+.nav-icon {
+    display: block;
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    margin-top: 19px;
+    z-index: 1;
+}
+
+.nav-quiz .nav-icon {
+    width: 19.93px;
+    height: 19.93px;
+}
+
+.nav-settings .nav-icon {
+    width: 18px;
+    height: 20px;
+}
+
+/* Navigation labels */
+.nav-label {
+    margin-top: 5px;
+    font-family: "Inter", Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 15px;
+    text-align: center;
+    white-space: nowrap;
+    color: var(--unselected-color);
+}
+
+/* Active navigation item */
+.nav-item.is-active .nav-indicator,
+.nav-item.is-active .nav-circle {
+    display: block;
+}
+
+.nav-item.is-active .nav-label {
+    color: var(--selected-color);
+    font-weight: 700;
+}
+
+/* Keyboard focus */
+.nav-item:focus-visible {
+    outline: 2px solid #81B29A;
+    outline-offset: -3px;
+    border-radius: 8px;
+}
+
+/* iPhone Home Indicator */
+.home-indicator {
+    position: absolute;
+    bottom: 13.5px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 120px;
+    height: 5px;
+    background-color: #75778E;
+    border-radius: 2.5px;
+}

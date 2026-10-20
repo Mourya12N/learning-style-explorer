@@ -1,0 +1,36 @@
+
+/* Brand */
+app-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 13px;
+    min-width: 0;
+    font-family: "Inter", Arial, sans-serif;
+}
+
+/* Logo */
+app-brand .app-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 49px;
+    height: 29px;
+    border-radius: 50px;
+    background: var(--brand-logo-bg, #E0E0E0);
+    color: var(--brand-logo-text, #FFFFFF);
+    font-size: 13px;
+    font-weight: 650;
+    letter-spacing: -0.2px;
+    line-height: 1;
+}
+
+/* App name */
+app-brand .app-name {
+    color: var(--brand-name-color, #333333);
+    font-size: 13px;
+    font-weight: 750;
+    letter-spacing: -0.35px;
+    line-height: 1.2;
+    white-space: nowrap;
+}

@@ -1,0 +1,293 @@
+
+/* Home layout */
+.home-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 60px 17px 110px;
+}
+
+/* Header */
+.home-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-shrink: 0;
+    width: 100%;
+    height: 30px;
+    margin-bottom: 11px;
+}
+
+/* Hero card */
+.hero-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    flex-shrink: 0;
+    width: 100%;
+    height: 304px;
+    padding: 0 18px 7px;
+    border-radius: 30px;
+    background-color: #F4F1DE;
+}
+
+/* Hero illustrations */
+.hero-illustrations {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.hero-illustrations img {
+    position: absolute;
+}
+
+.decorative-squares {
+    top: -29.7px;
+    right: -24.7px;
+    width: 164px;
+    height: 164px;
+    transform: rotate(18deg);
+}
+
+.graduation-girl {
+    top: 30px;
+    left: 48px;
+    width: 150px;
+    height: 109px;
+}
+
+.decorative-squares-small {
+    bottom: 13.1px;
+    left: 6.4px;
+    width: 57.5px;
+    height: 57.5px;
+    transform: rotate(-13deg);
+    transform-origin: center;
+}
+
+.decorative-circles {
+    bottom: 20.5px;
+    left: 131px;
+    width: 40.5px;
+    height: 22.5px;
+}
+
+/* Hero content */
+.hero-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.vark-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 104px;
+    height: 21px;
+    margin-left: 1px;
+    margin-bottom: 3px;
+    border-radius: 50px;
+    background-color: #E07A5F26;
+}
+
+.vark-label span {
+    color: #E07A5F;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.hero-heading {
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-title,
+.hero-title-second {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 34px;
+    letter-spacing: -0.7px;
+    white-space: nowrap;
+}
+
+.hero-title {
+    color: #3D405B;
+}
+
+.hero-title-second {
+    margin-top: -1px;
+    color: #E07A5F;
+}
+
+.hero-description {
+    margin: 5px 0 0;
+    color: #ACABAA;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 15.5px;
+    letter-spacing: -0.4px;
+    white-space: nowrap;
+}
+
+/* Dividers */
+.home-divider,
+.home-divider-second,
+.home-divider-third {
+    flex-shrink: 0;
+    width: 100%;
+    height: 1px;
+    border-radius: 0.5px;
+    background-color: #E7E7F0;
+}
+
+/* Learning styles */
+.learning-styles-section {
+    display: flex;
+    flex-direction: column;
+    margin-top: 19px;
+}
+
+.home-divider {
+    margin-bottom: 10px;
+}
+
+.learning-styles-title {
+    margin: 0 0 6px;
+    padding-inline: 7px;
+    color: #A8A9B5;
+    font-size: 12.5px;
+    font-weight: 800;
+    line-height: 15px;
+    letter-spacing: -0.3px;
+    white-space: nowrap;
+}
+
+.learning-styles {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+    width: 100%;
+}
+
+.style-pill {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    height: 27px;
+    padding-inline: 10px;
+    border-radius: 50px;
+    font-size: 10.25px;
+    font-weight: 700;
+    line-height: 12px;
+    white-space: nowrap;
+}
+
+.visual {
+    min-width: 70px;
+    background-color: #E07A5F;
+    color: #FFFFFF;
+}
+
+.auditory {
+    min-width: 80px;
+    background-color: #81B29A;
+    color: #FFFFFF;
+}
+
+.read-write {
+    min-width: 100px;
+    background-color: #3D405B;
+    color: #F4F1DE;
+}
+
+.kinesthetic {
+    min-width: 98px;
+    background-color: #F2CC8F;
+    color: #3D405B;
+}
+
+/* How it works */
+.how-it-works-section {
+    display: flex;
+    flex-direction: column;
+    margin-top: 14px;
+}
+
+.home-divider-second {
+    margin-bottom: 8px;
+}
+
+.how-it-works-title {
+    margin: 0 0 6px;
+    color: #3D405B;
+    font-size: 15.7px;
+    font-weight: 700;
+    line-height: 19px;
+    white-space: nowrap;
+}
+
+.how-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+}
+
+/* Get Started */
+.get-started-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.home-divider-third {
+    margin-bottom: 12px;
+}
+
+/* Account */
+.account-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    width: 100%;
+    margin-top: 4px;
+}
+
+.account-prompt {
+    margin: 0;
+    color: #9698AA;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 15px;
+    white-space: nowrap;
+}
+
+/* Sign Up link */
+.signup-link {
+    color: var(--link-color, #E07A5F99);
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 16px;
+    white-space: nowrap;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.signup-link:hover,
+.signup-link:focus-visible {
+    color: var(--link-hover-color, #E07A5F);
+    text-decoration: none;
+}

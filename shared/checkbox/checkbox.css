@@ -1,0 +1,94 @@
+
+/* Checkbox */
+app-checkbox {
+    display: inline-flex;
+    font-family: "Inter", Arial, sans-serif;
+}
+
+/* Label */
+.checkbox-label {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+/* Input */
+.checkbox-input {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Checkbox square */
+.checkbox-square {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    border: 1px solid currentColor;
+    border-radius: 8px;
+    background: var(--checkbox-bg, #E5E5E5);
+    color: var(--checkbox-outline, #000000);
+    pointer-events: none;
+}
+
+/* Hover */
+.checkbox-label:hover .checkbox-square {
+    background: var(--checkbox-hover-bg, #D0D0D0);
+    color: var(--checkbox-hover-outline, #222222);
+}
+
+/* Checked */
+.checkbox-input:checked + .checkbox-square {
+    border-width: 1.5px;
+}
+
+/* Tick */
+.checkbox-tick {
+    display: none;
+    width: 16px;
+    height: 12px;
+    flex-shrink: 0;
+    fill: currentColor;
+}
+
+.checkbox-input:checked + .checkbox-square .checkbox-tick {
+    display: block;
+}
+
+.checkbox-label:hover .checkbox-tick {
+    width: 14px;
+    height: 10px;
+}
+
+/* Keyboard focus */
+.checkbox-input:focus-visible + .checkbox-square {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+}
+
+/* Text */
+.checkbox-text {
+    color: var(--checkbox-text, #000000);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+}
+
+/* Disabled */
+app-checkbox[disabled] {
+    opacity: 0.5;
+}
+
+app-checkbox[disabled] .checkbox-label,
+app-checkbox[disabled] .checkbox-input {
+    cursor: not-allowed;
+}

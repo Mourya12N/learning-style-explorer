@@ -1,0 +1,195 @@
+
+/* Form field */
+app-form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    width: 100%;
+    min-width: 0;
+    font-family: "Inter", Arial, sans-serif;
+}
+
+.field-heading {
+    display: block;
+    margin: 0;
+    color: var(--field-heading, #333333);
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 15px;
+}
+
+.field-control {
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    height: 55px;
+    min-height: 55px;
+    flex-shrink: 0;
+    border-radius: 17px;
+    background: var(--field-bg, #F0F0F0);
+}
+
+.field-control:hover {
+    background: var(--field-hover, #E5E5E5);
+}
+
+.field-outline {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    pointer-events: none;
+}
+
+.field-outline path {
+    fill: none;
+    stroke: var(--field-border, #555555);
+    stroke-width: 1;
+    stroke-linecap: butt;
+    stroke-linejoin: round;
+    vector-effect: non-scaling-stroke;
+    opacity: 0;
+}
+
+.field-control.is-focused .field-outline path {
+    opacity: 1;
+}
+
+.field-input {
+    position: relative;
+    z-index: 0;
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    margin: 0;
+    padding: 0 55px 0 17px;
+    border: 0;
+    border-radius: 17px;
+    outline: none;
+    background: transparent;
+    color: var(--field-text, #222222);
+    font: 500 12px "Inter", Arial, sans-serif;
+}
+
+.field-floating-label {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 17px;
+    display: inline-block;
+    width: max-content;
+    max-width: calc(100% - 70px);
+    margin: 0;
+    padding: 0;
+    transform: translateY(-50%);
+    transform-origin: center center;
+    background: transparent;
+    color: var(--field-label, #888888);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1;
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+/* Animate inactive hover shrinking */
+.field-control:not(.is-raised) .field-floating-label {
+    transition: transform 150ms ease-out;
+}
+
+/* Hover shrinks toward centre */
+.field-control:hover:not(.is-raised) .field-floating-label {
+    transform: translateY(-50%) scale(0.833333);
+}
+
+/* Focus movement stays instant */
+.field-control.is-raised .field-floating-label,
+.field-control.is-raised:hover .field-floating-label {
+    top: 0;
+    left: 22px;
+    font-size: 10px;
+    font-weight: 400;
+    transform: translateY(-50%) scale(1);
+    transition: none;
+}
+
+.field-icon,
+.field-reveal {
+    position: absolute;
+    z-index: 3;
+    top: 50%;
+    right: 17px;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 26px;
+    height: 30px;
+    color: var(--field-icon, #777777);
+}
+
+.field-icon svg {
+    display: block;
+    flex-shrink: 0;
+    fill: currentColor;
+    transform-origin: center center;
+    transition: transform 150ms ease-out;
+}
+
+/* Icon hover */
+.field-control:hover .field-icon svg {
+    transform: scale(0.9);
+}
+
+.field-icon .icon-outline {
+    display: block;
+}
+
+.field-icon .icon-filled {
+    display: none;
+}
+
+.field-icon.is-active {
+    color: var(--field-active-icon, #333333);
+}
+
+.field-icon.is-active .icon-outline {
+    display: none;
+}
+
+.field-icon.is-active .icon-filled {
+    display: block;
+}
+
+.field-reveal {
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    touch-action: none;
+}
+
+.field-reveal .field-icon {
+    position: static;
+    transform: none;
+}
+
+.field-reveal:focus-visible {
+    outline: 2px solid var(--field-border, #555555);
+    border-radius: 5px;
+}
+
+app-form-field[disabled] {
+    opacity: 0.6;
+}
+
+app-form-field[disabled] .field-input,
+app-form-field[disabled] .field-reveal {
+    cursor: not-allowed;
+}

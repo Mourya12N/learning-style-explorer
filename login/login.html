@@ -1,0 +1,152 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Learning Style Explorer</title>
+
+    <!-- Shared styles -->
+    <link rel="stylesheet" href="../shared/iphone-frame/iphone-frame.css">
+    <link rel="stylesheet" href="../shared/status-bar/status-bar.css">
+    <link rel="stylesheet" href="../shared/bottom-nav/bottom-nav.css">
+    <link rel="stylesheet" href="../shared/themes/themes.css">
+    <link rel="stylesheet" href="../shared/brand/brand.css">
+    <link rel="stylesheet" href="../shared/button/button.css">
+    <link rel="stylesheet" href="../shared/form-field/form-field.css">
+    <link rel="stylesheet" href="login.css">
+
+    <!-- Shared components -->
+    <script src="../shared/brand/brand.js" defer></script>
+    <script src="../shared/button/button.js" defer></script>
+    <script src="../shared/form-field/form-field.js" defer></script>
+</head>
+
+<body data-theme="summer-drift">
+    <main class="app-container">
+        <div id="status-bar"></div>
+
+        <div class="login-content">
+
+            <!-- Header -->
+            <header class="login-header">
+                <app-brand></app-brand>
+
+                <app-button
+                    type="mini-back"
+                    text="Back">
+                </app-button>
+            </header>
+
+            <!-- Welcome card -->
+            <section class="login-card">
+                <div class="welcome-content">
+                    <span class="welcome-label">WELCOME BACK</span>
+
+                    <h1 class="welcome-heading">
+                        <span class="welcome-heading-first">Login to your</span>
+                        <span class="welcome-heading-second">account</span>
+                    </h1>
+
+                    <p class="welcome-description">
+                        <span>Please enter your details</span>
+                        <span>below to continue</span>
+                    </p>
+                </div>
+            </section>
+
+            <!-- Illustrations -->
+            <div class="login-illustrations" aria-hidden="true">
+                <img
+                    class="girl-window-tree"
+                    src="assets/girl-window-tree.svg"
+                    alt=""
+                >
+
+                <img
+                    class="decorative-squares-login"
+                    src="assets/decorative-squares-login.svg"
+                    alt=""
+                >
+
+                <img
+                    class="decorative-squares-small-login"
+                    src="assets/decorative-squares-small-login.svg"
+                    alt=""
+                >
+            </div>
+
+            <!-- Login form -->
+            <div class="login-form">
+
+                <!-- Fields -->
+                <div class="login-fields">
+                    <app-form-field
+                        type="email"
+                        heading="Email Address"
+                        label="Enter your email address">
+                    </app-form-field>
+
+                    <app-form-field
+                        type="password"
+                        heading="Password"
+                        label="Enter your password">
+                    </app-form-field>
+                </div>
+
+                <!-- Forgot password -->
+                <div class="login-forgot-password">
+                    <a href="#" class="login-link forgot-password-link">
+                        Forgot Password?
+                    </a>
+                </div>
+
+                <!-- Login button -->
+                <div class="login-submit">
+                    <app-button
+                        type="large"
+                        variant="primary"
+                        text="Login">
+                    </app-button>
+                </div>
+
+                <!-- Divider -->
+                <div class="login-divider">
+                    <span class="login-divider-line"></span>
+                    <span class="login-divider-text">or continue with</span>
+                    <span class="login-divider-line"></span>
+                </div>
+
+                <!-- Google button -->
+                <div class="login-google">
+                    <app-button
+                        type="google"
+                        text="Continue with Google">
+                    </app-button>
+                </div>
+
+                <!-- Sign up -->
+                <div class="login-signup">
+                    <span class="login-signup-prompt">
+                        Don’t have an account?
+                    </span>
+
+                    <a
+                        href="../signup/signup.html"
+                        class="login-link login-signup-link">
+                        Sign Up Free
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="bottom-nav"></div>
+    </main>
+
+    <!-- Shared scripts -->
+    <script src="../shared/status-bar/status-bar.js"></script>
+    <script src="../shared/bottom-nav/bottom-nav.js"></script>
+    <script src="login.js"></script>
+</body>
+</html>

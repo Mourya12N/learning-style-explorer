@@ -1,0 +1,219 @@
+
+/* Page layout */
+.login-content {
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 100%;
+    padding: 60px 17px 110px;
+    font-family: "Inter", Arial, sans-serif;
+}
+
+/* Header */
+.login-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-shrink: 0;
+    width: 100%;
+    height: 30px;
+}
+
+/* Welcome card */
+.login-card {
+    display: grid;
+    grid-template-columns: 167px 1fr;
+    width: 100%;
+    height: 216px;
+    margin-top: 12px;
+    padding-top: 40px;
+    border-radius: 32px;
+    background: #F4F1DE;
+}
+
+.welcome-content {
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.welcome-label {
+    color: #E07A5F;
+    font-size: 12.8px;
+    font-weight: 700;
+    line-height: 15px;
+    letter-spacing: 0.03em;
+    white-space: nowrap;
+}
+
+.welcome-heading {
+    display: flex;
+    flex-direction: column;
+    margin: 7px 0 0;
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 30px;
+    letter-spacing: 0.01em;
+}
+
+.welcome-heading-first {
+    color: #3D405B;
+}
+
+.welcome-heading-second {
+    color: #E07A5F;
+}
+
+.welcome-heading span,
+.welcome-description span {
+    white-space: nowrap;
+}
+
+.welcome-description {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin: 9px 0 0;
+    color: #A1A1A3;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 15px;
+    letter-spacing: 0.0025em;
+}
+
+/* Illustrations */
+.login-illustrations {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.login-illustrations img {
+    position: absolute;
+    display: block;
+}
+
+.girl-window-tree {
+    top: 123px;
+    left: 36px;
+    width: 134px;
+    height: 113px;
+}
+
+.decorative-squares-login {
+    top: 88.905px;
+    left: 291.905px;
+    width: 130px;
+    height: 130px;
+    transform: rotate(18deg);
+    transform-origin: center;
+}
+
+.decorative-squares-small-login {
+    top: 258.884px;
+    left: 22.884px;
+    width: 49px;
+    height: 49px;
+    transform: rotate(-13deg);
+    transform-origin: center;
+}
+
+/* Login form */
+.login-form {
+    margin-top: 15px;
+}
+
+.login-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Links */
+.login-link {
+    display: block;
+    color: var(--link-color, #E07A5F99);
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.login-link:hover,
+.login-link:focus-visible {
+    color: var(--link-hover-color, #E07A5F);
+    text-decoration: none;
+}
+
+/* Forgot password */
+.login-forgot-password {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 11px;
+}
+
+.forgot-password-link {
+    font-size: 12.8px;
+    font-weight: 700;
+    line-height: 15px;
+}
+
+/* Login button */
+.login-submit {
+    margin-top: 36px;
+}
+
+/* Divider */
+.login-divider {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    height: 1px;
+    margin-top: 19.5px;
+}
+
+.login-divider-line {
+    flex: 1;
+    min-width: 0;
+    height: 1px;
+    border-radius: 999px;
+    background: #E7E7F0;
+}
+
+.login-divider-text {
+    flex-shrink: 0;
+    color: #B2B3BE;
+    font-size: 10.6px;
+    font-weight: 600;
+    line-height: normal;
+    white-space: nowrap;
+}
+
+/* Google button */
+.login-google {
+    margin-top: 15.5px;
+}
+
+/* Sign up */
+.login-signup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    height: 16px;
+    margin-top: 12px;
+}
+
+.login-signup-prompt {
+    color: #9698AA;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 15px;
+    white-space: nowrap;
+}
+
+.login-signup-link {
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 16px;
+}

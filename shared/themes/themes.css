@@ -1,0 +1,195 @@
+
+/* Summer Drift */
+[data-theme="summer-drift"] {
+    /* Form fields */
+    --field-bg: #F4F1DE;
+    --field-hover: #D5D2BA;
+    --field-border: #3D405BCC;
+    --field-heading: #3D405B;
+    --field-label: #B4B3B0;
+    --field-text: #3D405B;
+    --field-icon: #81B29A;
+    --field-active-icon: #81B29A;
+
+    /* Dropdown */
+    --dropdown-bg: #F4F1DE;
+    --dropdown-hover: #D5D2BA;
+    --dropdown-border: #3D405BCC;
+    --dropdown-heading: #3D405B;
+    --dropdown-label: #B4B3B0;
+    --dropdown-text: #3D405B;
+    --dropdown-icon: #81B29A;
+    --dropdown-arrow: #B4B3B0;
+    --dropdown-option-bg: #F4F1DE;
+    --dropdown-option-hover: #D5D2BA;
+    --dropdown-option-text: #B4B3B0;
+    --dropdown-selected: #777777;
+
+    /* Checkbox */
+    --checkbox-bg: #F4F1DE;
+    --checkbox-hover-bg: #D5D2BA;
+    --checkbox-outline: #81B29A;
+    --checkbox-hover-outline: #537B67;
+    --checkbox-text: #3D405B;
+
+    /* Brand */
+    --brand-logo-bg: #E07A5F;
+    --brand-logo-text: #FFFFFF;
+    --brand-name-color: #3D405B;
+
+    /* Links */
+    --link-color: #E07A5F99;
+    --link-hover-color: #E07A5F;
+}
+
+/* Other five themes */
+[data-theme="autumn-glow"],
+[data-theme="forest-breeze"],
+[data-theme="midnight-mist"],
+[data-theme="tropical-sunset"],
+[data-theme="earthy-harvest"] {
+    /* Form fields */
+    --field-bg: #FFFFFF;
+    --field-hover: #EEEEEE;
+    --field-border: #000000;
+    --field-heading: #000000;
+    --field-label: #777777;
+    --field-text: #000000;
+    --field-icon: #000000;
+    --field-active-icon: #000000;
+
+    /* Dropdown */
+    --dropdown-bg: #FFFFFF;
+    --dropdown-hover: #EEEEEE;
+    --dropdown-border: #000000;
+    --dropdown-heading: #000000;
+    --dropdown-label: #777777;
+    --dropdown-text: #000000;
+    --dropdown-icon: #000000;
+    --dropdown-arrow: #777777;
+    --dropdown-option-bg: #FFFFFF;
+    --dropdown-option-hover: #EEEEEE;
+    --dropdown-option-text: #777777;
+    --dropdown-selected: #000000;
+
+    /* Checkbox */
+    --checkbox-bg: #FFFFFF;
+    --checkbox-hover-bg: #EEEEEE;
+    --checkbox-outline: #000000;
+    --checkbox-hover-outline: #555555;
+    --checkbox-text: #000000;
+
+    /* Brand */
+    --brand-logo-bg: #000000;
+    --brand-logo-text: #FFFFFF;
+    --brand-name-color: #000000;
+
+    /* Links */
+    --link-color: #555555;
+    --link-hover-color: #000000;
+}
+
+/* Default button colours */
+[data-theme] app-button {
+    --button-color: #FFFFFF;
+    --button-hover-color: #EEEEEE;
+    --button-text-color: #000000;
+    --button-text-hover-color: #000000;
+    --button-icon-color: #000000;
+    --button-icon-hover-color: #000000;
+    --button-border-color: #000000;
+}
+
+/* Summer Drift large primary */
+[data-theme="summer-drift"] app-button[type="large"]:is(
+    [variant="primary"],
+    :not([variant])
+) {
+    --button-color: #E07A5F;
+    --button-hover-color: #B45B44;
+    --button-text-color: #FFFFFF;
+    --button-text-hover-color: #D2D2D2;
+    --button-icon-color: #FFFFFF;
+    --button-icon-hover-color: #D2D2D2;
+}
+
+/* Summer Drift mini back */
+[data-theme="summer-drift"] app-button[type="mini-back"] {
+    --button-color: #F4F1DE;
+    --button-hover-color: #D5D2BA;
+    --button-text-color: #3D405B;
+    --button-text-hover-color: #2F2E41;
+    --button-icon-color: #3D405B;
+    --button-icon-hover-color: #2F2E41;
+}
+
+/* Summer Drift Login button */
+[data-theme="summer-drift"] app-button[type="login"] {
+    --button-color: transparent;
+    --button-hover-color: #F0F0F0;
+    --button-text-color: #9193A3;
+    --button-text-hover-color: #3D405B;
+    --button-border-color: #D8D9DE;
+}
+
+/* Summer Drift Google button */
+[data-theme="summer-drift"] app-button[type="google"] {
+    --button-color: transparent;
+    --button-hover-color: #F5F5F5;
+    --button-text-color: #3D405B;
+    --button-text-hover-color: #75778E;
+    --button-border-color: #F4F1DE;
+}
+
+/* Other themes large primary */
+[data-theme="autumn-glow"] app-button[type="large"]:is(
+    [variant="primary"],
+    :not([variant])
+),
+[data-theme="forest-breeze"] app-button[type="large"]:is(
+    [variant="primary"],
+    :not([variant])
+),
+[data-theme="midnight-mist"] app-button[type="large"]:is(
+    [variant="primary"],
+    :not([variant])
+),
+[data-theme="tropical-sunset"] app-button[type="large"]:is(
+    [variant="primary"],
+    :not([variant])
+),
+[data-theme="earthy-harvest"] app-button[type="large"]:is(
+    [variant="primary"],
+    :not([variant])
+) {
+    --button-color: #000000;
+    --button-hover-color: #333333;
+    --button-text-color: #FFFFFF;
+    --button-text-hover-color: #FFFFFF;
+    --button-icon-color: #FFFFFF;
+    --button-icon-hover-color: #FFFFFF;
+}
+
+/* All themes large secondary */
+[data-theme] app-button[type="large"][variant="secondary"] {
+    --button-color: #FFFFFF;
+    --button-hover-color: #EEEEEE;
+    --button-text-color: #000000;
+    --button-text-hover-color: #000000;
+    --button-icon-color: #000000;
+    --button-icon-hover-color: #000000;
+}
+
+/* Other themes mini back */
+[data-theme="autumn-glow"] app-button[type="mini-back"],
+[data-theme="forest-breeze"] app-button[type="mini-back"],
+[data-theme="midnight-mist"] app-button[type="mini-back"],
+[data-theme="tropical-sunset"] app-button[type="mini-back"],
+[data-theme="earthy-harvest"] app-button[type="mini-back"] {
+    --button-color: #FFFFFF;
+    --button-hover-color: #EEEEEE;
+    --button-text-color: #000000;
+    --button-text-hover-color: #000000;
+    --button-icon-color: #000000;
+    --button-icon-hover-color: #000000;
+}

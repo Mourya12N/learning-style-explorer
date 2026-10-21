@@ -1,5 +1,5 @@
 
-/* Figma icons */
+/* Original Figma icons */
 const formIcons = {
     "email-outline": {
         size: [16, 13],
@@ -44,19 +44,19 @@ const formIcons = {
     }
 };
 
-/* Create SVG icon */
+/* Create an SVG icon */
 function createIcon(name, className) {
-    const { size, paths } = formIcons[name];
+    const data = formIcons[name];
     const ns = "http://www.w3.org/2000/svg";
     const svg = document.createElementNS(ns, "svg");
 
-    svg.setAttribute("width", size[0]);
-    svg.setAttribute("height", size[1]);
-    svg.setAttribute("viewBox", `0 0 ${size.join(" ")}`);
-    svg.setAttribute("aria-hidden", "true");
     svg.classList.add(className);
+    svg.setAttribute("width", data.size[0]);
+    svg.setAttribute("height", data.size[1]);
+    svg.setAttribute("viewBox", `0 0 ${data.size.join(" ")}`);
+    svg.setAttribute("aria-hidden", "true");
 
-    for (const d of paths) {
+    for (const d of data.paths) {
         const path = document.createElementNS(ns, "path");
         path.setAttribute("d", d);
         svg.append(path);
@@ -65,6 +65,7 @@ function createIcon(name, className) {
     return svg;
 }
 
+/* Reusable form field */
 class AppFormField extends HTMLElement {
     static count = 0;
 
@@ -81,31 +82,37 @@ class AppFormField extends HTMLElement {
 
     static get observedAttributes() {
         return [
-            "heading", "label", "value", "disabled",
+            "type", "heading", "label", "name",
+            "value", "disabled", "required", "autocomplete",
             ...Object.keys(this.colors)
         ];
     }
 
     connectedCallback() {
-        if (this.input) {
-            this.observer.observe(this.control);
-            this.updateState();
-            return;
+        if (!this.input) this.render();
+        this.update();
+    }
+
+    attributeChangedCallback(name) {
+        if (!this.input) return;
+
+        if (name === "type") {
+            this.render();
+        } else {
+            this.update();
         }
+    }
 
+    /* Create the input and its labels */
+    render() {
         const type = this.getAttribute("type") || "email";
-        this.isPassword = type === "password";
-
-        const iconType = this.isPassword
+        const iconType = type === "password"
             ? "eye"
             : type === "person" ? "person" : "email";
 
         this.innerHTML = `
             <label class="field-heading"></label>
             <div class="field-control">
-                <svg class="field-outline" aria-hidden="true">
-                    <path></path>
-                </svg>
                 <input class="field-input" placeholder=" ">
                 <label class="field-floating-label"></label>
             </div>
@@ -115,56 +122,34 @@ class AppFormField extends HTMLElement {
         this.input = this.querySelector(".field-input");
         this.heading = this.querySelector(".field-heading");
         this.label = this.querySelector(".field-floating-label");
-        this.outline = this.querySelector(".field-outline");
-        this.path = this.outline.querySelector("path");
 
         this.input.id = `form-field-${++AppFormField.count}`;
-        this.input.type = this.isPassword
+        this.input.type = type === "password"
             ? "password"
             : type === "email" ? "email" : "text";
-        this.input.name = this.getAttribute("name") || "";
-        this.input.required = this.hasAttribute("required");
-        this.input.autocomplete = this.isPassword
-            ? "current-password"
-            : type === "email" ? "email" : "name";
 
         this.heading.htmlFor = this.input.id;
         this.label.htmlFor = this.input.id;
 
-        this.icon = document.createElement("span");
-        this.icon.className = "field-icon";
-        this.icon.append(
+        const icon = document.createElement("span");
+        icon.className = "field-icon";
+
+        icon.append(
             createIcon(`${iconType}-outline`, "icon-outline"),
             createIcon(`${iconType}-filled`, "icon-filled")
         );
 
-        if (this.isPassword) {
-            this.setupPasswordEye();
+        if (type === "password") {
+            this.createPasswordEye(icon);
         } else {
-            this.control.append(this.icon);
+            this.control.append(icon);
         }
 
-        this.input.addEventListener("input", () => this.updateState());
-        this.control.addEventListener("focusin", () => this.updateState());
-
-        this.control.addEventListener("focusout", () => {
-            requestAnimationFrame(() => {
-                if (this.isConnected) this.updateState();
-            });
-        });
-
-        this.observer = new ResizeObserver(() => this.scheduleOutline());
-        this.observer.observe(this.control);
-
-        document.fonts?.ready.then(() => {
-            if (this.isConnected) this.scheduleOutline();
-        });
-
-        this.updateAppearance();
+        this.update();
     }
 
-    /* Update labels and colours */
-    updateAppearance() {
+    /* Update text, input settings and custom colours */
+    update() {
         for (const [attribute, variable] of Object.entries(AppFormField.colors)) {
             const color = this.getAttribute(attribute);
 
@@ -181,148 +166,45 @@ class AppFormField extends HTMLElement {
         this.label.textContent =
             this.getAttribute("label") || "Lorem ipsum";
 
-        if (this.hasAttribute("value")) {
-            this.input.value = this.getAttribute("value") || "";
-        }
-
+        this.input.name = this.getAttribute("name") || "";
         this.input.disabled = this.hasAttribute("disabled");
+        this.input.required = this.hasAttribute("required");
+
+        const type = this.getAttribute("type") || "email";
+        this.input.autocomplete =
+            this.getAttribute("autocomplete") ||
+            (type === "person" ? "name" :
+             type === "email" ? "email" : "current-password");
+
+        if (this.hasAttribute("value")) {
+            this.input.value = this.getAttribute("value");
+        }
 
         if (this.revealButton) {
             this.revealButton.disabled = this.input.disabled;
         }
-
-        this.updateState();
     }
 
-    /* Update focus and label */
-    updateState() {
-        const focused = this.control.contains(document.activeElement);
-        const raised = focused || this.input.value.length > 0;
-
-        this.control.classList.toggle("is-focused", focused);
-        this.control.classList.toggle("is-raised", raised);
-
-        if (!this.isPassword) {
-            this.icon.classList.toggle("is-active", raised);
-        }
-
-        this.drawOutline();
-        this.scheduleOutline();
-    }
-
-    /* Update outline after layout */
-    scheduleOutline() {
-        cancelAnimationFrame(this.outlineFrame);
-
-        this.outlineFrame = requestAnimationFrame(() => {
-            if (this.isConnected) this.drawOutline();
-        });
-    }
-
-    /* Measure floating label */
-    measureLabel() {
-        const style = getComputedStyle(this.label);
-        const origin =
-            this.label.getBoundingClientRect().left -
-            this.control.getBoundingClientRect().left;
-
-        const canvas = this.canvas ||
-            (this.canvas = document.createElement("canvas"));
-
-        const context = canvas.getContext("2d");
-
-        if (!context) {
-            return {
-                left: origin,
-                right: origin + this.label.offsetWidth
-            };
-        }
-
-        context.font =
-            `${style.fontStyle} ${style.fontWeight} ${style.fontSize} ${style.fontFamily}`;
-
-        if ("fontKerning" in context) {
-            context.fontKerning = style.fontKerning;
-        }
-
-        if ("letterSpacing" in context) {
-            context.letterSpacing = style.letterSpacing;
-        }
-
-        const text = context.measureText(this.label.textContent || "");
-
-        return {
-            left: origin - (text.actualBoundingBoxLeft || 0),
-            right: origin + (
-                Number.isFinite(text.actualBoundingBoxRight)
-                    ? text.actualBoundingBoxRight
-                    : text.width
-            )
-        };
-    }
-
-    /* Draw border with label gap */
-    drawOutline() {
-        const width = this.control.clientWidth;
-        const height = this.control.clientHeight;
-
-        if (!width || !height) return;
-
-        const raised = this.control.classList.contains("is-raised");
-
-        let start = 17;
-        let end = 17;
-
-        if (raised) {
-            const text = this.measureLabel();
-
-            start = Math.max(
-                17,
-                Math.min(width - 17, text.left - 4)
-            );
-
-            end = Math.max(
-                17,
-                Math.min(width - 17, text.right + 4)
-            );
-        }
-
-        this.outline.setAttribute(
-            "viewBox",
-            `0 0 ${width} ${height}`
-        );
-
-        this.path.setAttribute("d", `
-            M ${raised ? end : 17} 0.5
-            H ${width - 17}
-            A 16.5 16.5 0 0 1 ${width - 0.5} 17
-            V ${height - 17}
-            A 16.5 16.5 0 0 1 ${width - 17} ${height - 0.5}
-            H 17
-            A 16.5 16.5 0 0 1 0.5 ${height - 17}
-            V 17
-            A 16.5 16.5 0 0 1 17 0.5
-            ${raised ? `H ${start}` : "Z"}
-        `);
-    }
-
-    /* Hold to show password */
-    setupPasswordEye() {
+    /* Press and hold the eye to reveal a password */
+    createPasswordEye(icon) {
         const button = document.createElement("button");
         button.type = "button";
         button.className = "field-reveal";
         button.setAttribute("aria-label", "Hold to show password");
 
-        button.append(this.icon);
+        // Put the eye SVGs directly in the button.
+        // Avoid nested absolute positioning of .field-icon.
+        button.append(...icon.children);
+
         this.control.append(button);
         this.revealButton = button;
 
         const show = event => {
             if (button.disabled) return;
-
             event.preventDefault();
+
             this.input.type = "text";
-            this.icon.classList.add("is-active");
+            button.classList.add("is-revealing");
 
             if (event.pointerId !== undefined) {
                 button.setPointerCapture(event.pointerId);
@@ -331,25 +213,20 @@ class AppFormField extends HTMLElement {
 
         const hide = () => {
             this.input.type = "password";
-            this.icon.classList.remove("is-active");
+            button.classList.remove("is-revealing");
         };
 
         button.addEventListener("pointerdown", show);
 
-        for (const name of [
-            "pointerup",
-            "pointercancel",
-            "lostpointercapture",
-            "blur"
+        for (const eventName of [
+            "pointerup", "pointercancel",
+            "lostpointercapture", "blur"
         ]) {
-            button.addEventListener(name, hide);
+            button.addEventListener(eventName, hide);
         }
 
         button.addEventListener("keydown", event => {
-            if (
-                (event.key === " " || event.key === "Enter") &&
-                !event.repeat
-            ) {
+            if ((event.key === " " || event.key === "Enter") && !event.repeat) {
                 show(event);
             }
         });
@@ -362,13 +239,13 @@ class AppFormField extends HTMLElement {
         });
     }
 
-    attributeChangedCallback() {
-        if (this.input) this.updateAppearance();
+    /* Read or change the native input value */
+    get value() {
+        return this.input?.value || "";
     }
 
-    disconnectedCallback() {
-        this.observer?.disconnect();
-        cancelAnimationFrame(this.outlineFrame);
+    set value(value) {
+        if (this.input) this.input.value = value;
     }
 }
 

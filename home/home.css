@@ -237,13 +237,6 @@
     white-space: nowrap;
 }
 
-.how-steps {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    width: 100%;
-}
-
 /* Get Started */
 .get-started-section {
     display: flex;

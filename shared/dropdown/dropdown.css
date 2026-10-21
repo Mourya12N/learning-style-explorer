@@ -1,6 +1,6 @@
 
-/* Dropdown */
-app-dropdown {
+/* Native dropdown */
+.dropdown {
     display: flex;
     flex-direction: column;
     gap: 7px;
@@ -29,88 +29,68 @@ app-dropdown {
     background: var(--dropdown-bg, #F4F1DE);
 }
 
+/* Hover */
 .dropdown-control:hover {
     background: var(--dropdown-hover, #D5D2BA);
 }
 
+/* Focus */
 .dropdown-control:focus-within {
     outline: 1px solid var(--dropdown-border, #3D405BCC);
     outline-offset: -1px;
 }
 
-/* Native select */
+/* Native HTML select */
 .dropdown-select {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    z-index: 2;
-    box-sizing: border-box;
+    display: block;
     width: 358px;
     max-width: 100%;
     height: 100%;
-    margin: 0;
-    padding: 0;
+    margin: 0 auto;
+    padding: 0 80px 0 17px;
+
     border: 0;
     border-radius: 17px;
     outline: none;
-    appearance: none;
-    opacity: 0;
-    transform: translateX(-50%);
-    cursor: pointer;
-    font-family: "Inter", Arial, sans-serif;
-}
 
-/* Visible label */
-.dropdown-label {
-    position: absolute;
-    top: 50%;
-    left: 17px;
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    max-width: calc(100% - 70px);
-    transform: translateY(-50%);
-    transform-origin: center center;
-    color: var(--dropdown-label, #B4B3B0);
+    appearance: none;
+    -webkit-appearance: none;
+
+    background: transparent;
+    color: var(--dropdown-text, #3D405B);
+
     font-family: "Inter", Arial, sans-serif;
     font-size: 12px;
-    font-weight: 400;
-    line-height: normal;
-    white-space: nowrap;
-    pointer-events: none;
-    transition: transform 150ms ease-out;
-}
-
-/* Shrink label on hover */
-.dropdown-control:hover .dropdown-label {
-    transform: translateY(-50%) scale(0.833333);
-}
-
-/* Selected value displayed in main field */
-.dropdown-control.has-selection .dropdown-label {
-    color: var(--dropdown-text, #3D405B);
     font-weight: 500;
+
+    cursor: pointer;
 }
 
-/* Prevent text clipping */
-.dropdown-label-text {
-    display: inline-block;
-    min-width: 0;
-    padding: 2px 0;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    line-height: normal;
+/* Placeholder text */
+.dropdown-select:invalid {
+    color: var(--dropdown-label, #B4B3B0);
+    font-weight: 400;
 }
 
-/* Triangle arrow - always points down */
+/* Placeholder shrinks on hover */
+.dropdown-control:hover .dropdown-select:invalid {
+    font-size: 10px;
+}
+
+/* Original filled triangle */
 .dropdown-triangle {
+    position: absolute;
+    top: 50%;
+    right: 55px;
+
     display: block;
     width: 8px;
     height: 8px;
-    flex-shrink: 0;
+
+    transform: translateY(-50%);
     fill: var(--dropdown-arrow, #B4B3B0);
-    transform-origin: center center;
+
+    pointer-events: none;
 }
 
 /* Student icon */
@@ -118,21 +98,27 @@ app-dropdown {
     position: absolute;
     top: 50%;
     right: 17px;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     width: 26px;
     height: 30px;
+
     transform: translateY(-50%);
     color: var(--dropdown-icon, #81B29A);
+
     pointer-events: none;
 }
 
+/* Original Figma student icon */
 .dropdown-icon svg {
     display: block;
     width: 14px;
     height: 17px;
     fill: currentColor;
+
     transform-origin: center center;
     transition: transform 150ms ease-out;
 }
@@ -142,46 +128,42 @@ app-dropdown {
     transform: scale(0.9);
 }
 
-/* Unselected options */
+/* Native dropdown options */
 .dropdown-select option {
     box-sizing: border-box;
     min-height: 35px;
     padding: 10px;
+
     background: var(--dropdown-option-bg, #F4F1DE);
     color: var(--dropdown-option-text, #B4B3B0);
+
     font: 500 12px "Inter", Arial, sans-serif;
 }
 
-/* Option hover where supported */
+/* Option hover where browser supports it */
 .dropdown-select option:hover,
 .dropdown-select option:focus {
     background: var(--dropdown-option-hover, #D5D2BA);
 }
 
-/* Selected option */
+/* Selected option where browser supports it */
 .dropdown-select option:checked {
     background: var(--dropdown-option-hover, #D5D2BA);
     color: var(--dropdown-selected, #E07A5F);
     font-weight: 500;
 }
 
-/* Unselected placeholder */
-.dropdown-select option:first-child:not(:checked) {
-    color: var(--dropdown-option-text, #B4B3B0);
-}
-
 /* Disabled */
-app-dropdown[disabled] {
+.dropdown:has(.dropdown-select:disabled) {
     opacity: 0.6;
 }
 
-app-dropdown[disabled] .dropdown-select {
+.dropdown-select:disabled {
     cursor: not-allowed;
 }
 
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
-    .dropdown-label,
     .dropdown-icon svg {
         transition: none;
     }

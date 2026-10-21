@@ -1,6 +1,24 @@
 
 /* Summer Drift */
 [data-theme="summer-drift"] {
+    /* Bottom navigation */
+    --nav-bg: #3D405B;
+    --nav-selected: #E07A5F;
+    --nav-unselected: #81B29A;
+    --nav-circle-bg: #E07A5F73;
+    --nav-focus: #81B29A;
+    --nav-home-indicator: #75778E;
+
+    /* Login and Signup pages */
+    --auth-card-bg: #F4F1DE;
+    --auth-accent: #E07A5F;
+    --auth-heading: #3D405B;
+    --login-description: #A1A1A3;
+    --signup-description: #ACABAA;
+    --auth-divider: #E7E7F0;
+    --login-divider-text: #B2B3BE;
+    --auth-prompt: #9698AA;
+
     /* Form fields */
     --field-bg: #F4F1DE;
     --field-hover: #D5D2BA;
@@ -25,12 +43,32 @@
     --dropdown-option-text: #B4B3B0;
     --dropdown-selected: #777777;
 
-    /* Checkbox */
+    /* Native checkbox */
     --checkbox-bg: #F4F1DE;
     --checkbox-hover-bg: #D5D2BA;
     --checkbox-outline: #81B29A;
     --checkbox-hover-outline: #537B67;
     --checkbox-text: #3D405B;
+
+    /* Numbered cards - shared colours */
+    --card-bg: #F4F1DE;
+    --heading-color: #3D405B;
+    --description-color: #AFAFAF;
+
+    /* Card 1 */
+    --step-1-accent: #E07A5F;
+    --step-1-circle-bg: #E07A5F26;
+    --step-1-number-color: #E07A5F;
+
+    /* Card 2 */
+    --step-2-accent: #81B29A;
+    --step-2-circle-bg: #81B29A26;
+    --step-2-number-color: #81B29A;
+
+    /* Card 3 */
+    --step-3-accent: #F2CC8F;
+    --step-3-circle-bg: #F2CC8F26;
+    --step-3-number-color: #3D405B;
 
     /* Brand */
     --brand-logo-bg: #E07A5F;
@@ -42,12 +80,32 @@
     --link-hover-color: #E07A5F;
 }
 
-/* Other five themes */
+/* Other five themes - neutral placeholder palettes */
 [data-theme="autumn-glow"],
 [data-theme="forest-breeze"],
 [data-theme="midnight-mist"],
 [data-theme="tropical-sunset"],
 [data-theme="earthy-harvest"] {
+    /* Bottom navigation */
+    --nav-bg: #333333;
+    --nav-selected: #FFFFFF;
+    --nav-unselected: #CCCCCC;
+    --nav-icon-selected: #FFFFFF;
+    --nav-icon-unselected: #CCCCCC;
+    --nav-circle-bg: #FFFFFF33;
+    --nav-focus: #FFFFFF;
+    --nav-home-indicator: #AAAAAA;
+
+    /* Login and Signup pages */
+    --auth-card-bg: #FFFFFF;
+    --auth-accent: #000000;
+    --auth-heading: #000000;
+    --login-description: #777777;
+    --signup-description: #777777;
+    --auth-divider: #DDDDDD;
+    --login-divider-text: #777777;
+    --auth-prompt: #777777;
+
     /* Form fields */
     --field-bg: #FFFFFF;
     --field-hover: #EEEEEE;
@@ -72,12 +130,32 @@
     --dropdown-option-text: #777777;
     --dropdown-selected: #000000;
 
-    /* Checkbox */
+    /* Native checkbox */
     --checkbox-bg: #FFFFFF;
     --checkbox-hover-bg: #EEEEEE;
     --checkbox-outline: #000000;
     --checkbox-hover-outline: #555555;
     --checkbox-text: #000000;
+
+    /* Numbered cards - shared colours */
+    --card-bg: #FFFFFF;
+    --heading-color: #000000;
+    --description-color: #777777;
+
+    /* Card 1 */
+    --step-1-accent: #000000;
+    --step-1-circle-bg: #EEEEEE;
+    --step-1-number-color: #000000;
+
+    /* Card 2 */
+    --step-2-accent: #000000;
+    --step-2-circle-bg: #EEEEEE;
+    --step-2-number-color: #000000;
+
+    /* Card 3 */
+    --step-3-accent: #000000;
+    --step-3-circle-bg: #EEEEEE;
+    --step-3-number-color: #000000;
 
     /* Brand */
     --brand-logo-bg: #000000;

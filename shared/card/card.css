@@ -1,12 +1,20 @@
 
-/* Reusable card */
-app-card {
-    --card-bg: #F0F0F0;
-    --accent-color: #555555;
-    --circle-bg: #E5E5E5;
-    --number-color: #333333;
-    --heading-color: #222222;
-    --description-color: #888888;
+/* Shared numbered cards */
+.step-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* Individual card */
+.step-card {
+    --card-bg: #F4F1DE;
+    --heading-color: #3D405B;
+    --description-color: #AFAFAF;
 
     display: flex;
     align-items: stretch;
@@ -15,7 +23,28 @@ app-card {
     font-family: "Inter", Arial, sans-serif;
 }
 
-/* Left line */
+/* Step 1 colours */
+.step-card:nth-child(1) {
+    --accent-color: #E07A5F;
+    --circle-bg: #E07A5F26;
+    --number-color: #E07A5F;
+}
+
+/* Step 2 colours */
+.step-card:nth-child(2) {
+    --accent-color: #81B29A;
+    --circle-bg: #81B29A26;
+    --number-color: #81B29A;
+}
+
+/* Step 3 colours */
+.step-card:nth-child(3) {
+    --accent-color: #F2CC8F;
+    --circle-bg: #F2CC8F26;
+    --number-color: #3D405B;
+}
+
+/* Left accent line */
 .card-accent {
     flex-shrink: 0;
     width: 6px;
@@ -23,7 +52,7 @@ app-card {
     background: var(--accent-color);
 }
 
-/* Main rectangle */
+/* Main card rectangle */
 .card-body {
     display: flex;
     align-items: center;
@@ -52,7 +81,7 @@ app-card {
     line-height: 1;
 }
 
-/* Text group */
+/* Text container */
 .card-text {
     display: flex;
     flex-direction: column;
@@ -62,8 +91,9 @@ app-card {
     min-width: 0;
 }
 
-/* Heading */
+/* Card heading */
 .card-heading {
+    margin: 0;
     color: var(--heading-color);
     font-size: 12.5px;
     font-weight: 700;
@@ -71,8 +101,9 @@ app-card {
     white-space: nowrap;
 }
 
-/* Description */
+/* Card description */
 .card-description {
+    margin: 0;
     color: var(--description-color);
     font-size: 10.7px;
     font-weight: 600;

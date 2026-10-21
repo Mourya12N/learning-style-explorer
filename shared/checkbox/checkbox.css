@@ -11,10 +11,11 @@ app-checkbox {
     display: inline-flex;
     align-items: center;
     gap: 10px;
+    font-family: "Inter", Arial, sans-serif;
     cursor: pointer;
 }
 
-/* Input */
+/* Native checkbox input */
 .checkbox-input {
     position: absolute;
     width: 24px;
@@ -83,7 +84,17 @@ app-checkbox {
     line-height: 16px;
 }
 
-/* Disabled */
+/* Disabled - native checkbox */
+.checkbox-label:has(.checkbox-input:disabled) {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.checkbox-input:disabled {
+    cursor: not-allowed;
+}
+
+/* Disabled - existing custom component */
 app-checkbox[disabled] {
     opacity: 0.5;
 }

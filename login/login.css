@@ -28,7 +28,7 @@
     margin-top: 12px;
     padding-top: 40px;
     border-radius: 32px;
-    background: #F4F1DE;
+    background: var(--auth-card-bg, #F4F1DE);
 }
 
 .welcome-content {
@@ -39,7 +39,7 @@
 }
 
 .welcome-label {
-    color: #E07A5F;
+    color: var(--auth-accent, #E07A5F);
     font-size: 12.8px;
     font-weight: 700;
     line-height: 15px;
@@ -58,11 +58,11 @@
 }
 
 .welcome-heading-first {
-    color: #3D405B;
+    color: var(--auth-heading, #3D405B);
 }
 
 .welcome-heading-second {
-    color: #E07A5F;
+    color: var(--auth-accent, #E07A5F);
 }
 
 .welcome-heading span,
@@ -75,7 +75,7 @@
     flex-direction: column;
     gap: 4px;
     margin: 9px 0 0;
-    color: #A1A1A3;
+    color: var(--login-description, #A1A1A3);
     font-size: 12px;
     font-weight: 500;
     line-height: 15px;
@@ -177,12 +177,12 @@
     min-width: 0;
     height: 1px;
     border-radius: 999px;
-    background: #E7E7F0;
+    background: var(--auth-divider, #E7E7F0);
 }
 
 .login-divider-text {
     flex-shrink: 0;
-    color: #B2B3BE;
+    color: var(--login-divider-text, #B2B3BE);
     font-size: 10.6px;
     font-weight: 600;
     line-height: normal;
@@ -205,7 +205,7 @@
 }
 
 .login-signup-prompt {
-    color: #9698AA;
+    color: var(--auth-prompt, #9698AA);
     font-size: 12px;
     font-weight: 500;
     line-height: 15px;

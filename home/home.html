@@ -19,7 +19,6 @@
     <!-- Shared components -->
     <script src="../shared/brand/brand.js" defer></script>
     <script src="../shared/button/button.js" defer></script>
-    <script src="../shared/card/card.js" defer></script>
 </head>
 
 <body data-theme="summer-drift">
@@ -111,48 +110,66 @@
                     How it works
                 </h2>
 
-                <div class="how-steps">
+                <ol class="step-cards">
 
                     <!-- Step 1 -->
-                    <app-card
-                        number="1"
-                        heading="Answer 12 quick questions"
-                        description="About your habits and learning preferences"
-                        accent-color="#E07A5F"
-                        bg="#F4F1DE"
-                        circle-bg="#E07A5F26"
-                        number-color="#E07A5F"
-                        heading-color="#3D405B"
-                        description-color="#AFAFAF">
-                    </app-card>
+                    <li class="step-card">
+                        <div class="card-accent" aria-hidden="true"></div>
+
+                        <div class="card-body">
+                            <span class="card-number" aria-hidden="true">1</span>
+
+                            <div class="card-text">
+                                <h3 class="card-heading">
+                                    Answer 12 quick questions
+                                </h3>
+
+                                <p class="card-description">
+                                    About your habits and learning preferences
+                                </p>
+                            </div>
+                        </div>
+                    </li>
 
                     <!-- Step 2 -->
-                    <app-card
-                        number="2"
-                        heading="Get your VARK result"
-                        description="See your personalised learning style breakdown"
-                        accent-color="#81B29A"
-                        bg="#F4F1DE"
-                        circle-bg="#81B29A26"
-                        number-color="#81B29A"
-                        heading-color="#3D405B"
-                        description-color="#AFAFAF">
-                    </app-card>
+                    <li class="step-card">
+                        <div class="card-accent" aria-hidden="true"></div>
+
+                        <div class="card-body">
+                            <span class="card-number" aria-hidden="true">2</span>
+
+                            <div class="card-text">
+                                <h3 class="card-heading">
+                                    Get your VARK result
+                                </h3>
+
+                                <p class="card-description">
+                                    See your personalised learning style breakdown
+                                </p>
+                            </div>
+                        </div>
+                    </li>
 
                     <!-- Step 3 -->
-                    <app-card
-                        number="3"
-                        heading="Study smarter with personalised tips"
-                        description="Strategies tailored to your learning style"
-                        accent-color="#F2CC8F"
-                        bg="#F4F1DE"
-                        circle-bg="#F2CC8F26"
-                        number-color="#3D405B"
-                        heading-color="#3D405B"
-                        description-color="#AFAFAF">
-                    </app-card>
+                    <li class="step-card">
+                        <div class="card-accent" aria-hidden="true"></div>
 
-                </div>
+                        <div class="card-body">
+                            <span class="card-number" aria-hidden="true">3</span>
+
+                            <div class="card-text">
+                                <h3 class="card-heading">
+                                    Study smarter with personalised tips
+                                </h3>
+
+                                <p class="card-description">
+                                    Strategies tailored to your learning style
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+
+                </ol>
             </section>
 
             <!-- Get Started -->
@@ -169,6 +186,7 @@
                 <!-- Account -->
                 <div class="account-section">
                     <p class="account-prompt">Don’t have an account?</p>
+
                     <a class="signup-link" href="../signup/signup.html">
                         Sign Up Free
                     </a>

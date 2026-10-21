@@ -14,10 +14,7 @@
     height: 100px;
     padding-inline: 17px;
 
-    background-color: #3D405B;
-
-    --selected-color: #E07A5F;
-    --unselected-color: #81B29A;
+    background-color: var(--nav-bg, #3D405B);
 }
 
 /* Navigation items */
@@ -47,7 +44,7 @@
     top: 3.5px;
     width: 60px;
     height: 3px;
-    background-color: var(--selected-color);
+    background-color: var(--nav-selected, #E07A5F);
     border-radius: 1.5px;
 }
 
@@ -55,7 +52,7 @@
     top: 12px;
     width: 40px;
     height: 40px;
-    background-color: #E07A5F73;
+    background-color: var(--nav-circle-bg, #E07A5F73);
     border-radius: 50%;
 }
 
@@ -88,7 +85,7 @@
     line-height: 15px;
     text-align: center;
     white-space: nowrap;
-    color: var(--unselected-color);
+    color: var(--nav-unselected, #81B29A);
 }
 
 /* Active navigation item */
@@ -98,13 +95,13 @@
 }
 
 .nav-item.is-active .nav-label {
-    color: var(--selected-color);
+    color: var(--nav-selected, #E07A5F);
     font-weight: 700;
 }
 
 /* Keyboard focus */
 .nav-item:focus-visible {
-    outline: 2px solid #81B29A;
+    outline: 2px solid var(--nav-focus, #81B29A);
     outline-offset: -3px;
     border-radius: 8px;
 }
@@ -118,6 +115,6 @@
 
     width: 120px;
     height: 5px;
-    background-color: #75778E;
+    background-color: var(--nav-home-indicator, #75778E);
     border-radius: 2.5px;
 }

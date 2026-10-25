@@ -78,6 +78,12 @@
     /* Links */
     --link-color: #E07A5F99;
     --link-hover-color: #E07A5F;
+
+    /* Large buttons */
+    --button-primary-bg: #E07A5F;
+    --button-primary-hover: #B45B44;
+    --button-secondary-bg: #81B29A;
+    --button-secondary-hover: #537B67;
 }
 
 /* Other five themes - neutral placeholder palettes */
@@ -167,6 +173,46 @@
     --link-hover-color: #000000;
 }
 
+/* Autumn Glow large buttons */
+[data-theme="autumn-glow"] {
+    --button-primary-bg: #000000;
+    --button-primary-hover: #333333;
+    --button-secondary-bg: #777777;
+    --button-secondary-hover: #555555;
+}
+
+/* Forest Breeze large buttons */
+[data-theme="forest-breeze"] {
+    --button-primary-bg: #000000;
+    --button-primary-hover: #333333;
+    --button-secondary-bg: #777777;
+    --button-secondary-hover: #555555;
+}
+
+/* Midnight Mist large buttons */
+[data-theme="midnight-mist"] {
+    --button-primary-bg: #000000;
+    --button-primary-hover: #333333;
+    --button-secondary-bg: #777777;
+    --button-secondary-hover: #555555;
+}
+
+/* Tropical Sunset large buttons */
+[data-theme="tropical-sunset"] {
+    --button-primary-bg: #000000;
+    --button-primary-hover: #333333;
+    --button-secondary-bg: #777777;
+    --button-secondary-hover: #555555;
+}
+
+/* Earthy Harvest large buttons */
+[data-theme="earthy-harvest"] {
+    --button-primary-bg: #000000;
+    --button-primary-hover: #333333;
+    --button-secondary-bg: #777777;
+    --button-secondary-hover: #555555;
+}
+
 /* Default button colours */
 [data-theme] app-button {
     --button-color: #FFFFFF;
@@ -178,17 +224,37 @@
     --button-border-color: #000000;
 }
 
-/* Summer Drift large primary */
-[data-theme="summer-drift"] app-button[type="large"]:is(
+/* Large primary buttons */
+[data-theme] app-button[type="large"]:is(
     [variant="primary"],
     :not([variant])
 ) {
-    --button-color: #E07A5F;
-    --button-hover-color: #B45B44;
+    --button-color: var(--button-primary-bg);
+    --button-hover-color: var(--button-primary-hover);
     --button-text-color: #FFFFFF;
     --button-text-hover-color: #D2D2D2;
     --button-icon-color: #FFFFFF;
     --button-icon-hover-color: #D2D2D2;
+}
+
+/* Large secondary buttons */
+[data-theme] app-button[type="large"][variant="secondary"] {
+    --button-color: var(--button-secondary-bg);
+    --button-hover-color: var(--button-secondary-hover);
+    --button-text-color: #FFFFFF;
+    --button-text-hover-color: #D2D2D2;
+    --button-icon-color: #FFFFFF;
+    --button-icon-hover-color: #D2D2D2;
+}
+
+/* Other themes large button hover text */
+[data-theme="autumn-glow"] app-button[type="large"],
+[data-theme="forest-breeze"] app-button[type="large"],
+[data-theme="midnight-mist"] app-button[type="large"],
+[data-theme="tropical-sunset"] app-button[type="large"],
+[data-theme="earthy-harvest"] app-button[type="large"] {
+    --button-text-hover-color: #FFFFFF;
+    --button-icon-hover-color: #FFFFFF;
 }
 
 /* Summer Drift mini back */
@@ -217,45 +283,6 @@
     --button-text-color: #3D405B;
     --button-text-hover-color: #75778E;
     --button-border-color: #F4F1DE;
-}
-
-/* Other themes large primary */
-[data-theme="autumn-glow"] app-button[type="large"]:is(
-    [variant="primary"],
-    :not([variant])
-),
-[data-theme="forest-breeze"] app-button[type="large"]:is(
-    [variant="primary"],
-    :not([variant])
-),
-[data-theme="midnight-mist"] app-button[type="large"]:is(
-    [variant="primary"],
-    :not([variant])
-),
-[data-theme="tropical-sunset"] app-button[type="large"]:is(
-    [variant="primary"],
-    :not([variant])
-),
-[data-theme="earthy-harvest"] app-button[type="large"]:is(
-    [variant="primary"],
-    :not([variant])
-) {
-    --button-color: #000000;
-    --button-hover-color: #333333;
-    --button-text-color: #FFFFFF;
-    --button-text-hover-color: #FFFFFF;
-    --button-icon-color: #FFFFFF;
-    --button-icon-hover-color: #FFFFFF;
-}
-
-/* All themes large secondary */
-[data-theme] app-button[type="large"][variant="secondary"] {
-    --button-color: #FFFFFF;
-    --button-hover-color: #EEEEEE;
-    --button-text-color: #000000;
-    --button-text-hover-color: #000000;
-    --button-icon-color: #000000;
-    --button-icon-hover-color: #000000;
 }
 
 /* Other themes mini back */

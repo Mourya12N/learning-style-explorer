@@ -65,188 +65,67 @@ function createIcon(name, className) {
     return svg;
 }
 
-/* Reusable form field */
-class AppFormField extends HTMLElement {
-    static count = 0;
+/* Add icons to native form fields */
+document.querySelectorAll(".form-field").forEach(field => {
+    const input = field.querySelector(".field-input");
+    const control = field.querySelector(".field-control");
 
-    static colors = {
-        bg: "--field-bg",
-        hover: "--field-hover",
-        "border-color": "--field-border",
-        "heading-color": "--field-heading",
-        "label-color": "--field-label",
-        "text-color": "--field-text",
-        "icon-color": "--field-icon",
-        "active-icon-color": "--field-active-icon"
-    };
+    const iconType = input.type === "password" ? "eye"
+                   : field.dataset.icon === "person" ? "person"
+                   : "email";
 
-    static get observedAttributes() {
-        return [
-            "type", "heading", "label", "name",
-            "value", "disabled", "required", "autocomplete",
-            ...Object.keys(this.colors)
-        ];
-    }
+    const outline = createIcon(`${iconType}-outline`, "icon-outline");
+    const filled = createIcon(`${iconType}-filled`, "icon-filled");
 
-    connectedCallback() {
-        if (!this.input) this.render();
-        this.update();
-    }
-
-    attributeChangedCallback(name) {
-        if (!this.input) return;
-
-        if (name === "type") {
-            this.render();
-        } else {
-            this.update();
-        }
-    }
-
-    /* Create the input and its labels */
-    render() {
-        const type = this.getAttribute("type") || "email";
-        const iconType = type === "password"
-            ? "eye"
-            : type === "person" ? "person" : "email";
-
-        this.innerHTML = `
-            <label class="field-heading"></label>
-            <div class="field-control">
-                <input class="field-input" placeholder=" ">
-                <label class="field-floating-label"></label>
-            </div>
-        `;
-
-        this.control = this.querySelector(".field-control");
-        this.input = this.querySelector(".field-input");
-        this.heading = this.querySelector(".field-heading");
-        this.label = this.querySelector(".field-floating-label");
-
-        this.input.id = `form-field-${++AppFormField.count}`;
-        this.input.type = type === "password"
-            ? "password"
-            : type === "email" ? "email" : "text";
-
-        this.heading.htmlFor = this.input.id;
-        this.label.htmlFor = this.input.id;
-
+    if (input.type !== "password") {
         const icon = document.createElement("span");
         icon.className = "field-icon";
-
-        icon.append(
-            createIcon(`${iconType}-outline`, "icon-outline"),
-            createIcon(`${iconType}-filled`, "icon-filled")
-        );
-
-        if (type === "password") {
-            this.createPasswordEye(icon);
-        } else {
-            this.control.append(icon);
-        }
-
-        this.update();
+        icon.append(outline, filled);
+        control.append(icon);
+        return;
     }
 
-    /* Update text, input settings and custom colours */
-    update() {
-        for (const [attribute, variable] of Object.entries(AppFormField.colors)) {
-            const color = this.getAttribute(attribute);
+    /* Password reveal button */
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "field-reveal";
+    button.setAttribute("aria-label", "Hold to show password");
+    button.disabled = input.disabled;
+    button.append(outline, filled);
+    control.append(button);
 
-            if (color) {
-                this.style.setProperty(variable, color);
-            } else {
-                this.style.removeProperty(variable);
-            }
+    const show = event => {
+        if (button.disabled) return;
+
+        event.preventDefault();
+        input.type = "text";
+        button.classList.add("is-revealing");
+
+        if (event.pointerId !== undefined) {
+            button.setPointerCapture(event.pointerId);
         }
+    };
 
-        this.heading.textContent =
-            this.getAttribute("heading") || "Lorem ipsum";
+    const hide = () => {
+        input.type = "password";
+        button.classList.remove("is-revealing");
+    };
 
-        this.label.textContent =
-            this.getAttribute("label") || "Lorem ipsum";
+    button.addEventListener("pointerdown", show);
 
-        this.input.name = this.getAttribute("name") || "";
-        this.input.disabled = this.hasAttribute("disabled");
-        this.input.required = this.hasAttribute("required");
+    ["pointerup", "pointercancel", "lostpointercapture", "blur"]
+        .forEach(event => button.addEventListener(event, hide));
 
-        const type = this.getAttribute("type") || "email";
-        this.input.autocomplete =
-            this.getAttribute("autocomplete") ||
-            (type === "person" ? "name" :
-             type === "email" ? "email" : "current-password");
-
-        if (this.hasAttribute("value")) {
-            this.input.value = this.getAttribute("value");
+    button.addEventListener("keydown", event => {
+        if ((event.key === "Enter" || event.key === " ") && !event.repeat) {
+            show(event);
         }
+    });
 
-        if (this.revealButton) {
-            this.revealButton.disabled = this.input.disabled;
-        }
-    }
-
-    /* Press and hold the eye to reveal a password */
-    createPasswordEye(icon) {
-        const button = document.createElement("button");
-        button.type = "button";
-        button.className = "field-reveal";
-        button.setAttribute("aria-label", "Hold to show password");
-
-        // Put the eye SVGs directly in the button.
-        // Avoid nested absolute positioning of .field-icon.
-        button.append(...icon.children);
-
-        this.control.append(button);
-        this.revealButton = button;
-
-        const show = event => {
-            if (button.disabled) return;
+    button.addEventListener("keyup", event => {
+        if (event.key === "Enter" || event.key === " ") {
             event.preventDefault();
-
-            this.input.type = "text";
-            button.classList.add("is-revealing");
-
-            if (event.pointerId !== undefined) {
-                button.setPointerCapture(event.pointerId);
-            }
-        };
-
-        const hide = () => {
-            this.input.type = "password";
-            button.classList.remove("is-revealing");
-        };
-
-        button.addEventListener("pointerdown", show);
-
-        for (const eventName of [
-            "pointerup", "pointercancel",
-            "lostpointercapture", "blur"
-        ]) {
-            button.addEventListener(eventName, hide);
+            hide();
         }
-
-        button.addEventListener("keydown", event => {
-            if ((event.key === " " || event.key === "Enter") && !event.repeat) {
-                show(event);
-            }
-        });
-
-        button.addEventListener("keyup", event => {
-            if (event.key === " " || event.key === "Enter") {
-                event.preventDefault();
-                hide();
-            }
-        });
-    }
-
-    /* Read or change the native input value */
-    get value() {
-        return this.input?.value || "";
-    }
-
-    set value(value) {
-        if (this.input) this.input.value = value;
-    }
-}
-
-customElements.define("app-form-field", AppFormField);
+    });
+});

@@ -32,10 +32,7 @@
             <header class="login-header">
                 <app-brand></app-brand>
 
-                <app-button
-                    type="mini-back"
-                    text="Back">
-                </app-button>
+                <app-button type="mini-back" text="Back"></app-button>
             </header>
 
             <!-- Welcome card -->
@@ -81,22 +78,62 @@
 
                 <!-- Fields -->
                 <div class="login-fields">
-                    <app-form-field
-                        type="email"
-                        heading="Email Address"
-                        label="Enter your email address">
-                    </app-form-field>
 
-                    <app-form-field
-                        type="password"
-                        heading="Password"
-                        label="Enter your password">
-                    </app-form-field>
+                    <!-- Email -->
+                    <div class="form-field">
+                        <label class="field-heading" for="login-email">
+                            Email Address
+                        </label>
+
+                        <div class="field-control">
+                            <input
+                                class="field-input"
+                                id="login-email"
+                                type="email"
+                                name="email"
+                                placeholder=" "
+                                autocomplete="email"
+                            >
+
+                            <label
+                                class="field-floating-label"
+                                for="login-email">
+                                Enter your email address
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Password -->
+                    <div class="form-field">
+                        <label class="field-heading" for="login-password">
+                            Password
+                        </label>
+
+                        <div class="field-control">
+                            <input
+                                class="field-input"
+                                id="login-password"
+                                type="password"
+                                name="password"
+                                placeholder=" "
+                                autocomplete="current-password"
+                            >
+
+                            <label
+                                class="field-floating-label"
+                                for="login-password">
+                                Enter your password
+                            </label>
+                        </div>
+                    </div>
+
                 </div>
 
                 <!-- Forgot password -->
                 <div class="login-forgot-password">
-                    <a href="#" class="login-link forgot-password-link">
+                    <a
+                        href="../forgot-password/forgot-password.html"
+                        class="login-link forgot-password-link">
                         Forgot Password?
                     </a>
                 </div>

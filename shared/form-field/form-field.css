@@ -1,10 +1,11 @@
 
 /* Reusable form field */
-app-form-field {
+.form-field {
     display: flex;
     flex-direction: column;
     gap: 7px;
-    width: 100%;
+    width: 392px;
+    max-width: 100%;
     min-width: 0;
     font-family: "Inter", Arial, sans-serif;
 }
@@ -79,10 +80,8 @@ app-form-field {
     max-width: calc(100% - 70px);
     margin: 0;
     padding: 0;
-
     transform: translateY(-50%);
-    transform-origin: centre center;
-
+    transform-origin: center center;
     color: var(--field-label, #888888);
     font-size: 12px;
     font-weight: 400;
@@ -111,15 +110,13 @@ app-form-field {
     left: 21px;
     margin-left: -4px;
     padding: 0 4px;
-
     color: var(--field-label, #888888);
     font-size: 10px;
     font-weight: 400;
-
     transform: translateY(-50%);
     transition: none;
 
-    /* Hide the border directly behind the label */
+    /* Hide the border behind the label */
     background: linear-gradient(
         to bottom,
         transparent 0,
@@ -222,12 +219,15 @@ app-form-field {
 }
 
 /* Disabled form field */
-app-form-field[disabled] {
+.field-input:disabled {
+    cursor: not-allowed;
+}
+
+.form-field:has(.field-input:disabled) {
     opacity: 0.6;
 }
 
-app-form-field[disabled] .field-input,
-app-form-field[disabled] .field-reveal {
+.form-field:has(.field-input:disabled) .field-reveal {
     cursor: not-allowed;
 }
 

@@ -1,0 +1,322 @@
+
+/* Instructions layout */
+.instructions-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 100%;
+    padding: 60px 17px 110px;
+    font-family: "Inter", Arial, sans-serif;
+}
+
+/* Header */
+.instructions-header {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-shrink: 0;
+    width: 100%;
+    height: 30px;
+}
+
+/* Instructions card */
+.instructions-card {
+    position: relative;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    width: 100%;
+    height: 216px;
+    margin-top: 12px;
+    padding: 23px 0 0 173px;
+    border-radius: 32px;
+    background-color: var(--auth-card-bg, #F4F1DE);
+}
+
+/* Card text */
+.instructions-text {
+    position: relative;
+    z-index: 1;
+}
+
+.instructions-label {
+    margin: 0;
+    color: var(--auth-accent, #E07A5F);
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 15px;
+    letter-spacing: 0.07em;
+    white-space: nowrap;
+}
+
+.instructions-heading {
+    margin: 5px 0 0;
+    color: var(--auth-heading, #3D405B);
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 29px;
+    letter-spacing: -0.015em;
+    white-space: nowrap;
+}
+
+.instructions-heading span {
+    color: var(--auth-accent, #E07A5F);
+    letter-spacing: -0.0125em;
+}
+
+.instructions-description {
+    margin: 10px 0 0;
+    color: var(--signup-description, #ACABAA);
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 17px;
+    white-space: nowrap;
+}
+
+/* Illustrations */
+.instructions-illustrations {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.instructions-illustrations img {
+    position: absolute;
+    display: block;
+}
+
+.decorative-squares-instructions {
+    top: -13px;
+    left: 275px;
+    width: 130px;
+    height: 130px;
+    transform: rotate(18deg);
+}
+
+.decorative-squares-small-instructions {
+    top: 157px;
+    left: 7px;
+    width: 49px;
+    height: 49px;
+    transform: rotate(-13deg);
+}
+
+.decorative-circle-instructions {
+    top: 181px;
+    left: 151px;
+    width: 23px;
+    height: 19px;
+}
+
+.person-reading-instructions {
+    top: 30px;
+    left: 23px;
+    width: 120px;
+    height: 107px;
+}
+
+/* About VARK */
+.instructions-vark {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    gap: 3px;
+    width: 100%;
+    height: 48px;
+    margin-top: 18px;
+    padding-top: 7px;
+    border-radius: 24px;
+    background-color: var(--auth-card-bg, #F4F1DE);
+}
+
+.instructions-vark h2 {
+    margin: 0;
+    color: var(--auth-heading, #3D405B);
+    font-size: 12.7px;
+    font-weight: 700;
+    line-height: 16px;
+}
+
+.instructions-vark p {
+    margin: 0;
+    color: var(--signup-description, #ACABAA);
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 15px;
+    letter-spacing: -0.038em;
+    white-space: nowrap;
+}
+
+/* Divider */
+.instructions-divider {
+    flex-shrink: 0;
+    width: 100%;
+    height: 1px;
+    margin-top: 15px;
+    border-radius: 999px;
+    background-color: var(--auth-divider, #E7E7F0);
+}
+
+/* Instruction steps */
+.instructions-steps {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    gap: 10px;
+    width: 100%;
+    margin: 14px 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* Taller step cards */
+.instructions-steps .step-card {
+    display: flex;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    width: 100%;
+    height: 82px;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+}
+
+.instructions-steps .card-accent {
+    position: static;
+    flex-shrink: 0;
+    width: 6px;
+    height: 100%;
+    border-radius: 999px;
+}
+
+.instructions-steps .card-body {
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    flex: 1;
+    min-width: 0;
+    gap: 11px;
+    height: 100%;
+    padding: 0 14px 0 15px;
+    border-radius: 8px 18px 18px 8px;
+    background-color: var(--card-bg, #F4F1DE);
+}
+
+.instructions-steps .card-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.instructions-steps .card-text {
+    flex: 1;
+    min-width: 0;
+}
+
+.instructions-steps .card-heading {
+    margin: 0 0 4px;
+    color: var(--heading-color, #3D405B);
+    font-size: 13.5px;
+    font-weight: 700;
+    line-height: 17px;
+}
+
+.instructions-steps .card-description {
+    margin: 0;
+    color: var(--description-color, #AFAFAF);
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 17px;
+    letter-spacing: -0.02em;
+    white-space: nowrap;
+}
+
+/* Step arrows */
+.instructions-steps .card-body::after {
+    content: "›";
+    flex-shrink: 0;
+    margin-left: auto;
+    color: var(--step-1-accent, #E07A5F);
+    font-size: 19px;
+    line-height: 1;
+}
+
+.instructions-steps .step-card:nth-child(2) .card-body::after {
+    color: var(--step-2-accent, #81B29A);
+}
+
+.instructions-steps .step-card:nth-child(3) .card-body::after {
+    color: var(--step-3-accent, #F2CC8F);
+}
+
+/* Quiz information */
+.instructions-info-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    width: 100%;
+    height: 44px;
+    margin-top: 17px;
+    padding: 0 40px;
+    border-radius: 22px;
+    background-color: var(--info-card-bg, #FAEBD2);
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.info-item svg {
+    display: block;
+    flex-shrink: 0;
+    width: 17px;
+    height: 17px;
+    fill: var(--info-icon-color, #81B29A);
+}
+
+.info-item:nth-of-type(2) svg {
+    width: 16px;
+}
+
+.info-item:nth-of-type(3) svg {
+    height: 12px;
+}
+
+.info-item p {
+    margin: 0;
+    color: var(--info-text-color, #3D405B);
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 15px;
+    letter-spacing: 0.025em;
+    white-space: nowrap;
+}
+
+.info-dot {
+    flex-shrink: 0;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: var(--info-dot-color, #3D405B);
+}
+
+/* Start Quiz */
+.instructions-start {
+    flex-shrink: 0;
+    margin-top: 14px;
+}

@@ -12,12 +12,9 @@
 
 /* Individual card */
 .step-card {
-    --card-bg: #F4F1DE;
-    --heading-color: #3D405B;
-    --description-color: #AFAFAF;
-
     display: flex;
     align-items: stretch;
+    box-sizing: border-box;
     width: 100%;
     min-height: 60px;
     font-family: "Inter", Arial, sans-serif;
@@ -25,23 +22,23 @@
 
 /* Step 1 colours */
 .step-card:nth-child(1) {
-    --accent-color: #E07A5F;
-    --circle-bg: #E07A5F26;
-    --number-color: #E07A5F;
+    --accent-color: var(--step-1-accent, #E07A5F);
+    --circle-bg: var(--step-1-circle-bg, #E07A5F26);
+    --number-color: var(--step-1-number-color, #E07A5F);
 }
 
 /* Step 2 colours */
 .step-card:nth-child(2) {
-    --accent-color: #81B29A;
-    --circle-bg: #81B29A26;
-    --number-color: #81B29A;
+    --accent-color: var(--step-2-accent, #81B29A);
+    --circle-bg: var(--step-2-circle-bg, #81B29A26);
+    --number-color: var(--step-2-number-color, #81B29A);
 }
 
 /* Step 3 colours */
 .step-card:nth-child(3) {
-    --accent-color: #F2CC8F;
-    --circle-bg: #F2CC8F26;
-    --number-color: #3D405B;
+    --accent-color: var(--step-3-accent, #F2CC8F);
+    --circle-bg: var(--step-3-circle-bg, #F2CC8F26);
+    --number-color: var(--step-3-number-color, #3D405B);
 }
 
 /* Left accent line */
@@ -49,7 +46,7 @@
     flex-shrink: 0;
     width: 6px;
     border-radius: 3px;
-    background: var(--accent-color);
+    background-color: var(--accent-color);
 }
 
 /* Main card rectangle */
@@ -57,12 +54,13 @@
     display: flex;
     align-items: center;
     flex: 1;
+    box-sizing: border-box;
     gap: 13px;
     min-width: 0;
     min-height: 60px;
     padding: 0 20px 0 24px;
     border-radius: 8px 18px 18px 8px;
-    background: var(--card-bg);
+    background-color: var(--card-bg, #F4F1DE);
 }
 
 /* Number circle */
@@ -74,14 +72,14 @@
     width: 28px;
     height: 28px;
     border-radius: 50%;
-    background: var(--circle-bg);
+    background-color: var(--circle-bg);
     color: var(--number-color);
     font-size: 14px;
     font-weight: 600;
     line-height: 1;
 }
 
-/* Text container */
+/* Card text */
 .card-text {
     display: flex;
     flex-direction: column;
@@ -94,7 +92,7 @@
 /* Card heading */
 .card-heading {
     margin: 0;
-    color: var(--heading-color);
+    color: var(--heading-color, #3D405B);
     font-size: 12.5px;
     font-weight: 700;
     line-height: 15px;
@@ -104,7 +102,7 @@
 /* Card description */
 .card-description {
     margin: 0;
-    color: var(--description-color);
+    color: var(--description-color, #AFAFAF);
     font-size: 10.7px;
     font-weight: 600;
     line-height: 13px;

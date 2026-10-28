@@ -1,5 +1,5 @@
 
-/* Page layout */
+/* Signup layout */
 .signup-content {
     position: relative;
     display: flex;
@@ -33,7 +33,7 @@
     margin-top: 12px;
     padding-top: 21px;
     border-radius: 32px;
-    background: var(--auth-card-bg, #F4F1DE);
+    background-color: var(--auth-card-bg, #F4F1DE);
 }
 
 .signup-welcome {
@@ -45,6 +45,7 @@
 }
 
 .signup-label {
+    margin: 0;
     color: var(--auth-accent, #E07A5F);
     font-size: 12.5px;
     font-weight: 700;
@@ -54,32 +55,24 @@
 }
 
 .signup-heading {
-    display: flex;
-    flex-direction: column;
     margin: 3px 0 0;
+    color: var(--auth-heading, #3D405B);
     font-size: 25px;
     font-weight: 800;
     line-height: 26px;
     white-space: nowrap;
 }
 
-.signup-heading-first {
-    color: var(--auth-heading, #3D405B);
-}
-
-.signup-heading-second {
+.signup-heading span {
     color: var(--auth-accent, #E07A5F);
 }
 
 .signup-description {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
     margin: 10px 0 0;
     color: var(--signup-description, #ACABAA);
     font-size: 12px;
     font-weight: 500;
-    line-height: 15px;
+    line-height: 17px;
     white-space: nowrap;
 }
 
@@ -108,7 +101,6 @@
     width: 120px;
     height: 120px;
     transform: rotate(18deg);
-    transform-origin: center;
 }
 
 .decorative-squares-small-signup {
@@ -117,19 +109,23 @@
     width: 45px;
     height: 45px;
     transform: rotate(-13deg);
-    transform-origin: center;
 }
 
-/* Form fields */
+/* Signup form */
 .signup-form {
     display: flex;
     flex-direction: column;
-    gap: 4px;
     width: 100%;
     margin-top: 8px;
 }
 
-/* Agreement */
+.signup-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+/* Terms agreement */
 .signup-agreement {
     display: flex;
     align-items: center;
@@ -152,12 +148,6 @@
     white-space: nowrap;
 }
 
-.signup-agreement .signup-link {
-    font-size: 11.4px;
-    font-weight: 700;
-    letter-spacing: normal;
-}
-
 /* Links */
 .signup-link {
     color: var(--link-color, #E07A5F99);
@@ -172,15 +162,15 @@
     text-decoration: none;
 }
 
-/* Create Account */
-.signup-submit {
-    width: 100%;
-    margin-top: 24px;
+.signup-agreement .signup-link {
+    font-size: 11.4px;
+    font-weight: 700;
+    letter-spacing: normal;
 }
 
-.signup-submit app-button {
-    display: block;
-    width: 100%;
+/* Create account */
+.signup-submit {
+    margin-top: 24px;
 }
 
 /* Login */
@@ -194,8 +184,9 @@
     white-space: nowrap;
 }
 
-.signup-login span {
-    color: var(--auth-heading, #3D405B);
+.signup-login-prompt {
+    margin: 0;
+    color: var(--auth-prompt, #9698AA);
     font-size: 12px;
     font-weight: 500;
     line-height: 15px;

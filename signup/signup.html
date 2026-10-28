@@ -20,7 +20,6 @@
 
     <!-- Shared components -->
     <script src="../shared/brand/brand.js" defer></script>
-    <script src="../shared/button/button.js" defer></script>
     <script src="../shared/form-field/form-field.js" defer></script>
 </head>
 
@@ -33,28 +32,27 @@
             <!-- Header -->
             <header class="signup-header">
                 <app-brand></app-brand>
-                <app-button type="mini-back" text="Back"></app-button>
+
+                <button
+                    type="button"
+                    class="btn btn-mini-back btn-icon-mini-back">
+                    Back
+                </button>
             </header>
 
             <!-- Welcome card -->
             <section class="signup-card">
                 <div class="signup-welcome">
-                    <span class="signup-label">
-                        CREATE ACCOUNT
-                    </span>
+                    <p class="signup-label">CREATE ACCOUNT</p>
 
                     <h1 class="signup-heading">
-                        <span class="signup-heading-first">
-                            Join Learning
-                        </span>
-                        <span class="signup-heading-second">
-                            Style Explorer
-                        </span>
+                        Join Learning<br>
+                        <span>Style Explorer</span>
                     </h1>
 
                     <p class="signup-description">
-                        <span>Create your free account today</span>
-                        <span>and discover how you learn</span>
+                        Create your free account today<br>
+                        and discover how you learn
                     </p>
                 </div>
             </section>
@@ -80,198 +78,201 @@
                 >
             </div>
 
-            <!-- Signup fields -->
-            <div class="signup-form">
+            <!-- Signup form -->
+            <form class="signup-form">
 
-                <!-- Full name -->
-                <div class="form-field" data-icon="person">
-                    <label class="field-heading" for="signup-name">
-                        Full Name
-                    </label>
+                <!-- Form fields -->
+                <div class="signup-fields">
 
-                    <div class="field-control">
-                        <input
-                            class="field-input"
-                            id="signup-name"
-                            type="text"
-                            name="full-name"
-                            placeholder=" "
-                            autocomplete="name"
-                            required
-                        >
-
-                        <label
-                            class="field-floating-label"
-                            for="signup-name">
-                            Enter your full name
+                    <!-- Full name -->
+                    <div class="form-field" data-icon="person">
+                        <label class="field-heading" for="signup-name">
+                            Full Name
                         </label>
+
+                        <div class="field-control">
+                            <input
+                                class="field-input"
+                                id="signup-name"
+                                type="text"
+                                name="full-name"
+                                placeholder=" "
+                                autocomplete="name"
+                                required
+                            >
+
+                            <label
+                                class="field-floating-label"
+                                for="signup-name">
+                                Enter your full name
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="form-field">
+                        <label class="field-heading" for="signup-email">
+                            Email Address
+                        </label>
+
+                        <div class="field-control">
+                            <input
+                                class="field-input"
+                                id="signup-email"
+                                type="email"
+                                name="email"
+                                placeholder=" "
+                                autocomplete="email"
+                                required
+                            >
+
+                            <label
+                                class="field-floating-label"
+                                for="signup-email">
+                                Enter your email address
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Password -->
+                    <div class="form-field">
+                        <label class="field-heading" for="signup-password">
+                            Password
+                        </label>
+
+                        <div class="field-control">
+                            <input
+                                class="field-input"
+                                id="signup-password"
+                                type="password"
+                                name="password"
+                                placeholder=" "
+                                autocomplete="new-password"
+                                required
+                            >
+
+                            <label
+                                class="field-floating-label"
+                                for="signup-password">
+                                Create a password
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Confirm password -->
+                    <div class="form-field">
+                        <label class="field-heading" for="signup-confirm">
+                            Confirm Password
+                        </label>
+
+                        <div class="field-control">
+                            <input
+                                class="field-input"
+                                id="signup-confirm"
+                                type="password"
+                                name="confirm-password"
+                                placeholder=" "
+                                autocomplete="new-password"
+                                required
+                            >
+
+                            <label
+                                class="field-floating-label"
+                                for="signup-confirm">
+                                Confirm your password
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Role dropdown -->
+                    <div class="dropdown">
+                        <label class="dropdown-heading" for="user-role">
+                            Your Role
+                        </label>
+
+                        <div class="dropdown-control">
+                            <select
+                                class="dropdown-select"
+                                id="user-role"
+                                name="user-role"
+                                required
+                            >
+                                <option value="" disabled selected hidden>
+                                    Select your role
+                                </option>
+                                <option value="High School Student">
+                                    High School Student
+                                </option>
+                                <option value="University Student">
+                                    University Student
+                                </option>
+                                <option value="Teacher / Tutor">
+                                    Teacher / Tutor
+                                </option>
+                                <option value="Parent">
+                                    Parent
+                                </option>
+                            </select>
+
+                            <!-- Dropdown triangle -->
+                            <svg
+                                class="dropdown-triangle"
+                                viewBox="0 0 12 12"
+                                aria-hidden="true">
+                                <path d="M0.8 1H11.2L6 10Z"></path>
+                            </svg>
+
+                            <!-- Student icon -->
+                            <span class="dropdown-icon">
+                                <svg viewBox="0 0 14 17" aria-hidden="true">
+                                    <path d="M13.3313 3.03225C13.332 2.45559 12.9813 1.95892 12.438 1.76692L8.128 0.246253C7.20267 -0.0810802 6.184 -0.0817469 5.25933 0.242253L0.897333 1.76892C0.352 1.95959 0 2.45559 0 3.03292C0 3.61092 0.352667 4.10692 0.898 4.29692L2.662 4.91225V6.03359C2.662 8.23959 4.456 10.0336 6.662 10.0336C8.868 10.0336 10.662 8.23959 10.662 6.03359V4.91225L11.9953 4.44692V7.36625C11.9953 7.73425 12.294 8.03292 12.662 8.03292C13.03 8.03292 13.3287 7.73425 13.3287 7.36625V3.04825C13.3287 3.04225 13.3313 3.03825 13.3313 3.03225ZM9.32867 6.03359C9.32867 7.50425 8.13267 8.70025 6.662 8.70025C5.19133 8.70025 3.99533 7.50425 3.99533 6.03359V5.37759L5.236 5.81025C5.69533 5.97025 6.17867 6.05092 6.66133 6.05092C7.144 6.05092 7.62667 5.97025 8.086 5.81025L9.32867 5.37692V6.03292V6.03359ZM7.64733 4.55159C7.012 4.77359 6.31133 4.77359 5.676 4.55159L1.338 3.02692L5.70067 1.50025C6.01933 1.38892 6.35333 1.33292 6.68867 1.33292C7.026 1.33292 7.36333 1.38959 7.68467 1.50292L11.9947 3.03492L7.64733 4.55159ZM11.966 15.1689C12.0753 15.5203 11.8787 15.8943 11.5273 16.0036C11.4613 16.0243 11.3947 16.0336 11.3293 16.0336C11.0453 16.0336 10.782 15.8503 10.6927 15.5643C10.168 13.8776 8.51133 12.6996 6.66267 12.6996C4.814 12.6996 3.15733 13.8776 2.63267 15.5643C2.52333 15.9163 2.14733 16.1116 1.798 16.0029C1.44667 15.8936 1.25 15.5196 1.35933 15.1683C2.05533 12.9296 4.236 11.3663 6.66267 11.3663C9.08933 11.3663 11.27 12.9303 11.966 15.1689Z"></path>
+                                </svg>
+                            </span>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Email -->
-                <div class="form-field">
-                    <label class="field-heading" for="signup-email">
-                        Email Address
-                    </label>
-
-                    <div class="field-control">
+                <!-- Terms agreement -->
+                <div class="signup-agreement">
+                    <label class="checkbox-label">
                         <input
-                            class="field-input"
-                            id="signup-email"
-                            type="email"
-                            name="email"
-                            placeholder=" "
-                            autocomplete="email"
+                            class="checkbox-input"
+                            type="checkbox"
+                            name="agreement"
+                            value="yes"
+                            aria-label="I agree to the Terms of Service and EULA"
                             required
                         >
 
-                        <label
-                            class="field-floating-label"
-                            for="signup-email">
-                            Enter your email address
-                        </label>
-                    </div>
-                </div>
-
-                <!-- Password -->
-                <div class="form-field">
-                    <label class="field-heading" for="signup-password">
-                        Password
-                    </label>
-
-                    <div class="field-control">
-                        <input
-                            class="field-input"
-                            id="signup-password"
-                            type="password"
-                            name="password"
-                            placeholder=" "
-                            autocomplete="new-password"
-                            required
-                        >
-
-                        <label
-                            class="field-floating-label"
-                            for="signup-password">
-                            Create a password
-                        </label>
-                    </div>
-                </div>
-
-                <!-- Confirm password -->
-                <div class="form-field">
-                    <label class="field-heading" for="signup-confirm">
-                        Confirm Password
-                    </label>
-
-                    <div class="field-control">
-                        <input
-                            class="field-input"
-                            id="signup-confirm"
-                            type="password"
-                            name="confirm-password"
-                            placeholder=" "
-                            autocomplete="new-password"
-                            required
-                        >
-
-                        <label
-                            class="field-floating-label"
-                            for="signup-confirm">
-                            Confirm your password
-                        </label>
-                    </div>
-                </div>
-
-                <!-- Native HTML dropdown -->
-                <div class="dropdown">
-                    <label class="dropdown-heading" for="user-role">
-                        Your Role
-                    </label>
-
-                    <div class="dropdown-control">
-                        <select
-                            class="dropdown-select"
-                            id="user-role"
-                            name="user-role"
-                            required
-                        >
-                            <option value="" disabled selected hidden>
-                                Select your role
-                            </option>
-                            <option value="High School Student">
-                                High School Student
-                            </option>
-                            <option value="University Student">
-                                University Student
-                            </option>
-                            <option value="Teacher / Tutor">
-                                Teacher / Tutor
-                            </option>
-                            <option value="Parent">
-                                Parent
-                            </option>
-                        </select>
-
-                        <!-- Original filled triangle -->
-                        <svg
-                            class="dropdown-triangle"
-                            viewBox="0 0 12 12"
-                            aria-hidden="true"
-                        >
-                            <path d="M0.8 1H11.2L6 10Z"></path>
-                        </svg>
-
-                        <!-- Original Figma student icon -->
-                        <span class="dropdown-icon">
-                            <svg viewBox="0 0 14 17" aria-hidden="true">
-                                <path d="M13.3313 3.03225C13.332 2.45559 12.9813 1.95892 12.438 1.76692L8.128 0.246253C7.20267 -0.0810802 6.184 -0.0817469 5.25933 0.242253L0.897333 1.76892C0.352 1.95959 0 2.45559 0 3.03292C0 3.61092 0.352667 4.10692 0.898 4.29692L2.662 4.91225V6.03359C2.662 8.23959 4.456 10.0336 6.662 10.0336C8.868 10.0336 10.662 8.23959 10.662 6.03359V4.91225L11.9953 4.44692V7.36625C11.9953 7.73425 12.294 8.03292 12.662 8.03292C13.03 8.03292 13.3287 7.73425 13.3287 7.36625V3.04825C13.3287 3.04225 13.3313 3.03825 13.3313 3.03225ZM9.32867 6.03359C9.32867 7.50425 8.13267 8.70025 6.662 8.70025C5.19133 8.70025 3.99533 7.50425 3.99533 6.03359V5.37759L5.236 5.81025C5.69533 5.97025 6.17867 6.05092 6.66133 6.05092C7.144 6.05092 7.62667 5.97025 8.086 5.81025L9.32867 5.37692V6.03292V6.03359ZM7.64733 4.55159C7.012 4.77359 6.31133 4.77359 5.676 4.55159L1.338 3.02692L5.70067 1.50025C6.01933 1.38892 6.35333 1.33292 6.68867 1.33292C7.026 1.33292 7.36333 1.38959 7.68467 1.50292L11.9947 3.03492L7.64733 4.55159ZM11.966 15.1689C12.0753 15.5203 11.8787 15.8943 11.5273 16.0036C11.4613 16.0243 11.3947 16.0336 11.3293 16.0336C11.0453 16.0336 10.782 15.8503 10.6927 15.5643C10.168 13.8776 8.51133 12.6996 6.66267 12.6996C4.814 12.6996 3.15733 13.8776 2.63267 15.5643C2.52333 15.9163 2.14733 16.1116 1.798 16.0029C1.44667 15.8936 1.25 15.5196 1.35933 15.1683C2.05533 12.9296 4.236 11.3663 6.66267 11.3663C9.08933 11.3663 11.27 12.9303 11.966 15.1689Z"></path>
+                        <span class="checkbox-square" aria-hidden="true">
+                            <svg class="checkbox-tick" viewBox="0 0 16 12">
+                                <path d="M5.16613 12C4.71195 12.0002 4.27638 11.8126 3.9555 11.4787L0.295374 7.67744C-0.098458 7.26814 -0.098458 6.60467 0.295374 6.19536C0.689332 5.78619 1.32794 5.78619 1.72189 6.19536L5.16613 9.77374L14.2781 0.306878C14.6721 -0.102293 15.3107 -0.102293 15.7046 0.306878C16.0985 0.716179 16.0985 1.37966 15.7046 1.78896L6.37675 11.4787C6.05587 11.8126 5.6203 12.0002 5.16613 12Z"></path>
                             </svg>
                         </span>
-                    </div>
+                    </label>
+
+                    <span class="signup-agreement-text">
+                        I agree to the
+                        <a href="#" class="signup-link">Terms of Service</a>
+                        and
+                        <a href="#" class="signup-link">EULA</a>
+                    </span>
                 </div>
 
-            </div>
-
-            <!-- Terms agreement -->
-            <div class="signup-agreement">
-                <label class="checkbox-label">
-                    <input
-                        class="checkbox-input"
-                        type="checkbox"
-                        name="agreement"
-                        value="yes"
-                        aria-label="I agree to the Terms of Service and EULA"
-                        required
-                    >
-
-                    <span class="checkbox-square" aria-hidden="true">
-                        <svg class="checkbox-tick" viewBox="0 0 16 12">
-                            <path d="M5.16613 12C4.71195 12.0002 4.27638 11.8126 3.9555 11.4787L0.295374 7.67744C-0.098458 7.26814 -0.098458 6.60467 0.295374 6.19536C0.689332 5.78619 1.32794 5.78619 1.72189 6.19536L5.16613 9.77374L14.2781 0.306878C14.6721 -0.102293 15.3107 -0.102293 15.7046 0.306878C16.0985 0.716179 16.0985 1.37966 15.7046 1.78896L6.37675 11.4787C6.05587 11.8126 5.6203 12.0002 5.16613 12Z"></path>
-                        </svg>
-                    </span>
-                </label>
-
-                <span class="signup-agreement-text">
-                    I agree to the
-                    <a href="#" class="signup-link">Terms of Service</a>
-                    and
-                    <a href="#" class="signup-link">EULA</a>
-                </span>
-            </div>
-
-            <!-- Create account -->
-            <div class="signup-submit">
-                <app-button
-                    type="large"
-                    variant="primary"
-                    text="Create Account">
-                </app-button>
-            </div>
+                <!-- Create account -->
+                <button
+                    type="button"
+                    class="btn btn-large btn-primary btn-icon-large signup-submit">
+                    Create Account
+                </button>
+            </form>
 
             <!-- Login link -->
             <div class="signup-login">
-                <span>Already have an account?</span>
+                <p class="signup-login-prompt">
+                    Already have an account?
+                </p>
+
                 <a href="../login/login.html" class="signup-link">
                     Login
                 </a>

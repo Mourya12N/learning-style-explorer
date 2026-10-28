@@ -18,7 +18,6 @@
 
     <!-- Shared components -->
     <script src="../shared/brand/brand.js" defer></script>
-    <script src="../shared/button/button.js" defer></script>
     <script src="../shared/form-field/form-field.js" defer></script>
 </head>
 
@@ -32,22 +31,26 @@
             <header class="login-header">
                 <app-brand></app-brand>
 
-                <app-button type="mini-back" text="Back"></app-button>
+                <button
+                    type="button"
+                    class="btn btn-mini-back btn-icon-mini-back">
+                    Back
+                </button>
             </header>
 
             <!-- Welcome card -->
             <section class="login-card">
                 <div class="welcome-content">
-                    <span class="welcome-label">WELCOME BACK</span>
+                    <p class="welcome-label">WELCOME BACK</p>
 
                     <h1 class="welcome-heading">
-                        <span class="welcome-heading-first">Login to your</span>
-                        <span class="welcome-heading-second">account</span>
+                        Login to your<br>
+                        <span>account</span>
                     </h1>
 
                     <p class="welcome-description">
-                        <span>Please enter your details</span>
-                        <span>below to continue</span>
+                        Please enter your details<br>
+                        below to continue
                     </p>
                 </div>
             </section>
@@ -74,7 +77,7 @@
             </div>
 
             <!-- Login form -->
-            <div class="login-form">
+            <form class="login-form">
 
                 <!-- Fields -->
                 <div class="login-fields">
@@ -126,7 +129,6 @@
                             </label>
                         </div>
                     </div>
-
                 </div>
 
                 <!-- Forgot password -->
@@ -139,43 +141,39 @@
                 </div>
 
                 <!-- Login button -->
-                <div class="login-submit">
-                    <app-button
-                        type="large"
-                        variant="primary"
-                        text="Login">
-                    </app-button>
-                </div>
+                <button
+                    type="button"
+                    class="btn btn-large btn-primary btn-icon-large login-submit">
+                    Login
+                </button>
 
-                <!-- Divider -->
-                <div class="login-divider">
-                    <span class="login-divider-line"></span>
-                    <span class="login-divider-text">or continue with</span>
-                    <span class="login-divider-line"></span>
-                </div>
+            </form>
 
-                <!-- Google button -->
-                <div class="login-google">
-                    <app-button
-                        type="google"
-                        text="Continue with Google">
-                    </app-button>
-                </div>
-
-                <!-- Sign up -->
-                <div class="login-signup">
-                    <span class="login-signup-prompt">
-                        Don’t have an account?
-                    </span>
-
-                    <a
-                        href="../signup/signup.html"
-                        class="login-link login-signup-link">
-                        Sign Up Free
-                    </a>
-                </div>
-
+            <!-- Divider -->
+            <div class="login-divider">
+                <span class="login-divider-line" aria-hidden="true"></span>
+                <span class="login-divider-text">or continue with</span>
+                <span class="login-divider-line" aria-hidden="true"></span>
             </div>
+
+            <!-- Google button -->
+            <button
+                type="button"
+                class="btn btn-google login-google">
+                Continue with Google
+            </button>
+
+            <!-- Sign up -->
+            <div class="login-signup">
+                <p class="login-signup-prompt">Don’t have an account?</p>
+
+                <a
+                    href="../signup/signup.html"
+                    class="login-link login-signup-link">
+                    Sign Up Free
+                </a>
+            </div>
+
         </div>
 
         <div id="bottom-nav"></div>

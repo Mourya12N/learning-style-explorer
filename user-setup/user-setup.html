@@ -1,0 +1,204 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Setup - Learning Style Explorer</title>
+
+    <!-- Shared styles -->
+    <link rel="stylesheet" href="../shared/iphone-frame/iphone-frame.css">
+    <link rel="stylesheet" href="../shared/status-bar/status-bar.css">
+    <link rel="stylesheet" href="../shared/bottom-nav/bottom-nav.css">
+    <link rel="stylesheet" href="../shared/themes/themes.css">
+    <link rel="stylesheet" href="../shared/brand/brand.css">
+    <link rel="stylesheet" href="../shared/button/button.css">
+    <link rel="stylesheet" href="../shared/radio/radio.css">
+    <link rel="stylesheet" href="user-setup.css">
+
+    <!-- Shared components -->
+    <script src="../shared/brand/brand.js" defer></script>
+</head>
+
+<body data-theme="summer-drift">
+    <main class="app-container">
+        <div id="status-bar"></div>
+
+        <div class="user-setup-content">
+
+            <!-- Header -->
+            <header class="user-setup-header">
+                <app-brand></app-brand>
+
+                <button
+                    type="button"
+                    class="btn btn-mini-back btn-icon-mini-back">
+                    Back
+                </button>
+            </header>
+
+            <!-- User setup card -->
+            <section class="user-setup-card">
+
+                <!-- Illustrations -->
+                <div class="user-setup-illustrations" aria-hidden="true">
+                    <img
+                        class="three-people"
+                        src="assets/three-people.svg"
+                        alt=""
+                    >
+
+                    <img
+                        class="decorative-squares-user-setup"
+                        src="assets/decorative-squares-user-setup.svg"
+                        alt=""
+                    >
+
+                    <img
+                        class="decorative-squares-small-user-setup"
+                        src="assets/decorative-squares-small-user-setup.svg"
+                        alt=""
+                    >
+
+                    <img
+                        class="decorative-circles-user-setup"
+                        src="assets/decorative-circles-user-setup.svg"
+                        alt=""
+                    >
+                </div>
+
+                <!-- Card text -->
+                <div class="user-setup-text">
+                    <p class="user-setup-label">BEFORE WE BEGIN</p>
+
+                    <h1 class="user-setup-heading">
+                        Tell us about<br>
+                        yourself
+                    </h1>
+
+                    <p class="user-setup-description">
+                        This helps us personalise<br>
+                        your results and study tips
+                    </p>
+                </div>
+            </section>
+
+            <!-- Role question -->
+            <section class="user-setup-role">
+                <h2 class="user-setup-role-heading">
+                    What best describes your role?
+                </h2>
+
+                <p class="user-setup-role-description">
+                    Select one option below — you can change this later in Settings
+                </p>
+            </section>
+
+            <!-- Role options -->
+            <fieldset class="user-setup-options" aria-label="Select your role">
+
+                <!-- High School Student -->
+                <label class="radio-option">
+                    <input
+                        class="radio-input"
+                        type="radio"
+                        name="user-role"
+                        value="high-school-student"
+                    >
+
+                    <span class="radio-circle" aria-hidden="true"></span>
+
+                    <span class="radio-text">
+                        <span class="radio-title">High School Student</span>
+                        <span class="radio-description">Year 7 — 12</span>
+                    </span>
+                </label>
+
+                <!-- University Student -->
+                <label class="radio-option">
+                    <input
+                        class="radio-input"
+                        type="radio"
+                        name="user-role"
+                        value="university-student"
+                    >
+
+                    <span class="radio-circle" aria-hidden="true"></span>
+
+                    <span class="radio-text">
+                        <span class="radio-title">University Student</span>
+                        <span class="radio-description">
+                            Undergraduate or Postgraduate
+                        </span>
+                    </span>
+                </label>
+
+                <!-- Teacher / Tutor -->
+                <label class="radio-option">
+                    <input
+                        class="radio-input"
+                        type="radio"
+                        name="user-role"
+                        value="teacher-tutor"
+                    >
+
+                    <span class="radio-circle" aria-hidden="true"></span>
+
+                    <span class="radio-text">
+                        <span class="radio-title">Teacher / Tutor</span>
+                        <span class="radio-description">Educator at any level</span>
+                    </span>
+                </label>
+
+                <!-- Parent -->
+                <label class="radio-option">
+                    <input
+                        class="radio-input"
+                        type="radio"
+                        name="user-role"
+                        value="parent"
+                    >
+
+                    <span class="radio-circle" aria-hidden="true"></span>
+
+                    <span class="radio-text">
+                        <span class="radio-title">Parent</span>
+                        <span class="radio-description">
+                            Supporting a child's learning
+                        </span>
+                    </span>
+                </label>
+
+            </fieldset>
+
+            <!-- Settings information -->
+            <div class="user-setup-info">
+                <img
+                    class="user-setup-light-bulb"
+                    src="assets/light-bulb-user-setup.svg"
+                    alt=""
+                    aria-hidden="true"
+                >
+
+                <p class="user-setup-info-text">
+                    You can change your role anytime in Settings
+                </p>
+            </div>
+
+            <!-- Start Quiz -->
+            <button
+                type="button"
+                class="btn btn-large btn-primary btn-icon-large user-setup-continue">
+                Next — Start Quiz
+            </button>
+
+        </div>
+
+        <div id="bottom-nav"></div>
+    </main>
+
+    <!-- Shared scripts -->
+    <script src="../shared/status-bar/status-bar.js"></script>
+    <script src="../shared/bottom-nav/bottom-nav.js"></script>
+</body>
+</html>

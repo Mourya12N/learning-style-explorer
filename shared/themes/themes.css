@@ -9,7 +9,7 @@
     --nav-focus: #81B29A;
     --nav-home-indicator: #75778E;
 
-    /* Login and Signup pages */
+    /* Page colours */
     --auth-card-bg: #F4F1DE;
     --auth-accent: #E07A5F;
     --auth-heading: #3D405B;
@@ -18,6 +18,12 @@
     --auth-divider: #E7E7F0;
     --login-divider-text: #B2B3BE;
     --auth-prompt: #9698AA;
+
+    /* Information cards */
+    --info-card-bg: #FAEBD2;
+    --info-text-color: #3D405B;
+    --info-icon-color: #81B29A;
+    --info-dot-color: #3D405B;
 
     /* Form fields */
     --field-bg: #F4F1DE;
@@ -40,17 +46,31 @@
     --dropdown-arrow: #B4B3B0;
     --dropdown-option-bg: #F4F1DE;
     --dropdown-option-hover: #D5D2BA;
-    --dropdown-option-text: #B4B3B0;
+    --dropdown-option-text: #3D405B;
     --dropdown-selected: #777777;
 
-    /* Native checkbox */
+    /* Checkbox */
     --checkbox-bg: #F4F1DE;
     --checkbox-hover-bg: #D5D2BA;
     --checkbox-outline: #81B29A;
     --checkbox-hover-outline: #537B67;
     --checkbox-text: #3D405B;
 
-    /* Numbered cards - shared colours */
+    /* Radio buttons */
+    --radio-bg: #F4F1DE;
+    --radio-hover-bg: #D5D2BA;
+    --radio-selected-bg: #81B29A;
+    --radio-title: #3D405B;
+    --radio-description: #9D9DA0;
+    --radio-hover-title: #3D405BCC;
+    --radio-hover-description: #9D9DA0E6;
+    --radio-selected-title: #FFFFFF;
+    --radio-selected-description: #FFFFFFB3;
+    --radio-circle-bg: #FFFFFF;
+    --radio-selected-circle-bg: #FFFFFF66;
+    --radio-selected-inner-circle: #FFFFFF;
+
+    /* Numbered cards */
     --card-bg: #F4F1DE;
     --heading-color: #3D405B;
     --description-color: #AFAFAF;
@@ -84,6 +104,25 @@
     --button-primary-hover: #B45B44;
     --button-secondary-bg: #81B29A;
     --button-secondary-hover: #537B67;
+    --button-large-text: #FFFFFF;
+    --button-large-text-hover: #D2D2D2;
+
+    /* Other buttons */
+    --button-border-color: #D8D9DE;
+    --button-login-text: #9193A3;
+    --button-login-hover: #3D405B;
+    --button-login-bg-hover: #F0F0F0;
+    --button-google-border: #F4F1DE;
+    --button-google-text: #3D405B;
+    --button-google-hover: #75778E;
+    --button-google-bg-hover: #F5F5F5;
+    --button-mini-text: #3D405B;
+    --button-mini-hover: #2F2E41;
+
+    /* Button icons */
+    --button-icon-filter: none;
+    --button-icon-hover-filter: none;
+    --button-mini-icon-filter: brightness(0) saturate(100%) invert(24%) sepia(13%) saturate(1256%) hue-rotate(197deg) brightness(93%) contrast(93%);
 }
 
 /* Other five themes - neutral placeholder palettes */
@@ -96,13 +135,11 @@
     --nav-bg: #333333;
     --nav-selected: #FFFFFF;
     --nav-unselected: #CCCCCC;
-    --nav-icon-selected: #FFFFFF;
-    --nav-icon-unselected: #CCCCCC;
     --nav-circle-bg: #FFFFFF33;
     --nav-focus: #FFFFFF;
     --nav-home-indicator: #AAAAAA;
 
-    /* Login and Signup pages */
+    /* Page colours */
     --auth-card-bg: #FFFFFF;
     --auth-accent: #000000;
     --auth-heading: #000000;
@@ -111,6 +148,12 @@
     --auth-divider: #DDDDDD;
     --login-divider-text: #777777;
     --auth-prompt: #777777;
+
+    /* Information cards */
+    --info-card-bg: #F0F0F0;
+    --info-text-color: #000000;
+    --info-icon-color: #000000;
+    --info-dot-color: #777777;
 
     /* Form fields */
     --field-bg: #FFFFFF;
@@ -133,17 +176,31 @@
     --dropdown-arrow: #777777;
     --dropdown-option-bg: #FFFFFF;
     --dropdown-option-hover: #EEEEEE;
-    --dropdown-option-text: #777777;
+    --dropdown-option-text: #000000;
     --dropdown-selected: #000000;
 
-    /* Native checkbox */
+    /* Checkbox */
     --checkbox-bg: #FFFFFF;
     --checkbox-hover-bg: #EEEEEE;
     --checkbox-outline: #000000;
     --checkbox-hover-outline: #555555;
     --checkbox-text: #000000;
 
-    /* Numbered cards - shared colours */
+    /* Radio buttons */
+    --radio-bg: #FFFFFF;
+    --radio-hover-bg: #EEEEEE;
+    --radio-selected-bg: #555555;
+    --radio-title: #000000;
+    --radio-description: #777777;
+    --radio-hover-title: #000000CC;
+    --radio-hover-description: #777777E6;
+    --radio-selected-title: #FFFFFF;
+    --radio-selected-description: #FFFFFFB3;
+    --radio-circle-bg: #FFFFFF;
+    --radio-selected-circle-bg: #FFFFFF66;
+    --radio-selected-inner-circle: #FFFFFF;
+
+    /* Numbered cards */
     --card-bg: #FFFFFF;
     --heading-color: #000000;
     --description-color: #777777;
@@ -171,130 +228,72 @@
     /* Links */
     --link-color: #555555;
     --link-hover-color: #000000;
-}
 
-/* Autumn Glow large buttons */
-[data-theme="autumn-glow"] {
+    /* Large buttons */
     --button-primary-bg: #000000;
     --button-primary-hover: #333333;
     --button-secondary-bg: #777777;
     --button-secondary-hover: #555555;
-}
+    --button-large-text: #FFFFFF;
+    --button-large-text-hover: #FFFFFF;
 
-/* Forest Breeze large buttons */
-[data-theme="forest-breeze"] {
-    --button-primary-bg: #000000;
-    --button-primary-hover: #333333;
-    --button-secondary-bg: #777777;
-    --button-secondary-hover: #555555;
-}
-
-/* Midnight Mist large buttons */
-[data-theme="midnight-mist"] {
-    --button-primary-bg: #000000;
-    --button-primary-hover: #333333;
-    --button-secondary-bg: #777777;
-    --button-secondary-hover: #555555;
-}
-
-/* Tropical Sunset large buttons */
-[data-theme="tropical-sunset"] {
-    --button-primary-bg: #000000;
-    --button-primary-hover: #333333;
-    --button-secondary-bg: #777777;
-    --button-secondary-hover: #555555;
-}
-
-/* Earthy Harvest large buttons */
-[data-theme="earthy-harvest"] {
-    --button-primary-bg: #000000;
-    --button-primary-hover: #333333;
-    --button-secondary-bg: #777777;
-    --button-secondary-hover: #555555;
-}
-
-/* Default button colours */
-[data-theme] app-button {
-    --button-color: #FFFFFF;
-    --button-hover-color: #EEEEEE;
-    --button-text-color: #000000;
-    --button-text-hover-color: #000000;
-    --button-icon-color: #000000;
-    --button-icon-hover-color: #000000;
+    /* Other buttons */
     --button-border-color: #000000;
+    --button-login-text: #777777;
+    --button-login-hover: #000000;
+    --button-login-bg-hover: #EEEEEE;
+    --button-google-border: #000000;
+    --button-google-text: #000000;
+    --button-google-hover: #555555;
+    --button-google-bg-hover: #EEEEEE;
+    --button-mini-text: #000000;
+    --button-mini-hover: #000000;
+
+    /* Button icons */
+    --button-icon-filter: none;
+    --button-icon-hover-filter: none;
+    --button-mini-icon-filter: brightness(0);
 }
 
-/* Large primary buttons */
-[data-theme] app-button[type="large"]:is(
-    [variant="primary"],
-    :not([variant])
-) {
+/* Primary buttons */
+[data-theme] .btn-primary {
     --button-color: var(--button-primary-bg);
     --button-hover-color: var(--button-primary-hover);
-    --button-text-color: #FFFFFF;
-    --button-text-hover-color: #D2D2D2;
-    --button-icon-color: #FFFFFF;
-    --button-icon-hover-color: #D2D2D2;
+    --button-text-color: var(--button-large-text);
+    --button-text-hover-color: var(--button-large-text-hover);
 }
 
-/* Large secondary buttons */
-[data-theme] app-button[type="large"][variant="secondary"] {
+/* Secondary buttons */
+[data-theme] .btn-secondary {
     --button-color: var(--button-secondary-bg);
     --button-hover-color: var(--button-secondary-hover);
-    --button-text-color: #FFFFFF;
-    --button-text-hover-color: #D2D2D2;
-    --button-icon-color: #FFFFFF;
-    --button-icon-hover-color: #D2D2D2;
+    --button-text-color: var(--button-large-text);
+    --button-text-hover-color: var(--button-large-text-hover);
 }
 
-/* Other themes large button hover text */
-[data-theme="autumn-glow"] app-button[type="large"],
-[data-theme="forest-breeze"] app-button[type="large"],
-[data-theme="midnight-mist"] app-button[type="large"],
-[data-theme="tropical-sunset"] app-button[type="large"],
-[data-theme="earthy-harvest"] app-button[type="large"] {
-    --button-text-hover-color: #FFFFFF;
-    --button-icon-hover-color: #FFFFFF;
+/* Mini back buttons */
+[data-theme] .btn-mini-back {
+    --button-color: var(--auth-card-bg);
+    --button-hover-color: var(--field-hover);
+    --button-text-color: var(--button-mini-text);
+    --button-text-hover-color: var(--button-mini-hover);
+    --button-icon-filter: var(--button-mini-icon-filter);
+    --button-icon-hover-filter: var(--button-mini-icon-filter);
 }
 
-/* Summer Drift mini back */
-[data-theme="summer-drift"] app-button[type="mini-back"] {
-    --button-color: #F4F1DE;
-    --button-hover-color: #D5D2BA;
-    --button-text-color: #3D405B;
-    --button-text-hover-color: #2F2E41;
-    --button-icon-color: #3D405B;
-    --button-icon-hover-color: #2F2E41;
-}
-
-/* Summer Drift Login button */
-[data-theme="summer-drift"] app-button[type="login"] {
+/* Login buttons */
+[data-theme] .btn-login {
     --button-color: transparent;
-    --button-hover-color: #F0F0F0;
-    --button-text-color: #9193A3;
-    --button-text-hover-color: #3D405B;
-    --button-border-color: #D8D9DE;
+    --button-hover-color: var(--button-login-bg-hover);
+    --button-text-color: var(--button-login-text);
+    --button-text-hover-color: var(--button-login-hover);
 }
 
-/* Summer Drift Google button */
-[data-theme="summer-drift"] app-button[type="google"] {
+/* Google buttons */
+[data-theme] .btn-google {
     --button-color: transparent;
-    --button-hover-color: #F5F5F5;
-    --button-text-color: #3D405B;
-    --button-text-hover-color: #75778E;
-    --button-border-color: #F4F1DE;
-}
-
-/* Other themes mini back */
-[data-theme="autumn-glow"] app-button[type="mini-back"],
-[data-theme="forest-breeze"] app-button[type="mini-back"],
-[data-theme="midnight-mist"] app-button[type="mini-back"],
-[data-theme="tropical-sunset"] app-button[type="mini-back"],
-[data-theme="earthy-harvest"] app-button[type="mini-back"] {
-    --button-color: #FFFFFF;
-    --button-hover-color: #EEEEEE;
-    --button-text-color: #000000;
-    --button-text-hover-color: #000000;
-    --button-icon-color: #000000;
-    --button-icon-hover-color: #000000;
+    --button-hover-color: var(--button-google-bg-hover);
+    --button-text-color: var(--button-google-text);
+    --button-text-hover-color: var(--button-google-hover);
+    --button-border-color: var(--button-google-border);
 }

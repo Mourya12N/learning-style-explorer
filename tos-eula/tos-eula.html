@@ -1,0 +1,210 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOS/EULA - Learning Style Explorer</title>
+
+    <!-- Shared styles -->
+    <link rel="stylesheet" href="../shared/iphone-frame/iphone-frame.css">
+    <link rel="stylesheet" href="../shared/status-bar/status-bar.css">
+    <link rel="stylesheet" href="../shared/themes/themes.css">
+    <link rel="stylesheet" href="../shared/brand/brand.css">
+    <link rel="stylesheet" href="../shared/button/button.css">
+    <link rel="stylesheet" href="../shared/checkbox/checkbox.css">
+
+    <!-- Page styles -->
+    <link rel="stylesheet" href="tos-eula.css">
+
+    <!-- Shared scripts -->
+    <script src="../shared/brand/brand.js" defer></script>
+</head>
+
+<body data-theme="summer-drift" data-page="tos-eula">
+    <script src="../shared/themes/themes.js"></script>
+
+    <main class="app-container">
+        <div id="status-bar"></div>
+
+        <div class="tos-eula-content">
+
+            <!-- App branding -->
+            <header class="tos-eula-header">
+                <app-brand></app-brand>
+            </header>
+
+            <!-- TOS/EULA panel -->
+            <section class="tos-eula-panel">
+
+                <!-- Panel header -->
+                <div class="tos-eula-panel-header">
+                    <div class="tos-eula-panel-heading">
+                        <h1 class="tos-eula-title">
+                            Terms of Service &amp; EULA
+                        </h1>
+                        <p class="tos-eula-subtitle">
+                            Learning Style Explorer
+                        </p>
+                    </div>
+
+                    <button type="button" class="tos-eula-close" aria-label="Close">
+                        <img src="assets/close-cross.svg" alt="" class="tos-eula-close-icon">
+                    </button>
+                </div>
+
+                <!-- Scrollable terms -->
+                <div class="tos-eula-panel-inner">
+                    <div class="tos-eula-scroll-content" tabindex="0">
+
+                        <!-- EULA -->
+                        <section class="tos-eula-document-section">
+                            <h2 class="tos-eula-section-title eula-title">
+                                EULA — End User License Agreement
+                            </h2>
+
+                            <h3 class="tos-eula-information-heading">Introduction</h3>
+                            <p class="tos-eula-paragraph">
+                                This End User License Agreement (EULA) outlines
+                                the terms and conditions governing the use of the
+                                Learning Style Explorer web application. By using
+                                this app you agree to abide by the terms below.
+                            </p>
+
+                            <h3 class="tos-eula-information-heading">User Responsibilities</h3>
+                            <ul class="tos-eula-list">
+                                <li>Use the app only for its intended purpose of identifying your learning style.</li>
+                                <li>Do not attempt to hack, damage, reverse engineer or interfere with the app.</li>
+                                <li>Do not misuse the app for any illegal activities.</li>
+                                <li>Keep your account login details secure and do not share them with others.</li>
+                                <li>Provide honest responses to quiz questions to ensure accurate results.</li>
+                            </ul>
+
+                            <h3 class="tos-eula-information-heading">User Content</h3>
+                            <ul class="tos-eula-list">
+                                <li>Users do not upload or share personal content.</li>
+                                <li>Results are based solely on the user's responses.</li>
+                                <li>The app does not claim ownership of user data.</li>
+                                <li>User data will only be used to generate results and improve app functionality.</li>
+                            </ul>
+
+                            <h3 class="tos-eula-information-heading">Termination</h3>
+                            <p class="tos-eula-paragraph tos-eula-paragraph-before-list">
+                                User access may be terminated if they:
+                            </p>
+                            <ul class="tos-eula-list">
+                                <li>Attempt to hack, disrupt or damage the app.</li>
+                                <li>Engage in illegal or harmful activities.</li>
+                                <li>Misuse the app in any way that violates these terms.</li>
+                            </ul>
+
+                            <h3 class="tos-eula-information-heading">Privacy and Security</h3>
+                            <ul class="tos-eula-list">
+                                <li>User data including results will be stored securely.</li>
+                                <li>The app uses standard security measures to protect personal information.</li>
+                                <li>The app will not sell or share personal data.</li>
+                                <li>No online system can guarantee 100% security.</li>
+                            </ul>
+                        </section>
+
+                        <!-- Terms of Service -->
+                        <section class="tos-eula-document-section">
+                            <h2 class="tos-eula-section-title tos-title">
+                                TOS — Terms of Service
+                            </h2>
+
+                            <h3 class="tos-eula-information-heading">Acceptance of Terms</h3>
+                            <p class="tos-eula-paragraph">
+                                By using the Learning Style Explorer you agree
+                                to abide by these Terms of Service. If you do
+                                not agree please do not use the app.
+                            </p>
+
+                            <h3 class="tos-eula-information-heading">Account Creation</h3>
+                            <ul class="tos-eula-list">
+                                <li>To create an account user must provide a valid email address, username and password.</li>
+                                <li>User are responsible for keeping their account credentials safe and confidential.</li>
+                                <li>The app is not responsible for any loss caused by sharing login details.</li>
+                                <li>Users must provide accurate information.</li>
+                            </ul>
+
+                            <h3 class="tos-eula-information-heading">Intellectual Property</h3>
+                            <ul class="tos-eula-list">
+                                <li>The Learning Style Explorer including its software, design and content is owned by the developers.</li>
+                                <li>Users may not copy, modify, distribute or sell any part of the app without permission.</li>
+                                <li>Users must respect copyright laws when using or sharing content from the app.</li>
+                            </ul>
+                        </section>
+
+                    </div>
+                </div>
+
+                <!-- Scroll indicator -->
+                <div class="tos-eula-scroll-hint">
+                    <span class="tos-eula-scroll-triangle"></span>
+                    <span class="tos-eula-scroll-text">Scroll to read more</span>
+                </div>
+
+                <!-- Agreement error -->
+                <p class="tos-eula-error" id="tos-eula-error" role="alert" hidden>
+                    *The terms must be accepted*
+                </p>
+
+                <!-- Agreement -->
+                <div class="tos-eula-agreement">
+                    <label class="checkbox-label tos-eula-checkbox">
+                        <input
+                            type="checkbox"
+                            class="checkbox-input"
+                            id="agree-terms"
+                            aria-label="Agree to the Terms"
+                            aria-describedby="tos-eula-error"
+                        >
+                        <span class="checkbox-square">
+                            <svg class="checkbox-tick" viewBox="0 0 16 12" aria-hidden="true">
+                                <path
+                                    d="M2 6L6 10L14 2"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+                            </svg>
+                        </span>
+                    </label>
+
+                    <label for="agree-terms" class="tos-eula-agreement-text">
+                        I have read and agree to the
+                    </label>
+                    <span class="tos-eula-terms-text">Terms</span>
+                </div>
+
+                <!-- Action buttons -->
+                <div class="tos-eula-actions">
+                    <button
+                        type="button"
+                        class="btn btn-accept btn-icon-accept"
+                        id="tos-eula-accept">
+                        Accept
+                    </button>
+
+                    <button type="button" class="btn btn-decline btn-icon-decline">
+                        Decline
+                    </button>
+                </div>
+
+            </section>
+        </div>
+
+        <!-- Bottom rectangle -->
+        <div class="tos-eula-bottom-rectangle"></div>
+    </main>
+
+    <!-- Shared scripts -->
+    <script src="../shared/status-bar/status-bar.js"></script>
+
+    <!-- Page script -->
+    <script src="tos-eula.js"></script>
+</body>
+</html>

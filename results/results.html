@@ -1,0 +1,228 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results - Learning Style Explorer</title>
+
+    <!-- Shared styles -->
+    <link rel="stylesheet" href="../shared/iphone-frame/iphone-frame.css">
+    <link rel="stylesheet" href="../shared/status-bar/status-bar.css">
+    <link rel="stylesheet" href="../shared/bottom-nav/bottom-nav.css">
+    <link rel="stylesheet" href="../shared/themes/themes.css">
+    <link rel="stylesheet" href="../shared/brand/brand.css">
+    <link rel="stylesheet" href="../shared/button/button.css">
+
+    <!-- Page styles -->
+    <link rel="stylesheet" href="results.css">
+
+    <!-- Shared brand -->
+    <script src="../shared/brand/brand.js" defer></script>
+</head>
+
+<body data-theme="summer-drift" data-page="results">
+    <script src="../shared/themes/themes.js"></script>
+
+    <main class="app-container">
+        <div id="status-bar"></div>
+
+        <div class="results-content">
+
+            <!-- Header -->
+            <header class="results-header">
+                <app-brand></app-brand>
+            </header>
+
+            <!-- Results section -->
+            <section class="results-section">
+
+                <!-- Quiz complete banner -->
+                <div class="results-complete-banner">
+                    <img
+                        class="results-party-popper"
+                        src="assets/party-popper-results.svg"
+                        alt=""
+                    >
+                    <p>Quiz Complete! Here are your results</p>
+                </div>
+
+                <!-- Main result card -->
+                <div class="results-card">
+
+                    <!-- Decorations -->
+                    <div class="results-decorations" aria-hidden="true">
+                        <img
+                            class="results-squares-small"
+                            src="assets/decorative-squares-small-results.svg"
+                            alt=""
+                        >
+                        <img
+                            class="results-squares"
+                            src="assets/decorative-squares-results.svg"
+                            alt=""
+                        >
+                    </div>
+
+                    <!-- Learning style images -->
+                    <div class="results-image-box">
+                        <img
+                            class="results-style-image"
+                            src="assets/visual-eye-results.svg"
+                            alt="Visual learning style"
+                        >
+                    </div>
+
+                    <!-- Result information -->
+                    <div class="results-card-content">
+                        <p class="results-label">YOUR RESULT</p>
+
+                        <h1 class="results-title">
+                            <span id="results-style-name">Visual</span>
+                            <span>Learner</span>
+                        </h1>
+
+                        <p class="results-description">
+                            You learn best through images,
+                            diagrams and visual content
+                        </p>
+
+                        <p class="results-score">Score: 33%</p>
+                    </div>
+                </div>
+
+                <!-- Score breakdown -->
+                <section class="results-breakdown">
+                    <h2>Score Breakdown</h2>
+
+                    <div class="results-score-list">
+
+                        <!-- Visual -->
+                        <div class="results-score-item results-visual">
+                            <div class="results-score-heading">
+                                <p>Visual (V)</p>
+                                <span>33%</span>
+                            </div>
+                            <div
+                                class="results-score-track"
+                                role="progressbar"
+                                aria-label="Visual score"
+                                aria-valuemin="0"
+                                aria-valuemax="100"
+                                aria-valuenow="33"
+                            >
+                                <div class="results-score-fill"></div>
+                            </div>
+                        </div>
+
+                        <!-- Auditory -->
+                        <div class="results-score-item results-auditory">
+                            <div class="results-score-heading">
+                                <p>Auditory (A)</p>
+                                <span>17%</span>
+                            </div>
+                            <div
+                                class="results-score-track"
+                                role="progressbar"
+                                aria-label="Auditory score"
+                                aria-valuemin="0"
+                                aria-valuemax="100"
+                                aria-valuenow="17"
+                            >
+                                <div class="results-score-fill"></div>
+                            </div>
+                        </div>
+
+                        <!-- Reading/Writing -->
+                        <div class="results-score-item results-reading">
+                            <div class="results-score-heading">
+                                <p>Reading/Writing (R)</p>
+                                <span>25%</span>
+                            </div>
+                            <div
+                                class="results-score-track"
+                                role="progressbar"
+                                aria-label="Reading and writing score"
+                                aria-valuemin="0"
+                                aria-valuemax="100"
+                                aria-valuenow="25"
+                            >
+                                <div class="results-score-fill"></div>
+                            </div>
+                        </div>
+
+                        <!-- Kinesthetic -->
+                        <div class="results-score-item results-kinesthetic">
+                            <div class="results-score-heading">
+                                <p>Kinesthetic (K)</p>
+                                <span>25%</span>
+                            </div>
+                            <div
+                                class="results-score-track"
+                                role="progressbar"
+                                aria-label="Kinesthetic score"
+                                aria-valuemin="0"
+                                aria-valuemax="100"
+                                aria-valuenow="25"
+                            >
+                                <div class="results-score-fill"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- Divider -->
+                <div class="results-divider" aria-hidden="true"></div>
+
+                <!-- Result actions -->
+                <div class="results-actions">
+
+                    <button
+                        type="button"
+                        class="btn btn-large btn-primary btn-icon-large"
+                        id="view-study-tips"
+                    >
+                        View Study Tips
+                    </button>
+
+                    <div class="results-secondary-actions">
+                        <button
+                            type="button"
+                            class="btn btn-save btn-icon-save results-action-button"
+                        >
+                            Save Results
+                        </button>
+
+                        <button
+                            type="button"
+                            class="btn btn-share btn-icon-share results-action-button"
+                        >
+                            Share Results
+                        </button>
+                    </div>
+
+                    <!-- Retake quiz -->
+                    <div class="results-retake">
+                        <p>Not happy with your result?</p>
+
+                        <a href="../quiz/quiz.html" class="results-retake-link">
+                            Retake Quiz
+                        </a>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+
+        <div id="bottom-nav"></div>
+    </main>
+
+    <!-- Shared scripts -->
+    <script src="../shared/status-bar/status-bar.js"></script>
+    <script src="../shared/bottom-nav/bottom-nav.js"></script>
+
+    <!-- Page script -->
+    <script src="results.js"></script>
+</body>
+</html>

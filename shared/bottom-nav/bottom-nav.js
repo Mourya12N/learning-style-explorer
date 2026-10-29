@@ -4,53 +4,48 @@ function loadBottomNav() {
     const container = document.getElementById("bottom-nav");
     if (!container) return;
 
-    /* Detect the current page automatically */
-    const currentPage = decodeURIComponent(
-        window.location.pathname.split("/").pop()
-    ).toLowerCase();
+    /* Current page */
+    const currentPage = window.location.pathname.split("/").pop();
 
+    /* Navigation pages */
     const pages = [
         {
             name: "Home",
             id: "home",
-            file: "home.html",
             width: 20,
             height: 20
         },
         {
             name: "Quiz",
             id: "quiz",
-            file: "quiz.html",
             width: 19.93,
             height: 19.93
         },
         {
             name: "Results",
             id: "results",
-            file: "results.html",
             width: 20,
             height: 20
         },
         {
             name: "Settings",
             id: "settings",
-            file: "settings.html",
             width: 18,
             height: 20
         }
     ];
 
-    /* Build navigation with the correct active icon */
+    /* Build navigation */
     container.innerHTML = `
         <nav class="bottom-nav" aria-label="Main navigation">
             ${pages.map(page => {
-                const selected = currentPage === page.file;
-                const variant = selected ? "filled" : "outline";
+                const selected = currentPage === `${page.id}.html`;
+                const icon = selected ? "filled" : "outline";
 
                 return `
                     <a
                         class="nav-item nav-${page.id}${selected ? " is-active" : ""}"
-                        href="${page.file}"
+                        href="../${page.id}/${page.id}.html"
                         ${selected ? 'aria-current="page"' : ""}
                     >
                         <span class="nav-indicator" aria-hidden="true"></span>
@@ -58,7 +53,7 @@ function loadBottomNav() {
 
                         <img
                             class="nav-icon"
-                            src="../shared/bottom-nav/icons/${page.id}-${variant}.svg"
+                            src="../shared/bottom-nav/icons/${page.id}-${icon}.svg"
                             width="${page.width}"
                             height="${page.height}"
                             alt=""

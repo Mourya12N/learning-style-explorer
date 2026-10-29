@@ -1,299 +1,645 @@
 
 /* Summer Drift */
 [data-theme="summer-drift"] {
+    --palette-light: #F4F1DE;
+    --palette-primary: #E07A5F;
+    --palette-dark: #3D405B;
+    --palette-secondary: #81B29A;
+    --palette-highlight: #F2CC8F;
+}
+
+/* Autumn Glow */
+[data-theme="autumn-glow"] {
+    --palette-light: #EAE2B7;
+    --palette-primary: #D62828;
+    --palette-dark: #003049;
+    --palette-secondary: #F77F00;
+    --palette-highlight: #FCBF49;
+}
+
+/* Forest Breeze */
+[data-theme="forest-breeze"] {
+    --palette-light: #C9E4CA;
+    --palette-primary: #55828B;
+    --palette-dark: #364958;
+    --palette-secondary: #87BBA2;
+    --palette-highlight: #3B6064;
+}
+
+/* Midnight Mist */
+[data-theme="midnight-mist"] {
+    --palette-light: #F2E9E4;
+    --palette-primary: #9A8C98;
+    --palette-dark: #22223B;
+    --palette-secondary: #4A4E69;
+    --palette-highlight: #C9ADA7;
+}
+
+/* Tropical Sunset */
+[data-theme="tropical-sunset"] {
+    --palette-light: #FAEDCD;
+    --palette-primary: #E76F51;
+    --palette-dark: #264653;
+    --palette-secondary: #2A9D8F;
+    --palette-highlight: #F4A261;
+}
+
+/* Earthy Harvest */
+[data-theme="earthy-harvest"] {
+    --palette-light: #FEFAE0;
+    --palette-primary: #BC6C25;
+    --palette-dark: #283618;
+    --palette-secondary: #606C38;
+    --palette-highlight: #DDA15E;
+}
+
+/* Shared theme variables */
+[data-theme] {
+    /* Derived colours */
+    --theme-surface-hover: color-mix(
+        in srgb,
+        var(--palette-light) 85%,
+        var(--palette-dark)
+    );
+    --theme-primary-hover: color-mix(
+        in srgb,
+        var(--palette-primary) 78%,
+        #000000
+    );
+    --theme-secondary-hover: color-mix(
+        in srgb,
+        var(--palette-secondary) 78%,
+        #000000
+    );
+    --theme-muted: color-mix(
+        in srgb,
+        var(--palette-dark) 58%,
+        #FFFFFF
+    );
+    --theme-divider: color-mix(
+        in srgb,
+        var(--palette-dark) 15%,
+        #FFFFFF
+    );
+
     /* Bottom navigation */
-    --nav-bg: #3D405B;
-    --nav-selected: #E07A5F;
-    --nav-unselected: #81B29A;
-    --nav-circle-bg: #E07A5F73;
-    --nav-focus: #81B29A;
-    --nav-home-indicator: #75778E;
+    --nav-bg: var(--palette-dark);
+    --nav-selected: var(--palette-primary);
+    --nav-unselected: var(--palette-secondary);
+    --nav-circle-bg: color-mix(
+        in srgb,
+        var(--palette-primary) 45%,
+        transparent
+    );
+    --nav-focus: var(--palette-secondary);
+    --nav-home-indicator: color-mix(
+        in srgb,
+        var(--palette-light) 45%,
+        var(--palette-dark)
+    );
 
     /* Page colours */
-    --auth-card-bg: #F4F1DE;
-    --auth-accent: #E07A5F;
-    --auth-heading: #3D405B;
+    --auth-card-bg: var(--palette-light);
+    --auth-accent: var(--palette-primary);
+    --auth-heading: var(--palette-dark);
+    --login-description: var(--theme-muted);
+    --signup-description: var(--theme-muted);
+    --auth-divider: var(--theme-divider);
+    --login-divider-text: var(--theme-muted);
+    --auth-prompt: var(--theme-muted);
+
+    /* Information cards */
+    --info-card-bg: color-mix(
+        in srgb,
+        var(--palette-light) 77%,
+        var(--palette-highlight)
+    );
+    --info-text-color: var(--palette-dark);
+    --info-icon-color: var(--palette-secondary);
+    --info-dot-color: var(--palette-dark);
+
+    /* Form fields */
+    --field-bg: var(--palette-light);
+    --field-hover: var(--theme-surface-hover);
+    --field-border: color-mix(
+        in srgb,
+        var(--palette-dark) 80%,
+        transparent
+    );
+    --field-heading: var(--palette-dark);
+    --field-label: var(--theme-muted);
+    --field-text: var(--palette-dark);
+    --field-icon: var(--palette-secondary);
+    --field-active-icon: var(--palette-secondary);
+
+    /* Dropdown */
+    --dropdown-bg: var(--palette-light);
+    --dropdown-hover: var(--theme-surface-hover);
+    --dropdown-border: var(--field-border);
+    --dropdown-heading: var(--palette-dark);
+    --dropdown-label: var(--theme-muted);
+    --dropdown-text: var(--palette-dark);
+    --dropdown-icon: var(--palette-secondary);
+    --dropdown-arrow: var(--theme-muted);
+    --dropdown-option-bg: var(--palette-light);
+    --dropdown-option-hover: var(--theme-surface-hover);
+    --dropdown-option-text: var(--palette-dark);
+    --dropdown-selected: var(--palette-secondary);
+
+    /* Checkbox */
+    --checkbox-bg: var(--palette-light);
+    --checkbox-hover-bg: var(--theme-surface-hover);
+    --checkbox-outline: var(--palette-secondary);
+    --checkbox-hover-outline: var(--theme-secondary-hover);
+    --checkbox-text: var(--palette-dark);
+
+    /* Radio buttons */
+    --radio-bg: var(--palette-light);
+    --radio-hover: var(--theme-surface-hover);
+    --radio-hover-bg: var(--theme-surface-hover);
+    --radio-selected-bg: var(--palette-secondary);
+    --radio-title: var(--palette-dark);
+    --radio-description: var(--theme-muted);
+    --radio-hover-title: color-mix(
+        in srgb,
+        var(--palette-dark) 80%,
+        transparent
+    );
+    --radio-hover-description: var(--theme-muted);
+    --radio-selected-title: #FFFFFF;
+    --radio-selected-description: #FFFFFFD9;
+    --radio-circle-bg: #FFFFFF;
+    --radio-circle-hover-bg: #FFFFFFB3;
+    --radio-selected-circle-bg: #FFFFFF66;
+    --radio-selected-inner-circle: #FFFFFF;
+
+    /* Numbered cards */
+    --card-bg: var(--palette-light);
+    --heading-color: var(--palette-dark);
+    --description-color: var(--theme-muted);
+
+    /* Card 1 */
+    --step-1-accent: var(--palette-primary);
+    --step-1-circle-bg: color-mix(
+        in srgb,
+        var(--palette-primary) 15%,
+        transparent
+    );
+    --step-1-number-color: var(--palette-primary);
+
+    /* Card 2 */
+    --step-2-accent: var(--palette-secondary);
+    --step-2-circle-bg: color-mix(
+        in srgb,
+        var(--palette-secondary) 15%,
+        transparent
+    );
+    --step-2-number-color: var(--palette-secondary);
+
+    /* Card 3 */
+    --step-3-accent: var(--palette-highlight);
+    --step-3-circle-bg: color-mix(
+        in srgb,
+        var(--palette-highlight) 15%,
+        transparent
+    );
+    --step-3-number-color: var(--palette-dark);
+
+    /* Brand */
+    --brand-logo-bg: var(--palette-primary);
+    --brand-logo-text: #FFFFFF;
+    --brand-name-color: var(--palette-dark);
+    --brand-name-loading-color: var(--palette-light);
+
+    /* Links */
+    --link-color: color-mix(
+        in srgb,
+        var(--palette-primary) 65%,
+        transparent
+    );
+    --link-hover-color: var(--palette-primary);
+
+    /* Large buttons */
+    --button-primary-bg: var(--palette-primary);
+    --button-primary-hover: var(--theme-primary-hover);
+    --button-secondary-bg: var(--palette-secondary);
+    --button-secondary-hover: var(--theme-secondary-hover);
+
+    --button-large-text: #FFFFFF;
+    --button-large-text-hover: #FFFFFF;
+
+    --button-primary-text: #FFFFFF;
+    --button-primary-text-hover: #FFFFFF;
+    --button-secondary-text: #FFFFFF;
+    --button-secondary-text-hover: #FFFFFF;
+
+    --button-primary-icon-filter: none;
+    --button-primary-icon-hover-filter: none;
+    --button-secondary-icon-filter: none;
+    --button-secondary-icon-hover-filter: none;
+
+    /* Accept button */
+    --button-accept-bg: var(--button-primary-bg);
+    --button-accept-hover: var(--button-primary-hover);
+    --button-accept-text: #FFFFFF;
+    --button-accept-icon-filter: none;
+
+    /* Decline button */
+    --button-decline-bg: var(--palette-light);
+    --button-decline-hover: var(--theme-surface-hover);
+    --button-decline-text: var(--palette-dark);
+    --button-decline-icon-filter: brightness(0);
+
+    /* Other buttons */
+    --button-border-color: var(--theme-divider);
+    --button-login-text: var(--theme-muted);
+    --button-login-hover: var(--palette-dark);
+    --button-login-bg-hover: var(--theme-surface-hover);
+    --button-google-border: var(--palette-light);
+    --button-google-text: var(--palette-dark);
+    --button-google-hover: var(--palette-primary);
+    --button-google-bg-hover: var(--theme-surface-hover);
+    --button-mini-text: var(--palette-dark);
+    --button-mini-hover: var(--theme-muted);
+
+    /* Quiz */
+    --quiz-progress-track: #FFFFFF;
+    --quiz-dot-inactive: var(--theme-divider);
+    --quiz-question-bg: var(--palette-dark);
+    --quiz-question-label: var(--palette-secondary);
+    --quiz-question-text: #FFFFFF;
+    --quiz-question-description: #FFFFFFA6;
+
+    /* Back button */
+    --button-quiz-back-bg: var(--palette-light);
+    --button-quiz-back-hover: var(--theme-surface-hover);
+    --button-quiz-back-text: var(--palette-dark);
+    --button-quiz-back-text-hover: var(--palette-dark);
+    --button-quiz-back-icon-filter: brightness(0);
+
+    /* Next button */
+    --button-quiz-next-bg: var(--button-primary-bg);
+    --button-quiz-next-hover: var(--button-primary-hover);
+    --button-quiz-next-text: #FFFFFF;
+    --button-quiz-next-text-hover: #FFFFFF;
+
+    /* Retake button */
+    --button-retake-bg: var(--button-primary-bg);
+    --button-retake-hover: var(--button-primary-hover);
+    --button-retake-text: #FFFFFF;
+    --button-retake-text-hover: #FFFFFF;
+    --button-retake-icon-filter: none;
+
+    /* Button icons */
+    --button-icon-filter: none;
+    --button-icon-hover-filter: none;
+    --button-mini-icon-filter: brightness(0);
+
+    /* Loading page */
+    --loading-page-bg: var(--palette-dark);
+    --loading-label-color: var(--palette-secondary);
+    --loading-heading-color: var(--palette-light);
+    --loading-heading-accent: var(--palette-primary);
+    --loading-description-color: #FFFFFFB3;
+
+    /* Loading progress */
+    --loading-progress-track: color-mix(
+        in srgb,
+        var(--palette-dark) 80%,
+        #FFFFFF
+    );
+    --loading-progress-fill: var(--palette-primary);
+    --loading-percentage-color: #FFFFFFB3;
+
+    /* Loading VARK labels */
+    --loading-visual-bg: #4A90D9;
+    --loading-visual-text: #FFFFFF;
+    --loading-auditory-bg: #81B29A;
+    --loading-auditory-text: #FFFFFF;
+    --loading-read-write-bg: #7B68C8;
+    --loading-read-write-text: #FFFFFF;
+    --loading-kinesthetic-bg: #E07A5F;
+    --loading-kinesthetic-text: #FFFFFF;
+
+    /* Loading information card */
+    --loading-info-accent: var(--palette-highlight);
+    --loading-info-bg: color-mix(
+        in srgb,
+        var(--palette-light) 8%,
+        transparent
+    );
+    --loading-info-heading: var(--palette-highlight);
+    --loading-info-description: #FFFFFFB3;
+}
+
+/* Original Summer Drift refinements */
+[data-theme="summer-drift"] {
+    --nav-circle-bg: #E07A5F73;
+    --nav-home-indicator: #75778E;
+
     --login-description: #A1A1A3;
     --signup-description: #ACABAA;
     --auth-divider: #E7E7F0;
     --login-divider-text: #B2B3BE;
     --auth-prompt: #9698AA;
 
-    /* Information cards */
     --info-card-bg: #FAEBD2;
-    --info-text-color: #3D405B;
-    --info-icon-color: #81B29A;
-    --info-dot-color: #3D405B;
-
-    /* Form fields */
-    --field-bg: #F4F1DE;
     --field-hover: #D5D2BA;
     --field-border: #3D405BCC;
-    --field-heading: #3D405B;
     --field-label: #B4B3B0;
-    --field-text: #3D405B;
-    --field-icon: #81B29A;
-    --field-active-icon: #81B29A;
 
-    /* Dropdown */
-    --dropdown-bg: #F4F1DE;
     --dropdown-hover: #D5D2BA;
     --dropdown-border: #3D405BCC;
-    --dropdown-heading: #3D405B;
     --dropdown-label: #B4B3B0;
-    --dropdown-text: #3D405B;
-    --dropdown-icon: #81B29A;
     --dropdown-arrow: #B4B3B0;
-    --dropdown-option-bg: #F4F1DE;
     --dropdown-option-hover: #D5D2BA;
-    --dropdown-option-text: #3D405B;
     --dropdown-selected: #777777;
 
-    /* Checkbox */
-    --checkbox-bg: #F4F1DE;
     --checkbox-hover-bg: #D5D2BA;
-    --checkbox-outline: #81B29A;
     --checkbox-hover-outline: #537B67;
-    --checkbox-text: #3D405B;
 
-    /* Radio buttons */
-    --radio-bg: #F4F1DE;
+    --radio-hover: #D5D2BA;
     --radio-hover-bg: #D5D2BA;
-    --radio-selected-bg: #81B29A;
-    --radio-title: #3D405B;
     --radio-description: #9D9DA0;
     --radio-hover-title: #3D405BCC;
     --radio-hover-description: #9D9DA0E6;
-    --radio-selected-title: #FFFFFF;
     --radio-selected-description: #FFFFFFB3;
-    --radio-circle-bg: #FFFFFF;
-    --radio-selected-circle-bg: #FFFFFF66;
-    --radio-selected-inner-circle: #FFFFFF;
 
-    /* Numbered cards */
-    --card-bg: #F4F1DE;
-    --heading-color: #3D405B;
     --description-color: #AFAFAF;
-
-    /* Card 1 */
-    --step-1-accent: #E07A5F;
     --step-1-circle-bg: #E07A5F26;
-    --step-1-number-color: #E07A5F;
-
-    /* Card 2 */
-    --step-2-accent: #81B29A;
     --step-2-circle-bg: #81B29A26;
-    --step-2-number-color: #81B29A;
-
-    /* Card 3 */
-    --step-3-accent: #F2CC8F;
     --step-3-circle-bg: #F2CC8F26;
-    --step-3-number-color: #3D405B;
 
-    /* Brand */
-    --brand-logo-bg: #E07A5F;
-    --brand-logo-text: #FFFFFF;
-    --brand-name-color: #3D405B;
-
-    /* Links */
     --link-color: #E07A5F99;
-    --link-hover-color: #E07A5F;
 
-    /* Large buttons */
-    --button-primary-bg: #E07A5F;
     --button-primary-hover: #B45B44;
-    --button-secondary-bg: #81B29A;
     --button-secondary-hover: #537B67;
-    --button-large-text: #FFFFFF;
     --button-large-text-hover: #D2D2D2;
+    --button-accept-hover: #B45B44;
+    --button-decline-hover: #D5D2BA;
 
-    /* Other buttons */
+    --button-decline-icon-filter: brightness(0)
+        saturate(100%) invert(24%) sepia(13%)
+        saturate(1256%) hue-rotate(197deg)
+        brightness(93%) contrast(93%);
+
     --button-border-color: #D8D9DE;
     --button-login-text: #9193A3;
-    --button-login-hover: #3D405B;
     --button-login-bg-hover: #F0F0F0;
-    --button-google-border: #F4F1DE;
-    --button-google-text: #3D405B;
     --button-google-hover: #75778E;
     --button-google-bg-hover: #F5F5F5;
-    --button-mini-text: #3D405B;
     --button-mini-hover: #2F2E41;
 
-    /* Button icons */
-    --button-icon-filter: none;
-    --button-icon-hover-filter: none;
-    --button-mini-icon-filter: brightness(0) saturate(100%) invert(24%) sepia(13%) saturate(1256%) hue-rotate(197deg) brightness(93%) contrast(93%);
+    --quiz-dot-inactive: #D9D9D9;
+    --quiz-question-description: #97979B;
+
+    --button-quiz-back-hover: #D5D2BA;
+    --button-quiz-back-icon-filter: brightness(0)
+        saturate(100%) invert(24%) sepia(13%)
+        saturate(1256%) hue-rotate(197deg)
+        brightness(93%) contrast(93%);
+
+    --button-quiz-next-hover: #B45B44;
+    --button-quiz-next-text-hover: #D2D2D2;
+    --button-retake-hover: #B45B44;
+    --button-retake-text-hover: #D2D2D2;
+
+    --button-mini-icon-filter: brightness(0)
+        saturate(100%) invert(24%) sepia(13%)
+        saturate(1256%) hue-rotate(197deg)
+        brightness(93%) contrast(93%);
+
+    --loading-description-color: #ACABAA;
+    --loading-progress-track: #57596D;
+    --loading-percentage-color: #ACABAA;
+
+    --loading-visual-bg: #E07A5FD9;
+    --loading-auditory-bg: #81B29AD9;
+    --loading-read-write-bg: #595A6E;
+    --loading-read-write-text: #F4F1DE;
+    --loading-kinesthetic-bg: #F2CC8FD9;
+    --loading-kinesthetic-text: #3D405B;
+
+    --loading-info-accent: #F2CC8F;
+    --loading-info-bg: #F4F1DE13;
+    --loading-info-description: #AFAFAE;
 }
 
-/* Other five themes - neutral placeholder palettes */
-[data-theme="autumn-glow"],
-[data-theme="forest-breeze"],
-[data-theme="midnight-mist"],
-[data-theme="tropical-sunset"],
+/* Autumn Glow adjustments */
+[data-theme="autumn-glow"] {
+    /* Darken orange buttons for white text and arrows */
+    --button-secondary-bg: #B95F00;
+    --button-secondary-hover: #924A00;
+
+    /* Dark text on selected orange radio options */
+    --radio-selected-title: #003049;
+    --radio-selected-description: #003049;
+    --radio-selected-inner-circle: #003049;
+}
+
+/* Forest Breeze adjustments */
+[data-theme="forest-breeze"] {
+    /* Darker teal primary buttons */
+    --button-primary-bg: #3B6064;
+    --button-primary-hover: #304E52;
+
+    /* Dark teal secondary buttons */
+    --button-secondary-bg: #3B6064;
+    --button-secondary-hover: #304E52;
+
+    /* Dark text on selected sage radio options */
+    --radio-selected-title: #364958;
+    --radio-selected-description: #364958;
+    --radio-selected-inner-circle: #364958;
+}
+
+/* Midnight Mist adjustments */
+[data-theme="midnight-mist"] {
+    /* Dark purple buttons with white text and icons */
+    --button-primary-bg: #4A4E69;
+    --button-primary-hover: #373A50;
+}
+
+/* Tropical Sunset adjustments */
+[data-theme="tropical-sunset"] {
+    /* Deep coral primary buttons */
+    --button-primary-bg: #B94D36;
+    --button-primary-hover: #973D2B;
+
+    /* Deep teal secondary buttons */
+    --button-secondary-bg: #20776E;
+    --button-secondary-hover: #185E57;
+}
+
+/* Earthy Harvest adjustments */
 [data-theme="earthy-harvest"] {
-    /* Bottom navigation */
-    --nav-bg: #333333;
-    --nav-selected: #FFFFFF;
-    --nav-unselected: #CCCCCC;
-    --nav-circle-bg: #FFFFFF33;
-    --nav-focus: #FFFFFF;
-    --nav-home-indicator: #AAAAAA;
+    /* Darker warm brown for white text */
+    --button-primary-bg: #A45C1F;
+    --button-primary-hover: #854916;
+}
 
-    /* Page colours */
-    --auth-card-bg: #FFFFFF;
-    --auth-accent: #000000;
-    --auth-heading: #000000;
-    --login-description: #777777;
-    --signup-description: #777777;
-    --auth-divider: #DDDDDD;
-    --login-divider-text: #777777;
-    --auth-prompt: #777777;
+/* Primary large buttons */
+[data-theme] .btn-primary,
+[data-theme].btn-primary {
+    --button-color: var(--button-primary-bg, #E07A5F);
+    --button-hover-color: var(--button-primary-hover, #B45B44);
+    --button-text-color: var(--button-primary-text, #FFFFFF);
+    --button-text-hover-color: var(--button-primary-text-hover, #FFFFFF);
+    --button-icon-filter: var(--button-primary-icon-filter, none);
+    --button-icon-hover-filter: var(
+        --button-primary-icon-hover-filter,
+        none
+    );
+}
 
-    /* Information cards */
-    --info-card-bg: #F0F0F0;
-    --info-text-color: #000000;
-    --info-icon-color: #000000;
-    --info-dot-color: #777777;
+/* Secondary large buttons */
+[data-theme] .btn-secondary,
+[data-theme].btn-secondary {
+    --button-color: var(--button-secondary-bg, #81B29A);
+    --button-hover-color: var(--button-secondary-hover, #537B67);
+    --button-text-color: var(--button-secondary-text, #FFFFFF);
+    --button-text-hover-color: var(--button-secondary-text-hover, #FFFFFF);
+    --button-icon-filter: var(--button-secondary-icon-filter, none);
+    --button-icon-hover-filter: var(
+        --button-secondary-icon-hover-filter,
+        none
+    );
+}
 
-    /* Form fields */
-    --field-bg: #FFFFFF;
-    --field-hover: #EEEEEE;
-    --field-border: #000000;
-    --field-heading: #000000;
-    --field-label: #777777;
-    --field-text: #000000;
-    --field-icon: #000000;
-    --field-active-icon: #000000;
-
-    /* Dropdown */
-    --dropdown-bg: #FFFFFF;
-    --dropdown-hover: #EEEEEE;
-    --dropdown-border: #000000;
-    --dropdown-heading: #000000;
-    --dropdown-label: #777777;
-    --dropdown-text: #000000;
-    --dropdown-icon: #000000;
-    --dropdown-arrow: #777777;
-    --dropdown-option-bg: #FFFFFF;
-    --dropdown-option-hover: #EEEEEE;
-    --dropdown-option-text: #000000;
-    --dropdown-selected: #000000;
-
-    /* Checkbox */
-    --checkbox-bg: #FFFFFF;
-    --checkbox-hover-bg: #EEEEEE;
-    --checkbox-outline: #000000;
-    --checkbox-hover-outline: #555555;
-    --checkbox-text: #000000;
-
-    /* Radio buttons */
-    --radio-bg: #FFFFFF;
-    --radio-hover-bg: #EEEEEE;
-    --radio-selected-bg: #555555;
-    --radio-title: #000000;
-    --radio-description: #777777;
-    --radio-hover-title: #000000CC;
-    --radio-hover-description: #777777E6;
-    --radio-selected-title: #FFFFFF;
-    --radio-selected-description: #FFFFFFB3;
-    --radio-circle-bg: #FFFFFF;
-    --radio-selected-circle-bg: #FFFFFF66;
-    --radio-selected-inner-circle: #FFFFFF;
-
-    /* Numbered cards */
-    --card-bg: #FFFFFF;
-    --heading-color: #000000;
-    --description-color: #777777;
-
-    /* Card 1 */
-    --step-1-accent: #000000;
-    --step-1-circle-bg: #EEEEEE;
-    --step-1-number-color: #000000;
-
-    /* Card 2 */
-    --step-2-accent: #000000;
-    --step-2-circle-bg: #EEEEEE;
-    --step-2-number-color: #000000;
-
-    /* Card 3 */
-    --step-3-accent: #000000;
-    --step-3-circle-bg: #EEEEEE;
-    --step-3-number-color: #000000;
-
-    /* Brand */
-    --brand-logo-bg: #000000;
-    --brand-logo-text: #FFFFFF;
-    --brand-name-color: #000000;
-
-    /* Links */
-    --link-color: #555555;
-    --link-hover-color: #000000;
-
-    /* Large buttons */
-    --button-primary-bg: #000000;
-    --button-primary-hover: #333333;
-    --button-secondary-bg: #777777;
-    --button-secondary-hover: #555555;
-    --button-large-text: #FFFFFF;
-    --button-large-text-hover: #FFFFFF;
-
-    /* Other buttons */
-    --button-border-color: #000000;
-    --button-login-text: #777777;
-    --button-login-hover: #000000;
-    --button-login-bg-hover: #EEEEEE;
-    --button-google-border: #000000;
-    --button-google-text: #000000;
-    --button-google-hover: #555555;
-    --button-google-bg-hover: #EEEEEE;
-    --button-mini-text: #000000;
-    --button-mini-hover: #000000;
-
-    /* Button icons */
-    --button-icon-filter: none;
+/* Accept buttons */
+[data-theme] .btn-accept,
+[data-theme].btn-accept {
+    --button-color: var(--button-accept-bg, #E07A5F);
+    --button-hover-color: var(--button-accept-hover, #B45B44);
+    --button-text-color: var(--button-accept-text, #FFFFFF);
+    --button-text-hover-color: #FFFFFF;
+    --button-icon-filter: var(--button-accept-icon-filter, none);
     --button-icon-hover-filter: none;
-    --button-mini-icon-filter: brightness(0);
 }
 
-/* Primary buttons */
-[data-theme] .btn-primary {
-    --button-color: var(--button-primary-bg);
-    --button-hover-color: var(--button-primary-hover);
-    --button-text-color: var(--button-large-text);
-    --button-text-hover-color: var(--button-large-text-hover);
+/* Decline buttons */
+[data-theme] .btn-decline,
+[data-theme].btn-decline {
+    --button-color: var(--button-decline-bg, #F4F1DE);
+    --button-hover-color: var(--button-decline-hover, #D5D2BA);
+    --button-text-color: var(--button-decline-text, #3D405B);
+    --button-text-hover-color: var(--button-decline-text, #3D405B);
+    --button-icon-filter: var(
+        --button-decline-icon-filter,
+        brightness(0)
+    );
+    --button-icon-hover-filter: var(
+        --button-decline-icon-filter,
+        brightness(0)
+    );
 }
 
-/* Secondary buttons */
-[data-theme] .btn-secondary {
-    --button-color: var(--button-secondary-bg);
-    --button-hover-color: var(--button-secondary-hover);
-    --button-text-color: var(--button-large-text);
-    --button-text-hover-color: var(--button-large-text-hover);
+/* Back buttons */
+[data-theme] .btn-back,
+[data-theme].btn-back {
+    --button-color: var(--button-quiz-back-bg, #F4F1DE);
+    --button-hover-color: var(--button-quiz-back-hover, #D5D2BA);
+    --button-text-color: var(--button-quiz-back-text, #3D405B);
+    --button-text-hover-color: var(
+        --button-quiz-back-text-hover,
+        #3D405B
+    );
+    --button-icon-filter: var(
+        --button-quiz-back-icon-filter,
+        brightness(0)
+    );
+    --button-icon-hover-filter: var(
+        --button-quiz-back-icon-filter,
+        brightness(0)
+    );
+}
+
+/* Next buttons */
+[data-theme] .btn-next,
+[data-theme].btn-next {
+    --button-color: var(--button-quiz-next-bg, #E07A5F);
+    --button-hover-color: var(--button-quiz-next-hover, #B45B44);
+    --button-text-color: var(--button-quiz-next-text, #FFFFFF);
+    --button-text-hover-color: var(
+        --button-quiz-next-text-hover,
+        #FFFFFF
+    );
+    --button-icon-filter: var(--button-primary-icon-filter, none);
+    --button-icon-hover-filter: var(
+        --button-primary-icon-hover-filter,
+        none
+    );
+}
+
+/* Retake buttons */
+[data-theme] .btn-retake,
+[data-theme].btn-retake {
+    --button-color: var(--button-retake-bg, #E07A5F);
+    --button-hover-color: var(--button-retake-hover, #B45B44);
+    --button-text-color: var(--button-retake-text, #FFFFFF);
+    --button-text-hover-color: var(
+        --button-retake-text-hover,
+        #FFFFFF
+    );
+    --button-icon-filter: var(--button-retake-icon-filter, none);
+    --button-icon-hover-filter: none;
 }
 
 /* Mini back buttons */
-[data-theme] .btn-mini-back {
-    --button-color: var(--auth-card-bg);
-    --button-hover-color: var(--field-hover);
-    --button-text-color: var(--button-mini-text);
-    --button-text-hover-color: var(--button-mini-hover);
-    --button-icon-filter: var(--button-mini-icon-filter);
-    --button-icon-hover-filter: var(--button-mini-icon-filter);
+[data-theme] .btn-mini-back,
+[data-theme].btn-mini-back {
+    --button-color: var(--auth-card-bg, #F4F1DE);
+    --button-hover-color: var(--field-hover, #D5D2BA);
+    --button-text-color: var(--button-mini-text, #3D405B);
+    --button-text-hover-color: var(--button-mini-hover, #2F2E41);
+    --button-icon-filter: var(
+        --button-mini-icon-filter,
+        brightness(0)
+    );
+    --button-icon-hover-filter: var(
+        --button-mini-icon-filter,
+        brightness(0)
+    );
 }
 
 /* Login buttons */
-[data-theme] .btn-login {
+[data-theme] .btn-login,
+[data-theme].btn-login {
     --button-color: transparent;
-    --button-hover-color: var(--button-login-bg-hover);
-    --button-text-color: var(--button-login-text);
-    --button-text-hover-color: var(--button-login-hover);
+    --button-hover-color: var(--button-login-bg-hover, #F0F0F0);
+    --button-text-color: var(--button-login-text, #9193A3);
+    --button-text-hover-color: var(
+        --button-login-hover,
+        #3D405B
+    );
 }
 
 /* Google buttons */
-[data-theme] .btn-google {
+[data-theme] .btn-google,
+[data-theme].btn-google {
     --button-color: transparent;
-    --button-hover-color: var(--button-google-bg-hover);
-    --button-text-color: var(--button-google-text);
-    --button-text-hover-color: var(--button-google-hover);
-    --button-border-color: var(--button-google-border);
+    --button-hover-color: var(--button-google-bg-hover, #F5F5F5);
+    --button-text-color: var(--button-google-text, #3D405B);
+    --button-text-hover-color: var(
+        --button-google-hover,
+        #75778E
+    );
+    --button-border-color: var(
+        --button-google-border,
+        #F4F1DE
+    );
+}
+
+/* Loading page - Summer Drift */
+[data-theme="summer-drift"][data-page="loading"] {
+    --nav-bg: #2A2D3E;
+    --nav-home-indicator: #57596DB3;
+}
+
+/* Loading page brand */
+[data-page="loading"] {
+    --brand-name-color: var(
+        --brand-name-loading-color,
+        #F4F1DE
+    );
 }

@@ -197,3 +197,29 @@
     font-weight: 600;
     line-height: 16px;
 }
+
+/* Terms agreement validation */
+.signup-agreement {
+    position: relative;
+}
+
+.signup-agreement-error {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    margin: 0;
+    color: #B44528;
+    font-size: 8px;
+    font-weight: 500;
+    line-height: 10px;
+    white-space: nowrap;
+}
+
+.signup-agreement-error[hidden] {
+    display: none;
+}
+
+.signup-agreement.has-error .signup-agreement-text {
+    display: inline-block;
+    transform: translateY(10px);
+}

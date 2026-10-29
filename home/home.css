@@ -94,7 +94,11 @@
     height: 21px;
     margin: 0 0 3px 1px;
     border-radius: 50px;
-    background-color: #E07A5F26;
+    background-color: color-mix(
+        in srgb,
+        var(--auth-accent, #E07A5F) 15%,
+        transparent
+    );
     color: var(--auth-accent, #E07A5F);
     font-size: 11px;
     font-weight: 700;
@@ -134,7 +138,7 @@
     width: 100%;
     height: 1px;
     border-radius: 0.5px;
-    background-color: #E7E7F0;
+    background-color: var(--auth-divider, #E7E7F0);
 }
 
 /* Learning styles */
@@ -151,7 +155,7 @@
 .learning-styles-title {
     margin: 0 0 6px;
     padding-inline: 7px;
-    color: #A8A9B5;
+    color: var(--auth-prompt, #A8A9B5);
     font-size: 12.5px;
     font-weight: 800;
     line-height: 15px;
@@ -182,28 +186,32 @@
     white-space: nowrap;
 }
 
+/* Visual */
 .visual {
     min-width: 70px;
-    background-color: #E07A5F;
+    background-color: var(--palette-primary, #E07A5F);
     color: #FFFFFF;
 }
 
+/* Auditory */
 .auditory {
     min-width: 80px;
-    background-color: #81B29A;
+    background-color: var(--palette-secondary, #81B29A);
     color: #FFFFFF;
 }
 
+/* Read/Write */
 .read-write {
     min-width: 100px;
-    background-color: #3D405B;
-    color: #F4F1DE;
+    background-color: var(--palette-dark, #3D405B);
+    color: var(--palette-light, #F4F1DE);
 }
 
+/* Kinesthetic */
 .kinesthetic {
     min-width: 98px;
-    background-color: #F2CC8F;
-    color: #3D405B;
+    background-color: var(--palette-highlight, #F2CC8F);
+    color: var(--palette-dark, #3D405B);
 }
 
 /* How it works */
@@ -250,7 +258,7 @@
 
 .account-prompt {
     margin: 0;
-    color: #9698AA;
+    color: var(--auth-prompt, #9698AA);
     font-size: 12px;
     font-weight: 500;
     line-height: 15px;

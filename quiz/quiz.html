@@ -1,0 +1,239 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz - Learning Style Explorer</title>
+
+    <!-- Shared styles -->
+    <link rel="stylesheet" href="../shared/iphone-frame/iphone-frame.css">
+    <link rel="stylesheet" href="../shared/status-bar/status-bar.css">
+    <link rel="stylesheet" href="../shared/bottom-nav/bottom-nav.css">
+    <link rel="stylesheet" href="../shared/themes/themes.css">
+    <link rel="stylesheet" href="../shared/brand/brand.css">
+    <link rel="stylesheet" href="../shared/button/button.css">
+    <link rel="stylesheet" href="../shared/radio/radio.css">
+
+    <!-- Page styles -->
+    <link rel="stylesheet" href="quiz.css">
+
+    <!-- Shared brand -->
+    <script src="../shared/brand/brand.js" defer></script>
+</head>
+
+<body data-theme="summer-drift">
+    <script src="../shared/themes/themes.js"></script>
+
+    <main class="app-container">
+
+        <div id="status-bar"></div>
+
+        <div class="quiz-content">
+
+            <!-- Header -->
+            <header class="quiz-header">
+                <app-brand></app-brand>
+
+                <a
+                    href="../user-setup/user-setup.html"
+                    class="btn btn-mini-back btn-icon-mini-back"
+                >
+                    Back
+                </a>
+            </header>
+
+            <section class="quiz-section" aria-labelledby="quiz-question">
+
+                <!-- Progress card -->
+                <div class="quiz-progress-card">
+                    <div class="quiz-progress-top">
+                        <p class="quiz-progress-heading" id="quiz-progress-heading">
+                            Question 1 of 12
+                        </p>
+                        <p class="quiz-progress-percentage" id="quiz-progress-percentage">
+                            8%
+                        </p>
+                    </div>
+
+                    <div
+                        class="quiz-progress-bar"
+                        id="quiz-progress-bar"
+                        role="progressbar"
+                        aria-label="Quiz progress"
+                        aria-valuemin="0"
+                        aria-valuemax="12"
+                        aria-valuenow="1"
+                    >
+                        <div class="quiz-progress-fill" id="quiz-progress-fill"></div>
+                    </div>
+
+                    <div class="quiz-progress-dots" aria-hidden="true">
+                        <i class="quiz-dot is-active"></i>
+                        <i class="quiz-dot"></i>
+                        <i class="quiz-dot"></i>
+                        <i class="quiz-dot"></i>
+                        <i class="quiz-dot"></i>
+                        <i class="quiz-dot"></i>
+                        <i class="quiz-dot"></i>
+                        <i class="quiz-dot"></i>
+                        <i class="quiz-dot"></i>
+                        <i class="quiz-dot"></i>
+                        <i class="quiz-dot"></i>
+                        <i class="quiz-dot"></i>
+                    </div>
+                </div>
+
+                <!-- Question card -->
+                <div class="quiz-question-card">
+                    <p class="quiz-question-label" id="quiz-question-label">
+                        QUESTION 1
+                    </p>
+
+                    <h1 class="quiz-question-heading" id="quiz-question">
+                        When you are given new information,<br>
+                        what do you naturally do first?
+                    </h1>
+
+                    <p class="quiz-question-description">
+                        Select one that best describes you
+                    </p>
+
+                    <img
+                        class="quiz-question-squares"
+                        src="assets/decorative-squares-quiz.svg"
+                        alt=""
+                        aria-hidden="true"
+                    >
+                </div>
+
+                <!-- Information pill -->
+                <div class="quiz-info-pill">
+                    <img
+                        class="quiz-info-icon"
+                        src="assets/light-bulb-quiz.svg"
+                        alt=""
+                        aria-hidden="true"
+                    >
+
+                    <p class="quiz-info-text">
+                        Be honest for best results
+                    </p>
+                </div>
+
+                <!-- Answer options -->
+                <fieldset class="quiz-options">
+                    <legend class="quiz-options-legend">
+                        Choose your answer
+                    </legend>
+
+                    <!-- Visual -->
+                    <label class="radio-option">
+                        <input
+                            class="radio-input"
+                            type="radio"
+                            name="quiz-answer"
+                            value="visual"
+                        >
+                        <span class="radio-circle"></span>
+                        <span class="radio-text">
+                            <span class="radio-title">
+                                Draw it out or look for a visual
+                            </span>
+                            <span class="radio-description">
+                                Diagrams, charts, maps or images
+                            </span>
+                        </span>
+                    </label>
+
+                    <!-- Auditory -->
+                    <label class="radio-option">
+                        <input
+                            class="radio-input"
+                            type="radio"
+                            name="quiz-answer"
+                            value="auditory"
+                        >
+                        <span class="radio-circle"></span>
+                        <span class="radio-text">
+                            <span class="radio-title">
+                                Talk about it or listen to someone
+                            </span>
+                            <span class="radio-description">
+                                Discussions, podcasts or lectures
+                            </span>
+                        </span>
+                    </label>
+
+                    <!-- Read/Write -->
+                    <label class="radio-option">
+                        <input
+                            class="radio-input"
+                            type="radio"
+                            name="quiz-answer"
+                            value="read-write"
+                        >
+                        <span class="radio-circle"></span>
+                        <span class="radio-text">
+                            <span class="radio-title">
+                                Write it down or read about it
+                            </span>
+                            <span class="radio-description">
+                                Notes, textbooks or written summaries
+                            </span>
+                        </span>
+                    </label>
+
+                    <!-- Kinesthetic -->
+                    <label class="radio-option">
+                        <input
+                            class="radio-input"
+                            type="radio"
+                            name="quiz-answer"
+                            value="kinesthetic"
+                        >
+                        <span class="radio-circle"></span>
+                        <span class="radio-text">
+                            <span class="radio-title">
+                                Try it out through practice
+                            </span>
+                            <span class="radio-description">
+                                Real examples, activities or experiments
+                            </span>
+                        </span>
+                    </label>
+                </fieldset>
+
+                <!-- Quiz navigation -->
+                <div class="quiz-navigation">
+                    <button
+                        class="btn btn-back btn-icon-back"
+                        id="quiz-back"
+                        type="button"
+                    >
+                        Back
+                    </button>
+
+                    <button
+                        class="btn btn-next btn-icon-next"
+                        id="quiz-next"
+                        type="button"
+                    >
+                        Next
+                    </button>
+                </div>
+
+            </section>
+        </div>
+
+        <div id="bottom-nav"></div>
+    </main>
+
+    <!-- Shared scripts -->
+    <script src="../shared/status-bar/status-bar.js"></script>
+    <script src="../shared/bottom-nav/bottom-nav.js"></script>
+
+    <!-- Page script -->
+    <script src="quiz.js"></script>
+</body>
+</html>

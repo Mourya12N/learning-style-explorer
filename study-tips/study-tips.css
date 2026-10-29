@@ -1,0 +1,377 @@
+
+/* Study tips page */
+.study-tips-content {
+    position: relative;
+    width: 100%;
+    min-height: 100%;
+    padding: 60px 17px 110px;
+    font-family: "Inter", Arial, sans-serif;
+
+    --style-color: #4A90D9;
+    --style-image-bg: #609DDE;
+}
+
+/* Fixed learning style colours */
+.study-tips-content[data-learning-style="auditory"] {
+    --style-color: #81B29A;
+    --style-image-bg: #96C3AE;
+}
+
+.study-tips-content[data-learning-style="reading"] {
+    --style-color: #7B68C8;
+    --style-image-bg: #9787D6;
+}
+
+.study-tips-content[data-learning-style="kinesthetic"] {
+    --style-color: #E07A5F;
+    --style-image-bg: #E9957F;
+}
+
+/* Header */
+.study-tips-header {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 30px;
+}
+
+/* Study tips section */
+.study-tips-section {
+    width: 100%;
+}
+
+/* Learning style card */
+.study-tips-card {
+    position: absolute;
+    top: 127px;
+    left: 17px;
+    width: 392px;
+    height: 142px;
+    overflow: hidden;
+    border-radius: 28px;
+    background-color: var(--style-color);
+}
+
+/* Decoration */
+.study-tips-squares {
+    position: absolute;
+    top: -19px;
+    left: 300px;
+    width: 100px;
+    height: 100px;
+    transform: rotate(15deg);
+    pointer-events: none;
+}
+
+/* Learning style image */
+.study-tips-image-box {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    width: 98px;
+    height: 88px;
+    border-radius: 15px;
+    background-color: var(--style-image-bg);
+}
+
+.study-tips-style-image {
+    max-width: 75%;
+    max-height: 75%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Tied learning style images */
+.study-tips-image-box:has(.study-tips-style-image:nth-child(2)) .study-tips-style-image {
+    width: 38px;
+    height: 38px;
+}
+
+.study-tips-image-box:has(.study-tips-style-image:nth-child(3)) .study-tips-style-image {
+    width: 32px;
+    height: 32px;
+}
+
+/* Learning style information */
+.study-tips-card-content {
+    position: absolute;
+    top: 0;
+    left: 129px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.study-tips-label {
+    margin: 22px 0 0;
+    color: #FFFFFFE6;
+    font-size: 12.5px;
+    font-weight: 700;
+    line-height: 15px;
+    letter-spacing: 0.07em;
+}
+
+.study-tips-title {
+    margin: 4px 0 0;
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 29px;
+    letter-spacing: -0.0125em;
+    white-space: nowrap;
+}
+
+/* Longer learning style names */
+.study-tips-content[data-learning-style="reading"] .study-tips-title,
+.study-tips-content[data-learning-style="multimodal"] .study-tips-title {
+    font-size: 19px;
+}
+
+.study-tips-description {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 5px 0 0;
+    color: #FFFFFFBF;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.study-tips-description span {
+    display: block;
+    line-height: 17px;
+    white-space: nowrap;
+}
+
+.study-tips-description span:first-child {
+    letter-spacing: -0.033em;
+}
+
+.study-tips-description span:last-child {
+    letter-spacing: -0.04em;
+}
+
+.study-tips-score {
+    margin: 7px 0 0;
+    color: #FFFFFFA6;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 17px;
+    letter-spacing: -0.07em;
+    white-space: nowrap;
+}
+
+/* Scrollable study tips area */
+.study-tips-scroll {
+    position: absolute;
+    top: 289px;
+    left: 17px;
+    box-sizing: border-box;
+    width: 392px;
+    height: 348px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: #ACABAA transparent;
+    overscroll-behavior: contain;
+}
+
+/* Enable scrolling for multiple learning styles */
+.study-tips-scroll.is-scrollable {
+    overflow-y: auto;
+}
+
+.study-tips-scroll:focus-visible {
+    outline: 2px solid var(--auth-heading, #3D405B);
+    outline-offset: 2px;
+}
+
+/* Study tips lists */
+.study-tips-list {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    margin: 0 0 12px;
+    padding: 0;
+    list-style: none;
+}
+
+.study-tips-list:last-child {
+    margin-bottom: 0;
+}
+
+.study-tips-list[hidden] {
+    display: none;
+}
+
+/* Learning style accent colours */
+.study-tips-visual {
+    --tip-accent: #4A90D9;
+}
+
+.study-tips-auditory {
+    --tip-accent: #81B29A;
+}
+
+.study-tips-reading {
+    --tip-accent: #7B68C8;
+}
+
+.study-tips-kinesthetic {
+    --tip-accent: #E07A5F;
+}
+
+/* Study tip cards */
+.study-tip {
+    position: relative;
+    flex-shrink: 0;
+    width: 392px;
+    height: 78px;
+}
+
+/* Left accent */
+.study-tip::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 6px;
+    height: 78px;
+    border-radius: 3px;
+    background-color: var(--tip-accent);
+    content: "";
+}
+
+/* Card background */
+.study-tip-background {
+    position: absolute;
+    top: 0;
+    left: 6px;
+    width: 386px;
+    height: 78px;
+    border-radius: 10px 18px 18px 10px;
+    background-color: #F4F1DE;
+}
+
+/* Tip icon */
+.study-tip-icon-box {
+    position: absolute;
+    top: 15px;
+    left: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background-color: color-mix(
+        in srgb,
+        var(--tip-accent) 15%,
+        transparent
+    );
+}
+
+.study-tip-icon-box img {
+    max-width: 75%;
+    max-height: 75%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Tip text */
+.study-tip-content {
+    position: absolute;
+    top: 0;
+    left: 72px;
+}
+
+.study-tip-content h2 {
+    margin: 11px 0 0;
+    color: #3D405B;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 17px;
+    letter-spacing: -0.01em;
+}
+
+.study-tip-content p {
+    margin: 0;
+    color: #9698AA;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: -0.04em;
+    white-space: nowrap;
+}
+
+.study-tip-content p:first-of-type {
+    margin-top: 5px;
+}
+
+/* View all study tips */
+.study-tips-view-all {
+    position: absolute;
+    top: 650px;
+    left: 17px;
+    display: flex;
+    align-items: center;
+    width: 392px;
+    height: 44px;
+    border-radius: 22px;
+    background-color: #FAEBD2;
+    cursor: pointer;
+}
+
+.study-tips-view-all:focus-visible {
+    outline: 2px solid var(--auth-heading, #3D405B);
+    outline-offset: 3px;
+}
+
+.study-tips-search-icon {
+    width: 20px;
+    height: 20px;
+    margin-left: 88px;
+    object-fit: contain;
+}
+
+.study-tips-view-all span {
+    margin-left: 5px;
+    color: var(--auth-heading, #3D405B);
+    font-size: 13.5px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    white-space: nowrap;
+}
+
+/* Divider */
+.study-tips-divider {
+    position: absolute;
+    top: 707px;
+    left: 27px;
+    width: 392px;
+    height: 1px;
+    border-radius: 0.5px;
+    background-color: var(--auth-divider, #E7E7F0);
+}
+
+/* Navigation buttons */
+.study-tips-actions {
+    position: absolute;
+    top: 722px;
+    left: 17px;
+    display: flex;
+    justify-content: space-between;
+    width: 392px;
+}

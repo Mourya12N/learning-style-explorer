@@ -1,0 +1,313 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - Learning Style Explorer</title>
+
+    <!-- Shared styles -->
+    <link rel="stylesheet" href="../shared/iphone-frame/iphone-frame.css">
+    <link rel="stylesheet" href="../shared/status-bar/status-bar.css">
+    <link rel="stylesheet" href="../shared/bottom-nav/bottom-nav.css">
+    <link rel="stylesheet" href="../shared/themes/themes.css">
+    <link rel="stylesheet" href="../shared/brand/brand.css">
+    <link rel="stylesheet" href="../shared/button/button.css">
+
+    <!-- Page styles -->
+    <link rel="stylesheet" href="settings.css">
+
+    <script src="../shared/brand/brand.js" defer></script>
+</head>
+
+<body data-theme="summer-drift" data-page="settings">
+    <script src="../shared/themes/themes.js"></script>
+
+    <main class="app-container">
+        <div id="status-bar"></div>
+
+        <div class="settings-content">
+
+            <!-- Header -->
+            <header class="settings-header">
+                <div class="settings-header-left">
+                    <app-brand></app-brand>
+                    <h1 class="settings-title">Settings</h1>
+                </div>
+
+                <button
+                    type="button"
+                    class="btn btn-mini-back btn-icon-mini-back">
+                    Back
+                </button>
+            </header>
+
+            <!-- Appearance -->
+            <section class="settings-appearance">
+                <h2 class="settings-section-title">APPEARANCE</h2>
+
+                <!-- Dark mode -->
+                <div class="settings-option">
+                    <div class="settings-option-background">
+                        <div class="settings-option-content">
+                            <h3 class="settings-option-title">Dark Mode</h3>
+                            <p class="settings-option-description">
+                                Switch to dark background
+                            </p>
+                        </div>
+                    </div>
+
+                    <label class="settings-toggle">
+                        <input
+                            type="checkbox"
+                            class="settings-toggle-input"
+                            aria-label="Dark Mode"
+                        >
+                        <span class="settings-toggle-track">
+                            <span class="settings-toggle-circle"></span>
+                        </span>
+                    </label>
+                </div>
+
+                <!-- Font size -->
+                <div class="settings-option">
+                    <div class="settings-option-background">
+                        <div class="settings-option-content">
+                            <h3 class="settings-option-title">Font Size</h3>
+                            <p class="settings-option-description">
+                                Adjust text size for readability
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="settings-slider-wrapper">
+                        <input
+                            type="range"
+                            class="settings-font-slider"
+                            min="0"
+                            max="100"
+                            value="0"
+                            aria-label="Font Size"
+                        >
+                    </div>
+                </div>
+
+                <!-- High contrast -->
+                <div class="settings-option">
+                    <div class="settings-option-background">
+                        <div class="settings-option-content">
+                            <h3 class="settings-option-title">High Contrast</h3>
+                            <p class="settings-option-description">
+                                Improve visibility and accessibility
+                            </p>
+                        </div>
+                    </div>
+
+                    <label class="settings-toggle">
+                        <input
+                            type="checkbox"
+                            class="settings-toggle-input"
+                            aria-label="High Contrast"
+                        >
+                        <span class="settings-toggle-track">
+                            <span class="settings-toggle-circle"></span>
+                        </span>
+                    </label>
+                </div>
+            </section>
+
+            <!-- Language -->
+            <section class="settings-language">
+                <h2 class="settings-section-title">LANGUAGE</h2>
+
+                <div class="settings-option">
+                    <div class="settings-option-background">
+                        <div class="settings-option-content">
+                            <h3 class="settings-option-title">Language</h3>
+                            <p class="settings-option-description">
+                                Select your preferred language
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="settings-language-dropdown">
+                        <select aria-label="Select language">
+                            <option value="english" selected>ENGLISH</option>
+                            <option value="spanish">SPANISH</option>
+                            <option value="french">FRENCH</option>
+                            <option value="german">GERMAN</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Colour theme -->
+            <section class="settings-colour-theme">
+                <h2 class="settings-colour-theme-title">
+                    COLOUR THEME
+                </h2>
+
+                <p class="settings-colour-theme-description">
+                    Personalise your entire app experience
+                </p>
+
+                <div class="settings-theme-options">
+
+                    <!-- Summer Drift -->
+                    <label class="settings-theme-option settings-theme-summer">
+                        <input
+                            type="radio"
+                            name="colour-theme"
+                            value="summer-drift"
+                            checked
+                        >
+                        <span class="settings-theme-preview">
+                            <span class="settings-theme-left"></span>
+                            <span class="settings-theme-middle"></span>
+                            <span class="settings-theme-right"></span>
+                            <span class="settings-theme-outline"></span>
+                        </span>
+                        <span class="settings-theme-name">
+                            <svg class="settings-theme-tick" width="14" height="11" viewBox="0 0 14 11" aria-hidden="true">
+                                <path d="M4.52036 10.1064C4.12296 10.1066 3.74183 9.9486 3.46106 9.66736L0.258452 6.46594C-0.0861507 6.12122 -0.0861507 5.56244 0.258452 5.21773C0.603165 4.87313 1.16194 4.87313 1.50666 5.21773L4.52036 8.23143L12.4933 0.258452C12.8381 -0.0861507 13.3968 -0.0861507 13.7415 0.258452C14.0862 0.603165 14.0862 1.16194 13.7415 1.50666L5.57966 9.66736C5.29889 9.9486 4.91776 10.1066 4.52036 10.1064Z" fill="currentColor"/>
+                            </svg>
+                            Summer Drift
+                        </span>
+                    </label>
+
+                    <!-- Autumn Glow -->
+                    <label class="settings-theme-option settings-theme-autumn">
+                        <input
+                            type="radio"
+                            name="colour-theme"
+                            value="autumn-glow"
+                        >
+                        <span class="settings-theme-preview">
+                            <span class="settings-theme-left"></span>
+                            <span class="settings-theme-middle"></span>
+                            <span class="settings-theme-right"></span>
+                            <span class="settings-theme-outline"></span>
+                        </span>
+                        <span class="settings-theme-name">
+                            <svg class="settings-theme-tick" width="14" height="11" viewBox="0 0 14 11" aria-hidden="true">
+                                <path d="M4.52036 10.1064C4.12296 10.1066 3.74183 9.9486 3.46106 9.66736L0.258452 6.46594C-0.0861507 6.12122 -0.0861507 5.56244 0.258452 5.21773C0.603165 4.87313 1.16194 4.87313 1.50666 5.21773L4.52036 8.23143L12.4933 0.258452C12.8381 -0.0861507 13.3968 -0.0861507 13.7415 0.258452C14.0862 0.603165 14.0862 1.16194 13.7415 1.50666L5.57966 9.66736C5.29889 9.9486 4.91776 10.1066 4.52036 10.1064Z" fill="currentColor"/>
+                            </svg>
+                            Autumn Glow
+                        </span>
+                    </label>
+
+                    <!-- Forest Breeze -->
+                    <label class="settings-theme-option settings-theme-forest">
+                        <input
+                            type="radio"
+                            name="colour-theme"
+                            value="forest-breeze"
+                        >
+                        <span class="settings-theme-preview">
+                            <span class="settings-theme-left"></span>
+                            <span class="settings-theme-middle"></span>
+                            <span class="settings-theme-right"></span>
+                            <span class="settings-theme-outline"></span>
+                        </span>
+                        <span class="settings-theme-name">
+                            <svg class="settings-theme-tick" width="14" height="11" viewBox="0 0 14 11" aria-hidden="true">
+                                <path d="M4.52036 10.1064C4.12296 10.1066 3.74183 9.9486 3.46106 9.66736L0.258452 6.46594C-0.0861507 6.12122 -0.0861507 5.56244 0.258452 5.21773C0.603165 4.87313 1.16194 4.87313 1.50666 5.21773L4.52036 8.23143L12.4933 0.258452C12.8381 -0.0861507 13.3968 -0.0861507 13.7415 0.258452C14.0862 0.603165 14.0862 1.16194 13.7415 1.50666L5.57966 9.66736C5.29889 9.9486 4.91776 10.1066 4.52036 10.1064Z" fill="currentColor"/>
+                            </svg>
+                            Forest Breeze
+                        </span>
+                    </label>
+
+                    <!-- Midnight Mist -->
+                    <label class="settings-theme-option settings-theme-midnight">
+                        <input
+                            type="radio"
+                            name="colour-theme"
+                            value="midnight-mist"
+                        >
+                        <span class="settings-theme-preview">
+                            <span class="settings-theme-left"></span>
+                            <span class="settings-theme-middle"></span>
+                            <span class="settings-theme-right"></span>
+                            <span class="settings-theme-outline"></span>
+                        </span>
+                        <span class="settings-theme-name">
+                            <svg class="settings-theme-tick" width="14" height="11" viewBox="0 0 14 11" aria-hidden="true">
+                                <path d="M4.52036 10.1064C4.12296 10.1066 3.74183 9.9486 3.46106 9.66736L0.258452 6.46594C-0.0861507 6.12122 -0.0861507 5.56244 0.258452 5.21773C0.603165 4.87313 1.16194 4.87313 1.50666 5.21773L4.52036 8.23143L12.4933 0.258452C12.8381 -0.0861507 13.3968 -0.0861507 13.7415 0.258452C14.0862 0.603165 14.0862 1.16194 13.7415 1.50666L5.57966 9.66736C5.29889 9.9486 4.91776 10.1066 4.52036 10.1064Z" fill="currentColor"/>
+                            </svg>
+                            Midnight Mist
+                        </span>
+                    </label>
+
+                    <!-- Tropical Sunset -->
+                    <label class="settings-theme-option settings-theme-tropical">
+                        <input
+                            type="radio"
+                            name="colour-theme"
+                            value="tropical-sunset"
+                        >
+                        <span class="settings-theme-preview">
+                            <span class="settings-theme-left"></span>
+                            <span class="settings-theme-middle"></span>
+                            <span class="settings-theme-right"></span>
+                            <span class="settings-theme-outline"></span>
+                        </span>
+                        <span class="settings-theme-name">
+                            <svg class="settings-theme-tick" width="14" height="11" viewBox="0 0 14 11" aria-hidden="true">
+                                <path d="M4.52036 10.1064C4.12296 10.1066 3.74183 9.9486 3.46106 9.66736L0.258452 6.46594C-0.0861507 6.12122 -0.0861507 5.56244 0.258452 5.21773C0.603165 4.87313 1.16194 4.87313 1.50666 5.21773L4.52036 8.23143L12.4933 0.258452C12.8381 -0.0861507 13.3968 -0.0861507 13.7415 0.258452C14.0862 0.603165 14.0862 1.16194 13.7415 1.50666L5.57966 9.66736C5.29889 9.9486 4.91776 10.1066 4.52036 10.1064Z" fill="currentColor"/>
+                            </svg>
+                            Tropical Sunset
+                        </span>
+                    </label>
+
+                    <!-- Earthy Harvest -->
+                    <label class="settings-theme-option settings-theme-earthy">
+                        <input
+                            type="radio"
+                            name="colour-theme"
+                            value="earthy-harvest"
+                        >
+                        <span class="settings-theme-preview">
+                            <span class="settings-theme-left"></span>
+                            <span class="settings-theme-middle"></span>
+                            <span class="settings-theme-right"></span>
+                            <span class="settings-theme-outline"></span>
+                        </span>
+                        <span class="settings-theme-name">
+                            <svg class="settings-theme-tick" width="14" height="11" viewBox="0 0 14 11" aria-hidden="true">
+                                <path d="M4.52036 10.1064C4.12296 10.1066 3.74183 9.9486 3.46106 9.66736L0.258452 6.46594C-0.0861507 6.12122 -0.0861507 5.56244 0.258452 5.21773C0.603165 4.87313 1.16194 4.87313 1.50666 5.21773L4.52036 8.23143L12.4933 0.258452C12.8381 -0.0861507 13.3968 -0.0861507 13.7415 0.258452C14.0862 0.603165 14.0862 1.16194 13.7415 1.50666L5.57966 9.66736C5.29889 9.9486 4.91776 10.1066 4.52036 10.1064Z" fill="currentColor"/>
+                            </svg>
+                            Earthy Harvest
+                        </span>
+                    </label>
+
+                </div>
+            </section>
+
+            <!-- Account -->
+            <section class="settings-account">
+                <h2 class="settings-account-title">ACCOUNT</h2>
+
+                <button
+                    type="button"
+                    class="btn btn-large btn-primary settings-save-button">
+                    Save Settings
+                </button>
+
+                <a class="settings-logout" href="">
+                    Log Out
+                </a>
+            </section>
+
+        </div>
+
+        <div id="bottom-nav"></div>
+    </main>
+
+    <!-- Shared scripts -->
+    <script src="../shared/status-bar/status-bar.js"></script>
+    <script src="../shared/bottom-nav/bottom-nav.js"></script>
+
+    <!-- Page script -->
+    <script src="settings.js"></script>
+</body>
+</html>

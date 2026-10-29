@@ -4,23 +4,21 @@
     position: relative;
     display: flex;
     align-items: center;
-    box-sizing: border-box;
-    gap: 12px;
-    width: 392px;
-    height: 72px;
-    padding: 0 22px;
-    border-radius: 16px;
-    background-color: var(--radio-bg, #F4F1DE);
+    gap: 14px;
+    width: 100%;
+    min-height: 72px;
+    padding: 14px 18px;
+    border-radius: 20px;
+    background-color: var(--radio-bg);
     cursor: pointer;
     transition: background-color 0.2s ease;
 }
 
-/* Native radio input */
+/* Radio input */
 .radio-input {
     position: absolute;
     width: 1px;
     height: 1px;
-    margin: 0;
     opacity: 0;
 }
 
@@ -30,110 +28,110 @@
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    width: 30px;
-    height: 30px;
+    width: 22px;
+    height: 22px;
     border-radius: 50%;
-    background-color: var(--radio-circle-bg, #FFFFFF);
-}
-
-.radio-circle::after {
-    content: "";
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    background-color: var(--radio-selected-inner-circle, #FFFFFF);
-    opacity: 0;
+    background-color: var(--radio-circle-bg);
+    transition: background-color 0.2s ease;
 }
 
 /* Radio text */
 .radio-text {
     display: flex;
-    flex: 1;
     flex-direction: column;
-    gap: 2px;
+    gap: 4px;
     min-width: 0;
-    font-family: "Inter", Arial, sans-serif;
 }
 
+/* Radio title */
 .radio-title {
-    color: var(--radio-title, #3D405B);
+    color: var(--radio-title);
     font-size: 14px;
-    font-weight: 700;
+    font-weight: 600;
     line-height: 18px;
-    letter-spacing: -0.21px;
 }
 
+/* Radio description */
 .radio-description {
-    color: var(--radio-description, #9D9DA0);
+    color: var(--radio-description);
     font-size: 12px;
     font-weight: 500;
     line-height: 16px;
-    letter-spacing: -0.48px;
 }
 
-/* Selected tick */
-.radio-option::after {
-    content: "";
-    flex-shrink: 0;
-    width: 17px;
-    height: 13px;
-    margin-left: auto;
-    background: url("assets/check-tick.svg") center / contain no-repeat;
-    opacity: 0;
+/* Hover */
+.radio-option:hover:not(:has(.radio-input:checked)) {
+    background-color: var(--radio-hover);
 }
 
-/* Selected state */
+.radio-option:hover:not(:has(.radio-input:checked)) .radio-title {
+    color: var(--radio-hover-title);
+    opacity: 0.8;
+}
+
+.radio-option:hover:not(:has(.radio-input:checked)) .radio-description {
+    color: var(--radio-hover-description);
+    opacity: 0.9;
+}
+
+.radio-option:hover:not(:has(.radio-input:checked)) .radio-circle {
+    background-color: var(--radio-circle-hover-bg);
+    opacity: 0.7;
+}
+
+/* Selected */
 .radio-option:has(.radio-input:checked) {
-    background-color: var(--radio-selected-bg, #81B29A);
-}
-
-.radio-option:has(.radio-input:checked) .radio-circle {
-    background-color: var(--radio-selected-circle-bg, #FFFFFF66);
-}
-
-.radio-option:has(.radio-input:checked) .radio-circle::after,
-.radio-option:has(.radio-input:checked)::after {
-    opacity: 1;
+    background-color: var(--radio-selected-bg);
 }
 
 .radio-option:has(.radio-input:checked) .radio-title {
-    color: var(--radio-selected-title, #FFFFFF);
+    color: var(--radio-selected-title);
+    opacity: 1;
 }
 
 .radio-option:has(.radio-input:checked) .radio-description {
-    color: var(--radio-selected-description, #FFFFFFB3);
+    color: var(--radio-selected-description);
+    opacity: 1;
 }
 
-/* Hover state */
-.radio-option:hover {
-    background-color: var(--radio-hover-bg, #D5D2BA);
+.radio-option:has(.radio-input:checked) .radio-circle {
+    background-color: var(--radio-selected-circle-bg);
+    opacity: 1;
 }
 
-.radio-option:hover .radio-circle {
-    background-color: var(--radio-circle-bg, #FFFFFF);
+/* Selected inner circle */
+.radio-option:has(.radio-input:checked) .radio-circle::after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--radio-selected-inner-circle);
 }
 
-.radio-option:hover .radio-circle::after,
-.radio-option:hover::after {
-    opacity: 0;
+/* Selected SVG tick on the right */
+.radio-option:has(.radio-input:checked)::after {
+    content: "";
+    display: block;
+    flex-shrink: 0;
+    width: 17px;
+    height: 12px;
+    margin-left: auto;
+    background: url("assets/check-tick.svg") center / contain no-repeat;
 }
 
-.radio-option:hover .radio-title {
-    color: var(--radio-hover-title, #3D405BCC);
+/* Keep selected appearance on hover */
+.radio-option:has(.radio-input:checked):hover {
+    background-color: var(--radio-selected-bg);
 }
 
-.radio-option:hover .radio-description {
-    color: var(--radio-hover-description, #9D9DA0E6);
+.radio-option:has(.radio-input:checked):hover .radio-title,
+.radio-option:has(.radio-input:checked):hover .radio-description,
+.radio-option:has(.radio-input:checked):hover .radio-circle {
+    opacity: 1;
 }
 
 /* Keyboard focus */
 .radio-option:has(.radio-input:focus-visible) {
-    outline: 2px solid var(--nav-focus, #81B29A);
+    outline: 2px solid var(--nav-focus);
     outline-offset: 3px;
-}
-
-/* Disabled state */
-.radio-option:has(.radio-input:disabled) {
-    opacity: 0.5;
-    cursor: not-allowed;
 }

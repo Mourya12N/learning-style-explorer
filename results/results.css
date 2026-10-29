@@ -1,0 +1,364 @@
+
+/* Results page */
+.results-content {
+    position: relative;
+    width: 100%;
+    min-height: 100%;
+    padding: 60px 17px 110px;
+    font-family: "Inter", Arial, sans-serif;
+}
+
+/* Header */
+.results-header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+/* Results section */
+.results-section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* Quiz complete banner */
+.results-complete-banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    width: 392px;
+    height: 34px;
+    margin-top: 12px;
+    border-radius: 17px;
+    background-color: #FAEBD2;
+}
+
+.results-party-popper {
+    width: 14.01px;
+    height: 13.49px;
+    object-fit: contain;
+}
+
+.results-complete-banner p {
+    margin: 0;
+    color: #3D405B;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    white-space: nowrap;
+}
+
+/* Main result card */
+.results-card {
+    position: relative;
+    width: 392px;
+    height: 195px;
+    margin-top: 13px;
+    overflow: hidden;
+    border-radius: 28px;
+    background-color: #4A90D9;
+}
+
+/* Decorative squares */
+.results-decorations {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.results-decorations img {
+    position: absolute;
+}
+
+.results-squares-small {
+    top: 134.59px;
+    left: 3.59px;
+    width: 40px;
+    height: 40px;
+    transform: rotate(-8deg);
+}
+
+.results-squares {
+    top: -23.86px;
+    left: 295.14px;
+    width: 108px;
+    height: 108px;
+    transform: rotate(15deg);
+}
+
+/* Learning style image box */
+.results-image-box {
+    position: absolute;
+    top: 15px;
+    left: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    box-sizing: border-box;
+    width: 108px;
+    height: 98px;
+    padding: 10px;
+    border-radius: 17px;
+    background-color: #609DDE;
+}
+
+/* Single learning style image */
+.results-style-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Two or more tied learning styles */
+.results-image-box:has(.results-style-image:nth-child(2)) .results-style-image {
+    width: 38px;
+    height: 38px;
+}
+
+/* Three or four tied learning styles */
+.results-image-box:has(.results-style-image:nth-child(3)) .results-style-image {
+    width: 32px;
+    height: 32px;
+}
+
+/* Result information */
+.results-card-content {
+    position: absolute;
+    top: 21px;
+    left: 145px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.results-label {
+    margin: 0;
+    color: #FFFFFFCC;
+    font-size: 12px;
+    font-weight: 800;
+    line-height: 15px;
+    letter-spacing: 0.105em;
+}
+
+/* Result title */
+.results-title {
+    margin: 2px 0 0;
+    color: #FFFFFF;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 26px;
+    letter-spacing: -0.02em;
+}
+
+/* Keep Learner on a separate line */
+.results-title span {
+    display: block;
+}
+
+/* Long learning style names */
+.results-title:has(#results-style-name[data-long="true"]) {
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.results-description {
+    margin: 19px 0 0;
+    color: #FFFFFFB3;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 16px;
+    letter-spacing: -0.01em;
+}
+
+.results-score {
+    margin: 13px 0 0;
+    color: #FFFFFFF2;
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 20px;
+    letter-spacing: -0.04em;
+}
+
+/* Score breakdown */
+.results-breakdown {
+    width: 390px;
+    margin-top: 10px;
+    margin-left: 1px;
+}
+
+.results-breakdown h2 {
+    margin: 0 0 8px;
+    color: #3D405B;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 19px;
+}
+
+/* Score rows */
+.results-score-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.results-score-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.results-score-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 14px;
+}
+
+.results-score-heading p {
+    margin: 0;
+    color: #3D405B;
+    font-size: 12.5px;
+    font-weight: 700;
+    line-height: 14px;
+    letter-spacing: -0.01em;
+}
+
+.results-score-heading span {
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 14px;
+    letter-spacing: -0.05em;
+}
+
+/* Score bars */
+.results-score-track {
+    width: 100%;
+    height: 12px;
+    overflow: hidden;
+    border-radius: 6px;
+    background-color: #F4F1DE;
+}
+
+.results-score-fill {
+    height: 100%;
+    border-radius: inherit;
+}
+
+/* Visual score */
+.results-visual .results-score-heading span {
+    color: #4A90D9;
+}
+
+.results-visual .results-score-fill {
+    width: 33%;
+    background-color: #4A90D9;
+}
+
+/* Auditory score */
+.results-auditory .results-score-heading span {
+    color: #81B29A;
+}
+
+.results-auditory .results-score-fill {
+    width: 17%;
+    background-color: #81B29A;
+}
+
+/* Reading/Writing score */
+.results-reading .results-score-heading span {
+    color: #7B68C8;
+}
+
+.results-reading .results-score-fill {
+    width: 25%;
+    background-color: #7B68C8;
+}
+
+/* Kinesthetic score */
+.results-kinesthetic .results-score-heading span {
+    color: #E07A5F;
+}
+
+.results-kinesthetic .results-score-fill {
+    width: 25%;
+    background-color: #E07A5F;
+}
+
+/* Divider */
+.results-divider {
+    width: 392px;
+    height: 1px;
+    flex-shrink: 0;
+    margin-top: 18px;
+    border-radius: 999px;
+    background-color: var(--auth-divider);
+}
+
+/* Result actions */
+.results-actions {
+    display: flex;
+    flex-direction: column;
+    width: 392px;
+    margin-top: 11px;
+}
+
+/* Save and Share buttons */
+.results-secondary-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 12px;
+}
+
+.results-action-button {
+    --button-color: var(--auth-card-bg);
+    --button-hover-color: var(--field-hover);
+    --button-text-color: var(--auth-heading);
+    --button-text-hover-color: var(--auth-heading);
+    --button-icon-filter: brightness(0) saturate(100%) invert(24%) sepia(13%) saturate(1256%) hue-rotate(197deg) brightness(93%) contrast(93%);
+    --button-icon-hover-filter: var(--button-icon-filter);
+}
+
+/* Retake quiz */
+.results-retake {
+    display: grid;
+    grid-template-columns: 160px auto;
+    align-items: start;
+    width: 392px;
+    height: 20px;
+    margin-top: 10px;
+    padding-left: 79px;
+}
+
+.results-retake p {
+    margin: 0;
+    padding-top: 1px;
+    color: var(--auth-prompt, #9698AA);
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 15px;
+    letter-spacing: -0.005em;
+    white-space: nowrap;
+}
+
+.results-retake-link {
+    color: var(--link-color, #E07A5F99);
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 16px;
+    letter-spacing: -0.01em;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.results-retake-link:hover,
+.results-retake-link:focus-visible {
+    color: var(--link-hover-color, #E07A5F);
+    text-decoration: none;
+}

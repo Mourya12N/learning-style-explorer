@@ -15,7 +15,7 @@
     cursor: pointer;
     text-decoration: none;
     vertical-align: top;
-    transition: background-color 0.2s ease, color 0.2s ease;
+    transition: background-color 0.2s ease;
 }
 
 /* Button states */

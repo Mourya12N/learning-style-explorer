@@ -1,0 +1,322 @@
+
+/* Page background */
+body[data-page="tos-eula"] .app-container {
+    background-color: #808080;
+}
+
+/* Page content */
+.tos-eula-content {
+    position: relative;
+    width: 100%;
+    min-height: 100%;
+    padding: 60px 17px 110px;
+    font-family: "Inter", Arial, sans-serif;
+}
+
+/* App branding */
+.tos-eula-header {
+    display: flex;
+    align-items: center;
+    height: 30px;
+}
+
+/* Main panel */
+.tos-eula-panel {
+    position: absolute;
+    top: 144px;
+    left: 13px;
+    width: 400px;
+    height: 602px;
+    border-radius: 34px;
+    background-color: #FFFFFF;
+}
+
+/* Panel header */
+.tos-eula-panel-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 400px;
+    height: 71px;
+    border-radius: 34px 34px 0 0;
+    background-color: var(--palette-dark, #3D405B);
+}
+
+/* Header text */
+.tos-eula-panel-heading {
+    position: absolute;
+    top: 19px;
+    left: 113px;
+}
+
+.tos-eula-title {
+    margin: 0;
+    color: var(--palette-light, #F4F1DE);
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 17px;
+    letter-spacing: 0.014em;
+    white-space: nowrap;
+}
+
+.tos-eula-subtitle {
+    margin: 4px 0 0 31px;
+    color: var(--palette-secondary, #81B29A);
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 14px;
+    letter-spacing: -0.044em;
+    white-space: nowrap;
+}
+
+/* Close button */
+.tos-eula-close {
+    position: absolute;
+    top: 13px;
+    right: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background-color: var(--palette-primary, #E07A5F);
+    cursor: pointer;
+}
+
+.tos-eula-close-icon {
+    display: block;
+    width: 14px;
+    height: 14px;
+}
+
+/* Terms content rectangle */
+.tos-eula-panel-inner {
+    position: absolute;
+    top: 82px;
+    left: 16px;
+    width: 368px;
+    height: 383px;
+    border-radius: 18px;
+    background-color: var(--palette-light, #F4F1DE);
+}
+
+/* Scrollable terms */
+.tos-eula-scroll-content {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    width: 328px;
+    height: 340px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: none;
+    font-family: "Inter", Arial, sans-serif;
+}
+
+.tos-eula-scroll-content::-webkit-scrollbar {
+    display: none;
+}
+
+/* Document sections */
+.tos-eula-document-section {
+    width: 100%;
+}
+
+/* Main headings */
+.tos-eula-section-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 328px;
+    height: 28px;
+    margin: 0 0 10px;
+    border-radius: 14px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 16px;
+    letter-spacing: -0.03em;
+    white-space: nowrap;
+}
+
+.eula-title {
+    color: var(--palette-primary, #E07A5F);
+    background-color: color-mix(
+        in srgb,
+        var(--palette-primary, #E07A5F) 15%,
+        transparent
+    );
+}
+
+.tos-title {
+    color: var(--palette-secondary, #81B29A);
+    background-color: color-mix(
+        in srgb,
+        var(--palette-secondary, #81B29A) 15%,
+        transparent
+    );
+}
+
+/* Information headings */
+.tos-eula-information-heading {
+    width: 328px;
+    margin: 0 0 9px;
+    padding: 0 0 6px;
+    border-bottom: 1px solid var(--button-border-color, #D8D9DE);
+    color: var(--palette-dark, #3D405B);
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 16px;
+    letter-spacing: -0.02em;
+}
+
+/* Paragraphs */
+.tos-eula-paragraph {
+    margin: 0 0 10px;
+    color: var(--theme-muted, #878899);
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 17px;
+    letter-spacing: -0.06em;
+}
+
+.tos-eula-paragraph-before-list {
+    margin-bottom: 0;
+}
+
+/* Lists */
+.tos-eula-list {
+    margin: 0 0 10px;
+    padding-left: 20px;
+    color: var(--theme-muted, #878899);
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 17px;
+    letter-spacing: -0.06em;
+}
+
+.tos-eula-list li {
+    padding-left: 0;
+    margin-bottom: 2px;
+}
+
+/* Scroll indicator */
+.tos-eula-scroll-hint {
+    position: absolute;
+    top: 445px;
+    left: 143px;
+    display: flex;
+    align-items: flex-start;
+    gap: 4px;
+}
+
+.tos-eula-scroll-triangle {
+    width: 0;
+    height: 0;
+    margin-top: 1px;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 10px solid var(--field-label, #B4B3B0);
+}
+
+.tos-eula-scroll-text {
+    color: var(--field-label, #B4B3B0);
+    font-size: 11.8px;
+    font-weight: 500;
+    line-height: 15px;
+    letter-spacing: -0.034em;
+    white-space: nowrap;
+}
+
+/* Agreement error */
+.tos-eula-error {
+    position: absolute;
+    top: 472px;
+    left: 26px;
+    margin: 0;
+    color: #B44528;
+    font-size: 8px;
+    font-weight: 500;
+    line-height: 10px;
+    white-space: nowrap;
+}
+
+.tos-eula-error[hidden] {
+    display: none;
+}
+
+/* Agreement */
+.tos-eula-agreement {
+    position: absolute;
+    top: 477px;
+    left: 16px;
+}
+
+.tos-eula-panel.has-agreement-error .tos-eula-agreement {
+    top: 487px;
+}
+
+/* Shared checkbox positioning */
+.tos-eula-checkbox {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Agreement text */
+.tos-eula-agreement-text {
+    position: absolute;
+    top: 5px;
+    left: 34px;
+    color: var(--palette-dark, #3D405B);
+    font-size: 11.8px;
+    font-weight: 500;
+    line-height: 15px;
+    letter-spacing: -0.03em;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.tos-eula-terms-text {
+    position: absolute;
+    top: 5px;
+    left: 184px;
+    color: var(--palette-primary, #E07A5F);
+    font-size: 11.8px;
+    font-weight: 700;
+    line-height: 15px;
+    letter-spacing: -0.035em;
+    white-space: nowrap;
+}
+
+/* Action buttons */
+.tos-eula-actions {
+    position: absolute;
+    top: 525px;
+    left: 16px;
+    display: flex;
+    gap: 16px;
+}
+
+/* Bottom rectangle */
+.tos-eula-bottom-rectangle {
+    position: absolute;
+    bottom: -7px;
+    left: 0;
+    z-index: 20;
+    width: 100%;
+    height: 100px;
+    background-color: var(--palette-dark, #2A2D3E);
+}
+
+/* Preserve original Summer Drift details */
+body[data-theme="summer-drift"][data-page="tos-eula"] .tos-eula-paragraph,
+body[data-theme="summer-drift"][data-page="tos-eula"] .tos-eula-list {
+    color: #878899;
+}
+
+body[data-theme="summer-drift"][data-page="tos-eula"] .tos-eula-bottom-rectangle {
+    background-color: #2A2D3E;
+}

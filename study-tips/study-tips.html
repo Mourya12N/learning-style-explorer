@@ -1,0 +1,380 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Tips - Learning Style Explorer</title>
+
+    <!-- Shared styles -->
+    <link rel="stylesheet" href="../shared/iphone-frame/iphone-frame.css">
+    <link rel="stylesheet" href="../shared/status-bar/status-bar.css">
+    <link rel="stylesheet" href="../shared/bottom-nav/bottom-nav.css">
+    <link rel="stylesheet" href="../shared/themes/themes.css">
+    <link rel="stylesheet" href="../shared/brand/brand.css">
+    <link rel="stylesheet" href="../shared/button/button.css">
+    <link rel="stylesheet" href="study-tips.css">
+
+    <!-- Shared brand -->
+    <script src="../shared/brand/brand.js" defer></script>
+</head>
+
+<body data-theme="summer-drift" data-page="study-tips">
+    <script src="../shared/themes/themes.js"></script>
+
+    <main class="app-container">
+        <div id="status-bar"></div>
+
+        <div class="study-tips-content">
+
+            <!-- Header -->
+            <header class="study-tips-header">
+                <app-brand></app-brand>
+
+                <button
+                    type="button"
+                    class="btn btn-mini-back btn-icon-mini-back">
+                    Back
+                </button>
+            </header>
+
+            <section class="study-tips-section">
+
+                <!-- Learning style summary -->
+                <div class="study-tips-card">
+                    <img
+                        class="study-tips-squares"
+                        src="assets/decorative-squares-study-tips.svg"
+                        alt=""
+                    >
+
+                    <div class="study-tips-image-box">
+                        <img
+                            class="study-tips-style-image"
+                            src="../results/assets/visual-eye-results.svg"
+                            alt="Visual learning style"
+                        >
+                    </div>
+
+                    <div class="study-tips-card-content">
+                        <p class="study-tips-label">YOUR STYLE</p>
+
+                        <h1 class="study-tips-title">Visual Learner</h1>
+
+                        <p class="study-tips-description">
+                            <span>Personalised strategies to help</span>
+                            <span>you study smarter</span>
+                        </p>
+
+                        <p class="study-tips-score">
+                            Based on your VARK score of 33%
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Scrollable study tips -->
+                <div
+                    class="study-tips-scroll"
+                    role="region"
+                    aria-label="Study strategies"
+                    tabindex="0">
+
+                    <!-- Visual study tips -->
+                    <ul
+                        class="study-tips-list study-tips-visual"
+                        data-style="visual">
+
+                        <li class="study-tip">
+                            <div class="study-tip-background">
+                                <div class="study-tip-icon-box">
+                                    <img src="assets/visual-tip-1.svg" alt="">
+                                </div>
+
+                                <div class="study-tip-content">
+                                    <h2>Use Mind Maps</h2>
+                                    <p>Create visual diagrams to connect</p>
+                                    <p>ideas and concepts together</p>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="study-tip">
+                            <div class="study-tip-background">
+                                <div class="study-tip-icon-box">
+                                    <img src="assets/visual-tip-2.svg" alt="">
+                                </div>
+
+                                <div class="study-tip-content">
+                                    <h2>Colour Code Your Notes</h2>
+                                    <p>Use different colours to highlight</p>
+                                    <p>key information and categories</p>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="study-tip">
+                            <div class="study-tip-background">
+                                <div class="study-tip-icon-box">
+                                    <img src="assets/visual-tip-3.svg" alt="">
+                                </div>
+
+                                <div class="study-tip-content">
+                                    <h2>Watch Educational Videos</h2>
+                                    <p>Use YouTube or Khan Academy</p>
+                                    <p>to visualise complex concepts</p>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="study-tip">
+                            <div class="study-tip-background">
+                                <div class="study-tip-icon-box">
+                                    <img src="assets/visual-tip-4.svg" alt="">
+                                </div>
+
+                                <div class="study-tip-content">
+                                    <h2>Draw Diagrams and Charts</h2>
+                                    <p>Sketch out processes and</p>
+                                    <p>relationships visually on paper</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <!-- Auditory study tips -->
+                    <ul
+                        class="study-tips-list study-tips-auditory"
+                        data-style="auditory"
+                        hidden>
+
+                        <li class="study-tip">
+                            <div class="study-tip-background">
+                                <div class="study-tip-icon-box">
+                                    <img src="assets/auditory-tip-1.svg" alt="">
+                                </div>
+
+                                <div class="study-tip-content">
+                                    <h2>Listen to Educational Podcasts</h2>
+                                    <p>Explore audio lessons and</p>
+                                    <p>podcasts about your subjects</p>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="study-tip">
+                            <div class="study-tip-background">
+                                <div class="study-tip-icon-box">
+                                    <img src="assets/auditory-tip-2.svg" alt="">
+                                </div>
+
+                                <div class="study-tip-content">
+                                    <h2>Study with Group Discussions</h2>
+                                    <p>Talk through concepts with</p>
+                                    <p>friends to explore different ideas</p>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="study-tip">
+                            <div class="study-tip-background">
+                                <div class="study-tip-icon-box">
+                                    <img src="assets/auditory-tip-3.svg" alt="">
+                                </div>
+
+                                <div class="study-tip-content">
+                                    <h2>Record and Replay Notes</h2>
+                                    <p>Record yourself explaining topics</p>
+                                    <p>and replay them when revising</p>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="study-tip">
+                            <div class="study-tip-background">
+                                <div class="study-tip-icon-box">
+                                    <img src="assets/auditory-tip-4.svg" alt="">
+                                </div>
+
+                                <div class="study-tip-content">
+                                    <h2>Explain Concepts Out Loud</h2>
+                                    <p>Teach a topic aloud using your</p>
+                                    <p>own words to check understanding</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <!-- Reading/Writing study tips -->
+                    <ul
+                        class="study-tips-list study-tips-reading"
+                        data-style="reading"
+                        hidden>
+
+                        <li class="study-tip">
+                            <div class="study-tip-background">
+                                <div class="study-tip-icon-box">
+                                    <img src="assets/reading-tip-1.svg" alt="">
+                                </div>
+
+                                <div class="study-tip-content">
+                                    <h2>Write Detailed Study Notes</h2>
+                                    <p>Summarise important information</p>
+                                    <p>using clear headings and lists</p>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="study-tip">
+                            <div class="study-tip-background">
+                                <div class="study-tip-icon-box">
+                                    <img src="assets/reading-tip-2.svg" alt="">
+                                </div>
+
+                                <div class="study-tip-content">
+                                    <h2>Read Textbooks and Articles</h2>
+                                    <p>Explore written explanations to</p>
+                                    <p>build a deeper understanding</p>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="study-tip">
+                            <div class="study-tip-background">
+                                <div class="study-tip-icon-box">
+                                    <img src="assets/reading-tip-3.svg" alt="">
+                                </div>
+
+                                <div class="study-tip-content">
+                                    <h2>Create Written Flashcards</h2>
+                                    <p>Write key terms and definitions</p>
+                                    <p>to practise recalling information</p>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="study-tip">
+                            <div class="study-tip-background">
+                                <div class="study-tip-icon-box">
+                                    <img src="assets/reading-tip-4.svg" alt="">
+                                </div>
+
+                                <div class="study-tip-content">
+                                    <h2>Practise with Written Questions</h2>
+                                    <p>Answer practice questions and</p>
+                                    <p>review your written responses</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <!-- Kinesthetic study tips -->
+                    <ul
+                        class="study-tips-list study-tips-kinesthetic"
+                        data-style="kinesthetic"
+                        hidden>
+
+                        <li class="study-tip">
+                            <div class="study-tip-background">
+                                <div class="study-tip-icon-box">
+                                    <img src="assets/kinesthetic-tip-1.svg" alt="">
+                                </div>
+
+                                <div class="study-tip-content">
+                                    <h2>Learn Through Experiments</h2>
+                                    <p>Try practical activities to explore</p>
+                                    <p>how different concepts work</p>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="study-tip">
+                            <div class="study-tip-background">
+                                <div class="study-tip-icon-box">
+                                    <img src="assets/kinesthetic-tip-2.svg" alt="">
+                                </div>
+
+                                <div class="study-tip-content">
+                                    <h2>Use Hands-On Activities</h2>
+                                    <p>Build models and interact with</p>
+                                    <p>objects to explore new ideas</p>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="study-tip">
+                            <div class="study-tip-background">
+                                <div class="study-tip-icon-box">
+                                    <img src="assets/kinesthetic-tip-3.svg" alt="">
+                                </div>
+
+                                <div class="study-tip-content">
+                                    <h2>Take Active Study Breaks</h2>
+                                    <p>Move around between study</p>
+                                    <p>sessions to stay refreshed</p>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="study-tip">
+                            <div class="study-tip-background">
+                                <div class="study-tip-icon-box">
+                                    <img src="assets/kinesthetic-tip-4.svg" alt="">
+                                </div>
+
+                                <div class="study-tip-content">
+                                    <h2>Practise Real-World Examples</h2>
+                                    <p>Apply what you learn to practical</p>
+                                    <p>situations and everyday tasks</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
+
+                <!-- View all study tips -->
+                <div class="study-tips-view-all">
+                    <img
+                        class="study-tips-search-icon"
+                        src="assets/search-study-tips.svg"
+                        alt=""
+                    >
+
+                    <span>View tips for all learning styles</span>
+                </div>
+
+                <!-- Divider -->
+                <div
+                    class="study-tips-divider"
+                    aria-hidden="true">
+                </div>
+
+                <!-- Navigation buttons -->
+                <div class="study-tips-actions">
+                    <button
+                        type="button"
+                        class="btn btn-back btn-icon-back">
+                        Back to Results
+                    </button>
+
+                    <button
+                        type="button"
+                        class="btn btn-retake btn-icon-retake">
+                        Retake Quiz
+                    </button>
+                </div>
+
+            </section>
+        </div>
+
+        <div id="bottom-nav"></div>
+    </main>
+
+    <!-- Shared scripts -->
+    <script src="../shared/status-bar/status-bar.js"></script>
+    <script src="../shared/bottom-nav/bottom-nav.js"></script>
+
+    <!-- Page script -->
+    <script src="study-tips.js"></script>
+</body>
+</html>

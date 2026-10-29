@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading - Learning Style Explorer</title>
+
+    <!-- Shared styles -->
+    <link rel="stylesheet" href="../shared/iphone-frame/iphone-frame.css">
+    <link rel="stylesheet" href="../shared/status-bar/status-bar.css">
+    <link rel="stylesheet" href="../shared/bottom-nav/bottom-nav.css">
+    <link rel="stylesheet" href="../shared/themes/themes.css">
+    <link rel="stylesheet" href="../shared/brand/brand.css">
+
+    <!-- Page styles -->
+    <link rel="stylesheet" href="loading.css">
+
+    <!-- Shared brand -->
+    <script src="../shared/brand/brand.js" defer></script>
+</head>
+
+<body data-theme="summer-drift" data-page="loading">
+    <!-- Apply saved theme before displaying content -->
+    <script src="../shared/themes/themes.js"></script>
+
+    <main class="app-container">
+
+        <div id="status-bar"></div>
+
+        <div class="loading-content">
+
+            <!-- Header -->
+            <header class="loading-header">
+                <app-brand></app-brand>
+            </header>
+
+            <!-- Loading section -->
+            <section class="loading-section">
+
+                <!-- Decorative squares -->
+                <div class="loading-decorations" aria-hidden="true">
+                    <img
+                        class="loading-squares-large"
+                        src="assets/decorative-squares-large-loading.svg"
+                        alt=""
+                    >
+
+                    <img
+                        class="loading-squares"
+                        src="assets/decorative-squares-loading.svg"
+                        alt=""
+                    >
+
+                    <img
+                        class="loading-squares-small"
+                        src="assets/decorative-squares-small-loading.svg"
+                        alt=""
+                    >
+                </div>
+
+                <!-- Loading text -->
+                <div class="loading-message">
+                    <p class="loading-label">
+                        ANALYSING YOUR RESPONSES
+                    </p>
+
+                    <h1 class="loading-heading">
+                        Finding Your<br>
+                        <span>Learning Style</span>
+                    </h1>
+
+                    <p class="loading-description">
+                        Please wait while we calculate<br>
+                        your personalised VARK result
+                    </p>
+                </div>
+
+                <!-- Progress -->
+                <div class="loading-progress">
+                    <div
+                        class="loading-progress-bar"
+                        role="progressbar"
+                        aria-label="Analysing responses"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                        aria-valuenow="0"
+                    >
+                        <div class="loading-progress-fill" style="width: 0%"></div>
+                    </div>
+
+                    <p class="loading-percentage">Loading... 0%</p>
+                </div>
+
+                <!-- Learning style labels -->
+                <div class="loading-styles">
+                    <p class="loading-style loading-visual">Visual</p>
+                    <p class="loading-style loading-auditory">Auditory</p>
+                    <p class="loading-style loading-read-write">Read/Write</p>
+                    <p class="loading-style loading-kinesthetic">Kinesthetic</p>
+                </div>
+
+                <!-- Did you know card -->
+                <aside class="loading-info-card">
+                    <div class="loading-info-accent"></div>
+
+                    <div class="loading-info-content">
+                        <div class="loading-info-heading">
+                            <img
+                                src="assets/lightbulb-loading.svg"
+                                alt=""
+                                class="loading-info-icon"
+                            >
+                            <h2>Did you know?</h2>
+                        </div>
+
+                        <p class="loading-info-description">
+                            Most people are a mix of all four VARK styles<br>
+                            with one or two being more dominant
+                        </p>
+                    </div>
+                </aside>
+
+            </section>
+
+        </div>
+
+        <div id="bottom-nav"></div>
+
+    </main>
+
+    <!-- Shared scripts -->
+    <script src="../shared/status-bar/status-bar.js"></script>
+    <script src="../shared/bottom-nav/bottom-nav.js"></script>
+
+    <!-- Page script -->
+    <script src="loading.js"></script>
+
+</body>
+</html>

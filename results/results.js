@@ -117,6 +117,27 @@ function showBreakdown() {
     });
 }
 
+/* Match Results colours and decorations */
+function showResultColours(mainStyle) {
+    const content = document.querySelector(".results-content");
+
+    content.dataset.learningStyle =
+        mainStyle === "read-write" ? "reading" : mainStyle;
+
+    const decorations = {
+        ".results-squares": "decorative-squares-results",
+        ".results-squares-small": "decorative-squares-small-results"
+    };
+
+    Object.entries(decorations).forEach(([selector, name]) => {
+        const image = document.querySelector(selector);
+
+        if (image) {
+            image.src = `assets/${name}-${mainStyle}.svg`;
+        }
+    });
+}
+
 /* Prepare results */
 if (!validScores) {
     alert("Please complete the quiz to view your results.");
@@ -136,6 +157,7 @@ if (!validScores) {
 
     showMainResult(topStyles);
     showBreakdown();
+    showResultColours(topStyles[0]);
 
     /* Create results summary */
     resultSummary = [

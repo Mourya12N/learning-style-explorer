@@ -67,3 +67,34 @@ document.querySelector(".save-password").addEventListener("click", () => {
     alert("Password reset successfully! You can now log in.");
     window.location.href = "../login/login.html";
 });
+
+/* Match Forgot Password illustrations to the selected theme */
+const forgotPasswordThemes = [
+    "summer-drift",
+    "autumn-glow",
+    "forest-breeze",
+    "midnight-mist",
+    "tropical-sunset",
+    "earthy-harvest"
+];
+
+const currentTheme = document.body.dataset.theme || "summer-drift";
+
+const selectedTheme = forgotPasswordThemes.includes(currentTheme)
+    ? currentTheme
+    : "summer-drift";
+
+const forgotPasswordIllustrations = [
+    "person-password",
+    "decorative-squares-forgot-password",
+    "decorative-squares-small-forgot-password",
+    "decorative-circle-forgot-password"
+];
+
+forgotPasswordIllustrations.forEach((name) => {
+    const image = document.querySelector(`.${name}`);
+
+    if (image) {
+        image.src = `assets/${name}-${selectedTheme}.svg`;
+    }
+});

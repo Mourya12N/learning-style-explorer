@@ -53,3 +53,33 @@ window.addEventListener("pageshow", () => {
         agreement.classList.remove("has-error");
     }
 });
+
+/* Match Sign Up illustrations to the selected theme */
+const signupThemes = [
+    "summer-drift",
+    "autumn-glow",
+    "forest-breeze",
+    "midnight-mist",
+    "tropical-sunset",
+    "earthy-harvest"
+];
+
+const signupCurrentTheme = document.body.dataset.theme || "summer-drift";
+
+const signupSelectedTheme = signupThemes.includes(signupCurrentTheme)
+    ? signupCurrentTheme
+    : "summer-drift";
+
+const signupIllustrations = [
+    "person-rocket",
+    "decorative-squares-signup",
+    "decorative-squares-small-signup"
+];
+
+signupIllustrations.forEach((name) => {
+    const image = document.querySelector(`.${name}`);
+
+    if (image) {
+        image.src = `assets/${name}-${signupSelectedTheme}.svg`;
+    }
+});

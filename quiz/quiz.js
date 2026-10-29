@@ -232,3 +232,13 @@ document.querySelector(".btn-mini-back").addEventListener("click", (event) => {
 
 /* Start quiz */
 showQuestion();
+
+/* Match Quiz decorations to the selected theme */
+const quizTheme = document.body.dataset.theme || "summer-drift";
+const quizSquares = document.querySelector(
+    'img[src="assets/decorative-squares-quiz.svg"]'
+);
+
+if (quizSquares) {
+    quizSquares.src = `assets/decorative-squares-quiz-${quizTheme}.svg`;
+}

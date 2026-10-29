@@ -6,6 +6,25 @@
     min-height: 100%;
     padding: 60px 17px 110px;
     font-family: "Inter", Arial, sans-serif;
+
+    --style-color: #4A90D9;
+    --style-image-bg: #609DDE;
+}
+
+/* Learning style colours */
+.results-content[data-learning-style="auditory"] {
+    --style-color: #81B29A;
+    --style-image-bg: #96C3AE;
+}
+
+.results-content[data-learning-style="reading"] {
+    --style-color: #7B68C8;
+    --style-image-bg: #9787D6;
+}
+
+.results-content[data-learning-style="kinesthetic"] {
+    --style-color: #E07A5F;
+    --style-image-bg: #E9957F;
 }
 
 /* Header */
@@ -58,7 +77,7 @@
     margin-top: 13px;
     overflow: hidden;
     border-radius: 28px;
-    background-color: #4A90D9;
+    background-color: var(--style-color);
 }
 
 /* Decorative squares */
@@ -104,7 +123,7 @@
     height: 98px;
     padding: 10px;
     border-radius: 17px;
-    background-color: #609DDE;
+    background-color: var(--style-image-bg);
 }
 
 /* Single learning style image */
@@ -155,7 +174,6 @@
     letter-spacing: -0.02em;
 }
 
-/* Keep Learner on a separate line */
 .results-title span {
     display: block;
 }

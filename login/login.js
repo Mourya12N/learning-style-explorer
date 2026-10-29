@@ -30,3 +30,33 @@ document.querySelector(".login-submit").addEventListener("click", () => {
 document.querySelector(".login-google").addEventListener("click", () => {
     alert("Google Sign-In is not available in this demo.");
 });
+
+/* Match Login illustrations to the selected theme */
+const loginThemes = [
+    "summer-drift",
+    "autumn-glow",
+    "forest-breeze",
+    "midnight-mist",
+    "tropical-sunset",
+    "earthy-harvest"
+];
+
+const loginCurrentTheme = document.body.dataset.theme || "summer-drift";
+
+const loginSelectedTheme = loginThemes.includes(loginCurrentTheme)
+    ? loginCurrentTheme
+    : "summer-drift";
+
+const loginIllustrations = [
+    "girl-window-tree",
+    "decorative-squares-login",
+    "decorative-squares-small-login"
+];
+
+loginIllustrations.forEach((name) => {
+    const image = document.querySelector(`.${name}`);
+
+    if (image) {
+        image.src = `assets/${name}-${loginSelectedTheme}.svg`;
+    }
+});

@@ -32,3 +32,35 @@ document.querySelector(".user-setup-continue").addEventListener("click", () => {
     sessionStorage.setItem("userRole", selectedRole.value);
     window.location.href = "../quiz/quiz.html";
 });
+
+/* Match User Setup illustrations to the selected theme */
+const userSetupThemes = [
+    "summer-drift",
+    "autumn-glow",
+    "forest-breeze",
+    "midnight-mist",
+    "tropical-sunset",
+    "earthy-harvest"
+];
+
+const currentTheme = document.body.dataset.theme || "summer-drift";
+
+const selectedTheme = userSetupThemes.includes(currentTheme)
+    ? currentTheme
+    : "summer-drift";
+
+/* Update illustrations and decorative shapes */
+const userSetupIllustrations = [
+    "three-people",
+    "decorative-squares-user-setup",
+    "decorative-squares-small-user-setup",
+    "decorative-circles-user-setup"
+];
+
+userSetupIllustrations.forEach((name) => {
+    const image = document.querySelector(`.${name}`);
+
+    if (image) {
+        image.src = `assets/${name}-${selectedTheme}.svg`;
+    }
+});

@@ -24,12 +24,13 @@
 
 /* Radio circle */
 .radio-circle {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    width: 22px;
-    height: 22px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     background-color: var(--radio-circle-bg);
     transition: background-color 0.2s ease;
@@ -59,26 +60,6 @@
     line-height: 16px;
 }
 
-/* Hover */
-.radio-option:hover:not(:has(.radio-input:checked)) {
-    background-color: var(--radio-hover);
-}
-
-.radio-option:hover:not(:has(.radio-input:checked)) .radio-title {
-    color: var(--radio-hover-title);
-    opacity: 0.8;
-}
-
-.radio-option:hover:not(:has(.radio-input:checked)) .radio-description {
-    color: var(--radio-hover-description);
-    opacity: 0.9;
-}
-
-.radio-option:hover:not(:has(.radio-input:checked)) .radio-circle {
-    background-color: var(--radio-circle-hover-bg);
-    opacity: 0.7;
-}
-
 /* Selected */
 .radio-option:has(.radio-input:checked) {
     background-color: var(--radio-selected-bg);
@@ -94,18 +75,32 @@
     opacity: 1;
 }
 
+/* Selected outer circle */
 .radio-option:has(.radio-input:checked) .radio-circle {
-    background-color: var(--radio-selected-circle-bg);
-    opacity: 1;
+    background-color: transparent;
 }
 
-/* Selected inner circle */
+/* Selected outer circle at 40% opacity */
+.radio-option:has(.radio-input:checked) .radio-circle::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background-color: var(--radio-selected-circle-bg);
+    opacity: 0.4;
+}
+
+/* Selected inner white circle */
 .radio-option:has(.radio-input:checked) .radio-circle::after {
     content: "";
-    width: 10px;
-    height: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 15px;
+    height: 15px;
     border-radius: 50%;
-    background-color: var(--radio-selected-inner-circle);
+    background-color: #FFFFFF;
+    transform: translate(-50%, -50%);
 }
 
 /* Selected SVG tick on the right */
@@ -119,15 +114,41 @@
     background: url("assets/check-tick.svg") center / contain no-repeat;
 }
 
-/* Keep selected appearance on hover */
-.radio-option:has(.radio-input:checked):hover {
-    background-color: var(--radio-selected-bg);
+/* Hover */
+.radio-option:hover {
+    background-color: var(--radio-hover);
 }
 
-.radio-option:has(.radio-input:checked):hover .radio-title,
-.radio-option:has(.radio-input:checked):hover .radio-description,
+.radio-option:hover .radio-title {
+    color: var(--radio-hover-title);
+    opacity: 0.8;
+}
+
+.radio-option:hover .radio-description {
+    color: var(--radio-hover-description);
+    opacity: 0.9;
+}
+
+/* Hover circle */
+.radio-option:hover .radio-circle,
 .radio-option:has(.radio-input:checked):hover .radio-circle {
-    opacity: 1;
+    background-color: transparent;
+}
+
+/* Hover circle at 70% opacity */
+.radio-option:hover .radio-circle::before,
+.radio-option:has(.radio-input:checked):hover .radio-circle::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background-color: var(--radio-circle-hover-bg);
+    opacity: 0.7;
+}
+
+/* No inner circle on hover */
+.radio-option:hover .radio-circle::after {
+    content: none;
 }
 
 /* Keyboard focus */

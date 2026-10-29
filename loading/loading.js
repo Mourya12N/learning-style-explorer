@@ -1,4 +1,34 @@
 
+/* Match Loading decorations to the selected theme */
+const loadingThemes = [
+    "summer-drift",
+    "autumn-glow",
+    "forest-breeze",
+    "midnight-mist",
+    "tropical-sunset",
+    "earthy-harvest"
+];
+
+const currentTheme = document.body.dataset.theme || "summer-drift";
+
+const selectedTheme = loadingThemes.includes(currentTheme)
+    ? currentTheme
+    : "summer-drift";
+
+const loadingIllustrations = {
+    ".loading-squares-large": "decorative-squares-large-loading",
+    ".loading-squares": "decorative-squares-loading",
+    ".loading-squares-small": "decorative-squares-small-loading"
+};
+
+Object.entries(loadingIllustrations).forEach(([selector, name]) => {
+    const image = document.querySelector(selector);
+
+    if (image) {
+        image.src = `assets/${name}-${selectedTheme}.svg`;
+    }
+});
+
 /* Loading elements */
 const progressBar = document.querySelector(".loading-progress-bar");
 const progressFill = document.querySelector(".loading-progress-fill");

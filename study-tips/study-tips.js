@@ -158,3 +158,14 @@ if (validScores) {
     alert("Please complete the quiz to view personalised study tips.");
     window.location.replace("../quiz/quiz.html");
 }
+
+/* Match Study Tips decorations to the learning style */
+if (validScores && topStyles.length > 0) {
+    const mainStyle = topStyles[0];
+    const squares = document.querySelector(".study-tips-squares");
+
+    if (squares) {
+        squares.src = `assets/decorative-squares-study-tips-${mainStyle}.svg`;
+    }
+}
+
